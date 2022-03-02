@@ -16,6 +16,7 @@ public class Arrow : MonoBehaviour
         gameObject.SetActive(false);
         
     }
+    //asdasgadsgsf
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerMovement.pInstance.pTransform.position = transform.position + new Vector3(0, pOffset, 0);
