@@ -17,10 +17,21 @@ public class EnemyAttack : MonoBehaviour
     private GameObject _bullet;
     [SerializeField]
     private GameObject _origin;
-    private bool _firstShoot=false; 
+    private bool _firstShoot=false;
+    private bool _canShoot = true;
+    private LayerMask _playerLayer;
 
     private float _atCD=1;
+    private void ShotAble()
+    {
+        if (Physics2D.Raycast(_myTransform.position, (_playerPosition.position - _myTransform.position), 1000.0f, _playerLayer))
+        {
 
+            _canShoot = false;
+        }
+        else _canShoot = true;
+        Debug.Log(_canShoot);
+    }
     private void Shoot( in Vector2 dir, float force)
     {
         if(dir.magnitude <= 10.0f)
@@ -33,20 +44,23 @@ public class EnemyAttack : MonoBehaviour
     }
     void Start()
     {
+        _playerLayer = 1 << 8;
         _myTransform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        ShotAble();
+       
         _atCD = _atCD + Time.deltaTime;
         dir = _playerPosition.position+ - _myTransform.position+_aimingUp*_offset;              // pongo un offset para que apunte un poco más arriba, para predecir el movimiento del personaje
-        if(_atCD>0 && _firstShoot == false)
+        if(_atCD>0 && _firstShoot == false &&_canShoot==true)
         {
             Shoot(dir, 10.0f);
             _firstShoot = true;
         }
-        else if (_atCD >= 5 && _firstShoot==true)
+        else if (_atCD >= 5 && _firstShoot==true && _canShoot==true)
         {          
             Shoot(dir, 10.0f);
             _atCD = 0;
