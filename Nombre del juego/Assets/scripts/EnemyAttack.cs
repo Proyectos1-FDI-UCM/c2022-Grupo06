@@ -10,6 +10,10 @@ public class EnemyAttack : MonoBehaviour
     private Transform _myTransform;
     private GameObject newBullet;
     [SerializeField]
+    private float _offset = 0.4f;
+    
+    private Vector3 _aimingUp= new Vector3 (0,1,0);
+    [SerializeField]
     private GameObject _bullet;
     [SerializeField]
     private GameObject _origin;
@@ -36,7 +40,7 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         _atCD = _atCD + Time.deltaTime;
-        dir = _playerPosition.position - _myTransform.position;
+        dir = _playerPosition.position+ - _myTransform.position+_aimingUp*_offset;              // pongo un offset para que apunte un poco más arriba, para predecir el movimiento del personaje
         if(_atCD>0 && _firstShoot == false)
         {
             Shoot(dir, 10.0f);
@@ -46,7 +50,6 @@ public class EnemyAttack : MonoBehaviour
         {          
             Shoot(dir, 10.0f);
             _atCD = 0;
-        }
-        
+        }       
     }
 }
