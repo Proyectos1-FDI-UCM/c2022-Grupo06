@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
         }
         else _canShoot = true;
 
-        Debug.Log(_canShoot);
+        //Debug.Log(_canShoot);
     }
     private void Shoot( in Vector2 dir, float force)
     {
