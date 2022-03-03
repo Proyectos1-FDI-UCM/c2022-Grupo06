@@ -21,15 +21,17 @@ public class EnemyAttack : MonoBehaviour
     private bool _canShoot = true;
     private LayerMask _playerLayer;
 
+    
     private float _atCD=1;
     private void ShotAble()
-    {
-        if (Physics2D.Raycast(_myTransform.position, (_playerPosition.position - _myTransform.position), 1000.0f, _playerLayer))
+    {   
+        
+        if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position - _myTransform.position), 1000.0f, _playerLayer))
         {
-
             _canShoot = false;
         }
         else _canShoot = true;
+
         Debug.Log(_canShoot);
     }
     private void Shoot( in Vector2 dir, float force)
