@@ -38,4 +38,5 @@ public class PlatformMovement : MonoBehaviour
     {
         Gizmos.DrawLine(_pos1.position, _pos2.position);
     }
+    
 }
