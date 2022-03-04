@@ -9,6 +9,7 @@ public class BowController : MonoBehaviour
     [SerializeField]
     private float _atackS;
     private float _atCD = 0;
+    private bool _canStillShoot = true;
     [SerializeField]
     private float _PredictionCoef;   
     private float _force = 0;
@@ -60,7 +61,7 @@ public class BowController : MonoBehaviour
         Vector2 Dir = mousePos - bPos;
         transform.up = Dir;
         
-        if (Input.GetMouseButton(0) && _atCD <= 1.5f)
+        if (Input.GetMouseButton(0) && _atCD <= 1.5f && _canStillShoot)
         {
             _point.SetActive(true);
             _atCD += Time.deltaTime * _atackS;
@@ -83,20 +84,9 @@ public class BowController : MonoBehaviour
             }
             Time.timeScale = 0.5f;
         }
-        if (Input.GetMouseButton(1))
-        {
-            MaxForce = false;
-            _atCD = 0;
-            Time.timeScale = 1;
-        }
-        else if (_atCD > 0 && !Input.GetMouseButton(0))
-        {
-            Shoot(Dir, _force);
-            MaxForce = false;
-            _atCD = 0;
-        }
         else if (!Input.GetMouseButton(0))
         {
+            if(_atCD > 0) Shoot(Dir, _force);
             for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].SetActive(false);
@@ -104,6 +94,7 @@ public class BowController : MonoBehaviour
             BowANIM.isBow = false;
             Time.timeScale = 1;
             MaxForce = false;
+            _canStillShoot = true;
             _atCD = 0;
         }
     }
@@ -122,13 +113,13 @@ public class BowController : MonoBehaviour
             multiplier = _arrowTP.GetComponent<Arrow>().multiplier;
         }
     }
-    private void Shoot(in Vector2 Dir, float force)
+    public void CancelacionDisparo()
     {
-        if (shotPointDetector.canShootArrow)
-        {
-            GameObject newArrow = Instantiate(_arrow, ShotPoint.transform.position, ShotPoint.transform.rotation);
-            newArrow.GetComponent<Rigidbody2D>().velocity =multiplier* _force * Dir.normalized;
-        }
+        FinDisparo();
+        _canStillShoot = false;
+    }
+    private void FinDisparo()
+    {
         Time.timeScale = 1f;
         _atCD = 0;
         _force = 0;
@@ -137,11 +128,20 @@ public class BowController : MonoBehaviour
         {
             Destroy(Points[i]);
         }
-  
         for (int i = 0; i < _numPoints; i++)
         {
             Points[i] = Instantiate(_point, transform.position, Quaternion.identity);
         }
+    }
+    private void Shoot(in Vector2 Dir, float force)
+    {
+        if (shotPointDetector.canShootArrow)
+        {
+            GameObject newArrow = Instantiate(_arrow, ShotPoint.transform.position, ShotPoint.transform.rotation);
+            newArrow.GetComponent<Rigidbody2D>().velocity =multiplier* _force * Dir.normalized;
+        }
+        FinDisparo();
+        
     }
    
     private Vector2 PointPosition(float t, Vector2 Direction, float force, Vector2 bPos)

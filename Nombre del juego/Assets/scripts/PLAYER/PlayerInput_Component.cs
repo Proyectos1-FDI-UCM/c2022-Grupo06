@@ -39,7 +39,10 @@ public class PlayerInput_Component : MonoBehaviour
         {
             _bow.GetComponent<BowController>().CambioDeFlecha();
         }
-
+        if (Input.GetKey(KeyCode.R))
+        {
+            _bow.GetComponent<BowController>().CancelacionDisparo();
+        }
 
         //la gravedad debería cambiarse en el script Arrow, esto era simplemente testeo
     }

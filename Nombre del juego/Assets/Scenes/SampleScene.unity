@@ -948,13 +948,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de95d4aab23dc84790f61e9e4bfdc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _atackS: 1
+  _atackS: 1.5
   _PredictionCoef: 0.5
   bowRENDER: {fileID: 928407614}
   _arrowTP: {fileID: 3279880908078348967, guid: 29c55269acc7e2a49b7a5929cae1d20c, type: 3}
   _arrowDamage: {fileID: 1213834817381885705, guid: 7417280574497f34dba91f163394be2a, type: 3}
   _point: {fileID: 3243805386953319856, guid: 84188f0c228741249865f44ffc0db410, type: 3}
-  _numPoints: 11
+  _numPoints: 10
   ShotPoint: {fileID: 258843329}
   pointorigin: {fileID: 1167223647}
   MaxForce: 1
@@ -3282,7 +3282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296260938379335251, guid: 74ef3f72f10b6574e862bf27c7344798, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.23
+      value: 2.04
       objectReference: {fileID: 0}
     - target: {fileID: 8296260938379335251, guid: 74ef3f72f10b6574e862bf27c7344798, type: 3}
       propertyPath: m_LocalPosition.y
