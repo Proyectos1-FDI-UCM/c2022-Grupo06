@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb0b134d98bdc9469aae63742b5a1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 2
+  multiplier: 4
 --- !u!96 &-1650834112393969731
 TrailRenderer:
   serializedVersion: 2

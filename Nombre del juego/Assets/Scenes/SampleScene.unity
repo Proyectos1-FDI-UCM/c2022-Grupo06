@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de95d4aab23dc84790f61e9e4bfdc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _atackS: 0.5
+  _atackS: 1
   _PredictionCoef: 0.5
   bowRENDER: {fileID: 928407614}
   _arrowTP: {fileID: 3279880908078348967, guid: 29c55269acc7e2a49b7a5929cae1d20c, type: 3}
@@ -957,7 +957,7 @@ MonoBehaviour:
   _numPoints: 11
   ShotPoint: {fileID: 258843329}
   pointorigin: {fileID: 1167223647}
-  MaxForce: 0
+  MaxForce: 1
 --- !u!4 &605316802
 Transform:
   m_ObjectHideFlags: 0
