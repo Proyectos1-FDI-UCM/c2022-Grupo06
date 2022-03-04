@@ -6,26 +6,26 @@ public class EnemyAttack : MonoBehaviour
 {
     Vector2 dir;
     [SerializeField]
-    private Transform _playerPosition;
-    private Transform _myTransform;
-    private GameObject newBullet;
+    private Transform _playerPosition;                  //posicion del jugador           
+    private GameObject newBullet;                       //instancia de la nueva bala
     [SerializeField]
-    private float _offset = 0.4f;
+    private float _offset = 0.4f;                       //_offset relativa a la predicción del disparo              ¿mismo offset que la cámara?
     
-    private Vector3 _aimingUp= new Vector3 (0,1,0);
+    private Vector3 _aimingUp= new Vector3 (0,1,0);    //vector que le sumamos
     [SerializeField]
-    private GameObject _bullet;
+    private GameObject _bullet;                         //modelo de bala
     [SerializeField]
-    private GameObject _origin;
-    private bool _firstShoot=false;
-    private bool _canShoot = true;
-    private LayerMask _playerLayer;
+    private GameObject _origin;                         //objeto vacio de donde nace la bala y el raycast
+    private bool _firstShoot=false;                     //booleano con el que vemos si hemos si el enemigo ha disparado por primera vez
+    private bool _canShoot = true;                      //condición necesaria que permite o no el disparo
+    private LayerMask _floorLayer;                          // capa del suelo
 
     
-    private float _atCD=1;
-    private void ShotAble()
-    {   
+    private float _atCD=1;                                  //Retardo entre disparos
+    private void ShotAble()                         //función que nos dice si se puede disparar o no
+    {
         
+<<<<<<< Updated upstream
         if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position - _myTransform.position), (_playerPosition.position - _myTransform.position).magnitude, _playerLayer))
         {
             _canShoot = false;
@@ -34,29 +34,35 @@ public class EnemyAttack : MonoBehaviour
 
         
     }
+=======
+        if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position - _origin.transform.position), (_playerPosition.position - _origin.transform.position).magnitude, _floorLayer))         //raycast lanzado desde un punto del enemigo y 
+        {   
+            _canShoot = false;
+        }
+        else _canShoot = true;
+       
+    } 
+>>>>>>> Stashed changes
     private void Shoot( in Vector2 dir, float force)
     {
         if(dir.magnitude <= 10.0f)
         {
             newBullet = Instantiate(_bullet, _origin.transform.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().velocity = force * dir.normalized;
-            Debug.Log(dir);
             _firstShoot = true;
         }
     }
     void Start()
     {
-        _playerLayer = 1 << 8;
-        _myTransform = GetComponent<Transform>();
+        _floorLayer = 1 << 8;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ShotAble();
-       
+        ShotAble();      
         _atCD = _atCD + Time.deltaTime;
-        dir = _playerPosition.position+ - _myTransform.position+_aimingUp*_offset;              // pongo un offset para que apunte un poco más arriba, para predecir el movimiento del personaje
+        dir = _playerPosition.position+ - _origin.transform.position+_aimingUp*_offset;              // pongo un offset para que apunte un poco más arriba, para predecir el movimiento del personaje
         if(_atCD>0 && _firstShoot == false &&_canShoot==true)
         {
             Shoot(dir, 10.0f);
