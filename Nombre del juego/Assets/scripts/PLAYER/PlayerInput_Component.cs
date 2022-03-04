@@ -24,17 +24,7 @@ public class PlayerInput_Component : MonoBehaviour
         }
         moveInput= Input.GetAxis("Horizontal");
         _myPlayerMovement.movement(moveInput);
-        //un ejemplo de como podría ir el movimiento de la flecha
-        if (Input.GetKey("up")) 
-        {
-            Debug.Log("entra");
-            _rbAr.gravityScale = 0;       
-        }
-        else if (Input.GetKey("down"))
-        {
-            Debug.Log("entra");
-            _rbAr.gravityScale = 1;
-        }
+
         if (Input.GetMouseButtonDown(1))
         {
             _bow.GetComponent<BowController>().CambioDeFlecha();
@@ -44,6 +34,5 @@ public class PlayerInput_Component : MonoBehaviour
             _bow.GetComponent<BowController>().CancelacionDisparo();
         }
 
-        //la gravedad debería cambiarse en el script Arrow, esto era simplemente testeo
     }
 }
