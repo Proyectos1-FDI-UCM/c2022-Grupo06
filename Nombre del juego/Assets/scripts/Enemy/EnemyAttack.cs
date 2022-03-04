@@ -24,25 +24,16 @@ public class EnemyAttack : MonoBehaviour
     private float _atCD=1;                                  //Retardo entre disparos
     private void ShotAble()                         //función que nos dice si se puede disparar o no
     {
-        
-<<<<<<< Updated upstream
-        if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position - _myTransform.position), (_playerPosition.position - _myTransform.position).magnitude, _playerLayer))
+
+        if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position - _origin.transform.position), (_playerPosition.position - _origin.transform.position).magnitude, _floorLayer))         //raycast lanzado desde un punto del enemigo y 
         {
             _canShoot = false;
         }
         else _canShoot = true;
 
-        
+
     }
-=======
-        if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position - _origin.transform.position), (_playerPosition.position - _origin.transform.position).magnitude, _floorLayer))         //raycast lanzado desde un punto del enemigo y 
-        {   
-            _canShoot = false;
-        }
-        else _canShoot = true;
-       
-    } 
->>>>>>> Stashed changes
+
     private void Shoot( in Vector2 dir, float force)
     {
         if(dir.magnitude <= 10.0f)
