@@ -133,7 +133,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 0, g: 1, b: 0.058139563, a: 1}
-  m_Intensity: 1.68
+  m_Intensity: 1.57
   m_LightVolumeOpacity: 0.16
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -208,3 +208,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotateAround: {fileID: 5180076697695035269}
+  _initialIntensity: 1
+  _lifeTime: 2
