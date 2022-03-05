@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("entra");
+    
         if (_mytransform.position.x <= _posderecha && derecha)
         {
             
