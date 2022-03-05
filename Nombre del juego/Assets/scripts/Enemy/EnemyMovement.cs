@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 
     #region parametros
     [SerializeField]
-    private float _speed = 0.01f;
+    private float _speed = 0.5f;
     [SerializeField]
     private float _posderecha = 3;
     [SerializeField]
@@ -27,24 +27,26 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_mytransform.position.x <= _posderecha && derecha)
+        Debug.Log("entra");
+        if (_mytransform.position.x <= _posderecha && derecha)
         {
+            
             transform.Translate(Vector2.right * _speed);
+
             if (_mytransform.position.x > _posderecha)
             {
                 derecha = false;
                 izquierda = true;
-                
             }
         }
         else if (_mytransform.position.x >= _posizquierda && izquierda)
         {
             transform.Translate(Vector2.left * _speed);
+
             if (_mytransform.position.x < _posizquierda)
             {
                 izquierda = false;
                 derecha = true;
-                
             }
         }
 
