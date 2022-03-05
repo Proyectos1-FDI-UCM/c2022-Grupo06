@@ -2264,7 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vel: 0.01
+  _vel: 0.001
   _accel: 0
   _coefaccel: 0.000000001
   _world_limit: 23.07
