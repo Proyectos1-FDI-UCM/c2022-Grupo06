@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 8296260938379335260}
   - component: {fileID: 8296260938379335248}
   - component: {fileID: 4546474123253692501}
+  - component: {fileID: 2803680480350401688}
   m_Layer: 7
   m_Name: Enemigo
   m_TagString: Untagged
@@ -256,3 +257,24 @@ PolygonCollider2D:
       - {x: 2, y: -8}
       - {x: 3.97, y: -2.81}
       - {x: 1.55, y: -0.97999996}
+--- !u!50 &2803680480350401688
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296260938379335262}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

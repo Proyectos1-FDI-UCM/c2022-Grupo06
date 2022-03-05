@@ -35,7 +35,7 @@ public class Spike_Platform_Component : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
         _currentime = _timer;
 
-        _myRigidbody.gravityScale = _gravity;
+        //_myRigidbody.gravityScale = _gravity;
     }
     void Update()
     {
