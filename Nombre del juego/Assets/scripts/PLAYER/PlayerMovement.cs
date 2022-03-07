@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -78,5 +79,20 @@ public class PlayerMovement : MonoBehaviour
         }
         _myRigidBody.velocity = new Vector2(moveInput * moveSpeed, _myRigidBody.velocity.y);
     }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+    private void Update()
+    {
+       
+    }
 }
