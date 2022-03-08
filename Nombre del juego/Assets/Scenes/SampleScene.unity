@@ -1336,6 +1336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy balas (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4570703451250500252, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
+      propertyPath: _playerPosition
+      value: 
+      objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2904,10 +2908,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vel: 0.0003
+  _vel: 0.003
   _accel: 0
   _coefaccel: 0.0000001
-  _world_limit: 23.07
+  _world_limit: 65
   _startingtime: 3
 --- !u!1001 &521641584
 PrefabInstance:
@@ -5895,6 +5899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy balas (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4570703451250500252, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
+      propertyPath: _playerPosition
+      value: 
+      objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -11478,6 +11486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy balas (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4570703451250500252, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
+      propertyPath: _playerPosition
+      value: 
+      objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
       value: 5
