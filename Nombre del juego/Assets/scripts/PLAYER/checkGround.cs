@@ -8,14 +8,12 @@ public class checkGround : MonoBehaviour
     int _layer = 8;
     void Start()
     {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == _layer)
-        {
-            player.transform.parent = collision.gameObject.transform;
-        }
+        if(!collision.GetComponent<Cloud>()) player.transform.parent = collision.gameObject.transform;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
