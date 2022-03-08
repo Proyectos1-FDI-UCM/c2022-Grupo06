@@ -13,6 +13,9 @@ public class EnemyMovement : MonoBehaviour
 
     private float _movFactor =1;
 
+    private float _direccion = 1;
+
+
     #endregion
 
     // Start is called before the first frame update
@@ -24,12 +27,21 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         transform.Translate(Vector2.right.normalized*_movFactor* _speed);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _movFactor *= -1;
-        //if(_movFactor ==1) _mytransform.eulerAngles = new Vector2(0, 0);
-        //else _mytransform.eulerAngles = new Vector2(0, 180);
+        _direccion *= -1;
+        if (_direccion > 0)
+        {
+            _mytransform.eulerAngles = new Vector3(0, 0, 0);
+
+        }
+        else
+        {
+            _mytransform.eulerAngles = new Vector3(0, 180, 0);
+        }
     }
 }

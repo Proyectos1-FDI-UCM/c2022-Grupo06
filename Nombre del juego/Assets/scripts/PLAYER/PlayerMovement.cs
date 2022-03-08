@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -156,10 +157,11 @@ public class PlayerMovement : MonoBehaviour
             pTransform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
+
     public void Dash(Vector2 vec)
     {
         _myRigidBody.inertia = 0;
-        _myRigidBody.AddForce(new Vector2(vec.x /1.5f * _dashSpeed, vec.y / 1.5f * _dashSpeed), ForceMode2D.Impulse);
+        _myRigidBody.AddForce(new Vector2(vec.x / 1.5f * _dashSpeed, vec.y / 1.5f * _dashSpeed), ForceMode2D.Impulse);
         _dashCD = 0;
     }
 }
