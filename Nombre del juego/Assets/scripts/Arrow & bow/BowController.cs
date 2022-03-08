@@ -15,6 +15,9 @@ public class BowController : MonoBehaviour
     private float _PredictionCoef;   
     private float _force = 0;
 
+    [SerializeField]
+    private GameObject bowRENDER;
+
 
     private GameObject _arrow;
 
@@ -37,6 +40,8 @@ public class BowController : MonoBehaviour
     [SerializeField]
     private GameObject ShotPoint;
 
+    [SerializeField]
+    private GameObject pointorigin;
     void Start()
     {
         Points = new GameObject[_numPoints];
@@ -67,37 +72,36 @@ public class BowController : MonoBehaviour
 
         if (Input.GetMouseButton(0) && _atCD <= 1.5f && _canStillShoot)
         {
-            Time.timeScale = 0.5f;
             _point.SetActive(true);
             _atCD += Time.deltaTime * _atackS;
-            _force += Time.deltaTime * _atackS*10;
+            _force += Mathf.Pow(Time.deltaTime * _atackS*100, 2);
             BowANIM.isBow = true;
             for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].SetActive(true);
                 Points[i].transform.position = PointPosition(0.1f * i, Dir, _force, ShotPoint.transform.position);
             }
+            Time.timeScale = 0.5f;
         }
         
         else if (_atCD >=1.5f && Input.GetMouseButton(0))
         {
-            Time.timeScale = 0.5f;
             MaxForce = true;
             for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].transform.position = PointPosition(0.1f * i, Dir, _force, ShotPoint.transform.position);
             }
-            
+            Time.timeScale = 0.5f;
         }
         else if (!Input.GetMouseButton(0))
         {
-            Time.timeScale = 1;
-            if (_atCD > 0) Shoot(Dir, _force);
+            if(_atCD > 0) Shoot(Dir, _force);
             for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].SetActive(false);
             }
             BowANIM.isBow = false;
+            Time.timeScale = 1;
             MaxForce = false;
             _canStillShoot = true;
             _atCD = 0;
