@@ -8,13 +8,10 @@ public class EnemyMovement : MonoBehaviour
     #region parametros
     [SerializeField]
     private float _speed = 0.5f;
-    [SerializeField]
-    private float _posderecha = 3;
-    [SerializeField]
-    private float _posizquierda = 1;
-    bool derecha = true;
-    bool izquierda = false;
+
     private Transform _mytransform;
+    private float _direccion = 1;
+
     #endregion
 
     // Start is called before the first frame update
@@ -27,32 +24,21 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-        if (_mytransform.position.x <= _posderecha && derecha)
+        transform.Translate(Vector2.right.normalized* _direccion* _speed);
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _direccion *= -1;
+        if (_direccion > 0)
         {
-            
-            transform.Translate(Vector2.right * _speed);
+            _mytransform.eulerAngles = new Vector3(0, 0, 0);
 
-            if (_mytransform.position.x > _posderecha)
-            {
-                derecha = false;
-                izquierda = true;
-            }
         }
-        else if (_mytransform.position.x >= _posizquierda && izquierda)
+        else
         {
-            transform.Translate(Vector2.left * _speed);
-
-            if (_mytransform.position.x < _posizquierda)
-            {
-                izquierda = false;
-                derecha = true;
-            }
+            _mytransform.eulerAngles = new Vector3(0, 180, 0);
         }
-
-        
-
-
-
     }
 }
