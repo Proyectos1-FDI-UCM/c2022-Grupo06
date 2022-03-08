@@ -8,7 +8,7 @@ public class Cloud : MonoBehaviour
     bool InicioCuentra = false;
     [SerializeField]
     public float cont;
-    private float _elapsedTime;     //tiempo que ha pasado, para la desaparición
+    private float _elapsedTime=0;     //tiempo que ha pasado, para la desaparición
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Player_Life_Component>())
@@ -18,7 +18,6 @@ public class Cloud : MonoBehaviour
     }
     private void Update()
     {
-
         if (InicioCuentra == true)
         {
             _elapsedTime += Time.deltaTime;

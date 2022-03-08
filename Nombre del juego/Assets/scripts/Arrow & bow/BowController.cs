@@ -26,7 +26,7 @@ public class BowController : MonoBehaviour
     [SerializeField]
     public GameObject _arrowDamage;
 
-    private int multiplier=1;
+    private int _multiplier=1;
 
     [SerializeField]
     private GameObject _point;
@@ -59,8 +59,7 @@ public class BowController : MonoBehaviour
         Vector2 bPos = transform.position;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 Dir = mousePos - bPos;
-        transform.up = Dir;
-        
+        transform.up = Dir; 
         if (Input.GetMouseButton(0) && _atCD <= 1.5f && _canStillShoot)
         {
             _point.SetActive(true);
@@ -104,13 +103,13 @@ public class BowController : MonoBehaviour
         {
             _arrow = _arrowDamage;
             _PredictionCoef = 0f;
-            multiplier = _arrowDamage.GetComponent<Arrow2>().multiplier;
+            _multiplier = _arrowDamage.GetComponent<Arrow2>().multiplier;
         }
         else
         {
             _arrow = _arrowTP;
             _PredictionCoef = 0.5f;
-            multiplier = _arrowTP.GetComponent<Arrow>().multiplier;
+            _multiplier = _arrowTP.GetComponent<Arrow>().multiplier;
         }
     }
     public void CancelacionDisparo()
@@ -138,7 +137,7 @@ public class BowController : MonoBehaviour
         if (shotPointDetector.canShootArrow)
         {
             GameObject newArrow = Instantiate(_arrow, ShotPoint.transform.position, ShotPoint.transform.rotation);
-            newArrow.GetComponent<Rigidbody2D>().velocity =multiplier* _force * Dir.normalized;
+            newArrow.GetComponent<Rigidbody2D>().velocity =_multiplier* _force * Dir.normalized;
         }
         FinDisparo();
         

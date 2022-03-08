@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9141650173970024688}
   - component: {fileID: -234202162449884993}
-  - component: {fileID: 2635266576983851568}
+  - component: {fileID: 6262038547606838880}
   m_Layer: 0
   m_Name: pGhost
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2635266576983851568
+--- !u!114 &6262038547606838880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3524957245420017737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6340cc51c4f944794c8e3469f0cba2, type: 3}
+  m_Script: {fileID: 11500000, guid: f9a83d933a65dac49a253d6160b6685f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pReference: {fileID: 4420804304367032904, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}

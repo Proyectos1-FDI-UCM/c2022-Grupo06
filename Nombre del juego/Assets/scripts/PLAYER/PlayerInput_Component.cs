@@ -8,8 +8,6 @@ public class PlayerInput_Component : MonoBehaviour
      private PlayerMovement _myPlayerMovement;
      private float moveInput = 0;
 
-    private Rigidbody2D _rbAr;     //accedo a su Rigidbody
-    private bool _flechaTP = true;
     [SerializeField]
     private GameObject _bow;
 
@@ -33,6 +31,5 @@ public class PlayerInput_Component : MonoBehaviour
         {
             _bow.GetComponent<BowController>().CancelacionDisparo();
         }
-
     }
 }
