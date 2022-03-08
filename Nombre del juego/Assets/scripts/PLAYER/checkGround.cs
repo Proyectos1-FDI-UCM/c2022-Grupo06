@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class checkGround : MonoBehaviour
 {
+    [SerializeField]
     public GameObject player;
-    int _layer = 8;
     void Start()
     {
 
@@ -13,7 +13,7 @@ public class checkGround : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.GetComponent<Cloud>()) player.transform.parent = collision.gameObject.transform;
+        if(!collision.GetComponent<Cloud>() && !collision.GetComponent<CameraCollisionDetection>()) player.transform.parent = collision.gameObject.transform;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
