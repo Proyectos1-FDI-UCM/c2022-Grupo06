@@ -27,7 +27,6 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         transform.Translate(Vector2.right.normalized*_movFactor* _speed);
     }
 
