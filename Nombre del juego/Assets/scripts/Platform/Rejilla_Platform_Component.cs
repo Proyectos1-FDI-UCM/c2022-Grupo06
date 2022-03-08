@@ -8,6 +8,7 @@ public class Rejilla_Platform_Component : MonoBehaviour
     private Rigidbody2D _myRigidbody;
     private Rigidbody2D _playerRigidbody;
     private Collider2D _myCollider;
+    [SerializeField]
     private float _impulse = 35.0f;
     private bool _fisrtime = true;
     private Player_Life_Component _player;
