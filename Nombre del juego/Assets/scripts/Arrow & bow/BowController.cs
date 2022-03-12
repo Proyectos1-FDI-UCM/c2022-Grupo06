@@ -37,6 +37,9 @@ public class BowController : MonoBehaviour
     [SerializeField]
     private GameObject ShotPoint;
 
+    [SerializeField]
+    public HUD_BarraTensado BarraTensado;
+
     void Start()
     {
         Points = new GameObject[_numPoints];
@@ -46,6 +49,7 @@ public class BowController : MonoBehaviour
         }
         _arrow = _arrowTP;
         BowInstance = this;
+        BarraTensado.AjustarMaximo(15f);
     }
 
     public bool MaxForce = false;
@@ -72,6 +76,7 @@ public class BowController : MonoBehaviour
             _atCD += Time.deltaTime * _atackS;
             _force += Time.deltaTime * _atackS*10;
             BowANIM.isBow = true;
+            BarraTensado.AjustarDimensiones(_force);
             for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].SetActive(true);
@@ -110,12 +115,14 @@ public class BowController : MonoBehaviour
             _arrow = _arrowDamage;
             _PredictionCoef = 0f;
             _multiplier = _arrowDamage.GetComponent<Arrow2>().multiplier;
+            BarraTensado.AjustarColor(true);
         }
         else
         {
             _arrow = _arrowTP;
             _PredictionCoef = 0.5f;
             _multiplier = _arrowTP.GetComponent<Arrow>().multiplier;
+            BarraTensado.AjustarColor(false);
         }
     }
     public void CancelacionDisparo()
@@ -128,6 +135,7 @@ public class BowController : MonoBehaviour
         Time.timeScale = 1f;
         _atCD = 0;
         _force = 0;
+        BarraTensado.AjustarDimensiones(_force);
         BowANIM.isBow = false;
         for (int i = 0; i < _numPoints; i++)
         {
