@@ -26,7 +26,7 @@ public class Rejilla_Platform_Component : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Player_Life_Component>() && _fisrtime)
         {
-            _myRigidbody.simulated = false;
+            //_myRigidbody.simulated = false;
             _playerRigidbody = collision.gameObject.GetComponent<Rigidbody2D>();
             _playerRigidbody.velocity = new Vector2(0, _impulse);
             _fisrtime = false;
@@ -39,7 +39,7 @@ public class Rejilla_Platform_Component : MonoBehaviour
         
         if (Collision.gameObject.GetComponent<Player_Life_Component>())
         {
-            _myRigidbody.simulated = true;
+            //_myRigidbody.simulated = true;
             _myCollider.isTrigger = false;
         }
     }
