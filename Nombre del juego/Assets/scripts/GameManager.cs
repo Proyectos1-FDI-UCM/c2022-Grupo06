@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     private GameObject _enemyMov;
     [SerializeField]
     private GameManager _gameManager;
+    [SerializeField]
+    private Player_Life_Component _myPlayer_Life_Component;
 
     [SerializeField]
     private Transform _finishLine;                            //donde acabaríamos el nivel
@@ -68,5 +70,14 @@ public class GameManager : MonoBehaviour
         {
             OnPlayerVictory();
         }
+    }
+
+    public void OnplayerDamage(int damage)
+    {
+        _myPlayer_Life_Component.Damage(damage);
+    }
+    public void GameOver()
+    {
+
     }
 }
