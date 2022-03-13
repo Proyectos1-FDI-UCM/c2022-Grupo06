@@ -13,20 +13,13 @@ public class Player_Life_Component : MonoBehaviour
     {
         _currrentlife = _maxlife;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<EnemyLifeComponent>())
-        {
-            GameManager.Instance.OnPlayerDefeat();
-        }
-    }
     public void Damage(int _damage)
     {
-        _currrentlife -= _maxlife;
+        Debug.Log(_currrentlife);
+        _currrentlife -= _damage;
         if (_currrentlife <= 0)
         {
-            GameManager.Instance.GameOver();
-            Debug.Log("chiki");
+            GameManager.Instance.GameOver();            
         }
     }
 }

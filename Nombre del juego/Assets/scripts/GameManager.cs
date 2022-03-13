@@ -48,14 +48,6 @@ public class GameManager : MonoBehaviour
         _enemyMov.SetActive(false);
         UIManager.Instance.SetVictoryMenu(true);
     }
-    public void OnPlayerDefeat()
-    {
-        Time.timeScale = 0.0f;
-        _player.SetActive(false);
-        _bow.SetActive(false);
-        _enemyMov.SetActive(false);
-        UIManager.Instance.SetLoseMenu(true);
-    }
     void Start()
     {
         Time.timeScale = 0.0f;                              //falta desactivar el componente de la cámra      
@@ -63,6 +55,19 @@ public class GameManager : MonoBehaviour
         _bow.SetActive(false);
         _enemyMov.SetActive(false);
         UIManager.Instance.SetMainMenu(true);
+    }
+   
+    public void OnplayerDamage(int damage)
+    {
+        _myPlayer_Life_Component.Damage(damage);
+    }
+    public void GameOver()
+    {
+        Time.timeScale = 0.0f;
+        _player.SetActive(false);
+        _bow.SetActive(false);
+        _enemyMov.SetActive(false);
+        UIManager.Instance.SetLoseMenu(true);
     }
     private void Update()
     {
@@ -72,12 +77,4 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnplayerDamage(int damage)
-    {
-        _myPlayer_Life_Component.Damage(damage);
-    }
-    public void GameOver()
-    {
-
-    }
 }

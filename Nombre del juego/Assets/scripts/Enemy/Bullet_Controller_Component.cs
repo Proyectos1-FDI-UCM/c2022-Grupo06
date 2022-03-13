@@ -17,15 +17,21 @@ public class Bullet_Controller_Component : MonoBehaviour
     private float _intenisityReduction;
     private Light2D _myLight;
     [SerializeField]
-    private int _damage;
+    private int _damage=1;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<Player_Life_Component>())
+        {
+            GameManager.Instance.OnplayerDamage(_damage);
+            Destroy(this.gameObject);
+        }
+    }
 
     void Start()
     {
         _myLight = GetComponent<Light2D>();
         _mytransform = GetComponent<Transform>();
     }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -43,12 +49,5 @@ public class Bullet_Controller_Component : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<Player_Life_Component>())
-        {
-            Destroy(this.gameObject);
-            GameManager.Instance.OnplayerDamage(_damage);
-        }
-    }
+  
 }
