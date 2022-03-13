@@ -19,7 +19,6 @@ public class EnemyAttack : MonoBehaviour
     private bool _firstShoot=false;                     //booleano con el que vemos si hemos si el enemigo ha disparado por primera vez
     private bool _canShoot = true;                      //condición necesaria que permite o no el disparo
     private LayerMask _floorLayer;                          // capa del suelo
-
     
     private float _atCD=1;                                  //Retardo entre disparos
     private void ShotAble()                         //función que nos dice si se puede disparar o no

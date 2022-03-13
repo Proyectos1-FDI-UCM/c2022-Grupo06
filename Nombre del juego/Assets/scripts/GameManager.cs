@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     private GameObject _enemyMov;
     [SerializeField]
     private GameManager _gameManager;
-   
+    [SerializeField]
+    private Player_Life_Component _myPlayer_Life_Component;
+
     private void Awake()
     {
         _instance = this;
@@ -45,5 +47,18 @@ public class GameManager : MonoBehaviour
         _bow.SetActive(false);
         _enemyMov.SetActive(false);
         UIManager.Instance.SetMainMenu(true);
+    }
+
+    public void OnplayerDies()
+    {
+        GameOver();
+    }
+    public void OnplayerDamage(int damage)
+    {
+        _myPlayer_Life_Component.Damage(damage);
+    }
+    public void GameOver()
+    {
+
     }
 }

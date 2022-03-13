@@ -210,3 +210,4 @@ MonoBehaviour:
   _rotateAround: {fileID: 5180076697695035269}
   _initialIntensity: 1
   _lifeTime: 2
+  _damage: 1
