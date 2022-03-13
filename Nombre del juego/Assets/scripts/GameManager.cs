@@ -12,13 +12,15 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    
     [SerializeField]
     private GameObject _player;
     [SerializeField]
     private GameObject _bow;
     [SerializeField]
+    private GameObject _enemyMov;
+    [SerializeField]
     private GameManager _gameManager;
+   
     private void Awake()
     {
         _instance = this;
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         _player.SetActive(true);
         _bow.SetActive(true);
+        _enemyMov.SetActive(true);
         UIManager.Instance.SetMainMenu(false);
     }
     public void QuitGame()
@@ -36,8 +39,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0.0f;
+       
         _player.SetActive(false);
         _bow.SetActive(false);
+        _enemyMov.SetActive(false);
         UIManager.Instance.SetMainMenu(true);
     }
 }
