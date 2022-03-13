@@ -8,6 +8,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private GameObject _mainMenu;
+    [SerializeField]
+    private GameObject _defeatMenu;
+    [SerializeField]
+    private GameObject _victoryMenu;
     static private UIManager _instance;
     static public UIManager Instance
     {
@@ -17,11 +21,20 @@ public class UIManager : MonoBehaviour
         }
     }
     public void SetMainMenu(bool enabled)
-    { //permite activar o desactivar el menu inicial
+    {                                           //permite activar o desactivar el menu inicial
         _mainMenu.SetActive(enabled);
+    }
+    public void SetVictoryMenu(bool enabled)
+    {
+        _victoryMenu.SetActive(enabled);
+    }
+    public void SetLoseMenu(bool enabled)
+    {
+        _defeatMenu.SetActive(enabled);
     }
     public void StartMatch()
     {
+       
         GameManager.Instance.StartMatch();
     }
     public void QuitGame()

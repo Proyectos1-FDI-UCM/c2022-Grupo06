@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     private GameObject _enemyMov;
     [SerializeField]
     private GameManager _gameManager;
-   
+
+    [SerializeField]
+    private Transform _finishLine;                            //donde acabaríamos el nivel
     private void Awake()
     {
         _instance = this;
@@ -36,14 +38,35 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-
-    void Start()
+    private void OnPlayerVictory()
     {
         Time.timeScale = 0.0f;
-       
+        _player.SetActive(false);
+        _bow.SetActive(false);
+        _enemyMov.SetActive(false);
+        UIManager.Instance.SetVictoryMenu(true);
+    }
+    public void OnPlayerDefeat()
+    {
+        Time.timeScale = 0.0f;
+        _player.SetActive(false);
+        _bow.SetActive(false);
+        _enemyMov.SetActive(false);
+        UIManager.Instance.SetLoseMenu(true);
+    }
+    void Start()
+    {
+        Time.timeScale = 0.0f;                              //falta desactivar el componente de la cámra      
         _player.SetActive(false);
         _bow.SetActive(false);
         _enemyMov.SetActive(false);
         UIManager.Instance.SetMainMenu(true);
+    }
+    private void Update()
+    {
+        if (_player.transform.position.y >= _finishLine.position.y)
+        {
+            OnPlayerVictory();
+        }
     }
 }
