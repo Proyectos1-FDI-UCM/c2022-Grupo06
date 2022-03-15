@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     private GameManager _gameManager;
     [SerializeField]
     private Player_Life_Component _myPlayer_Life_Component;
+    [SerializeField]
+    private Transform _finishLine;
     
    
     private void Awake()
@@ -80,8 +82,39 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void OnPlayerVictory()
+    {
+        Time.timeScale = 0.0f;
+        _player.SetActive(false);
+        _bow.SetActive(false);
+        _enemyDisp.SetActive(false);
+        _enemyMov.SetActive(false);
+        UIManager.Instance.SetVictoryMenu(true);
+        _Camera.GetComponent<CamaraMovement>().enabled = false;
+    }
+    public void OnPlayerDefeat()
+    {
+        Time.timeScale = 0.0f;
+        _player.SetActive(false);
+        _bow.SetActive(false);
+        _enemyDisp.SetActive(false);
+        _enemyMov.SetActive(false);
+        UIManager.Instance.SetLoseMenu(true);
+        _Camera.GetComponent<CamaraMovement>().enabled = false;
+    }
 
 
 
+    private void Update()
+    {
+        if (_player.transform.position.y >= _finishLine.position.y)
+        {
+            OnPlayerVictory();
+        }
+        if (Player_Life_Component.instance.isAlive == false)
+        {
+            OnPlayerDefeat();
+        }
+    }
 
 }

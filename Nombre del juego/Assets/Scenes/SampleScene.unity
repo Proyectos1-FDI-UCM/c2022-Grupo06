@@ -353,6 +353,7 @@ MonoBehaviour:
   isAlive: 1
   Render: {fileID: 452840470}
   _explosion: {fileID: 2129577170888187945, guid: 4c1c775923402214897f155020e941e5, type: 3}
+  _maxlife: 0
 --- !u!114 &65722156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3524,8 +3525,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenu: {fileID: 1323915493}
-  _defeatMenu: {fileID: 0}
-  _victoryMenu: {fileID: 0}
+  _defeatMenu: {fileID: 1548180226}
+  _victoryMenu: {fileID: 32410976}
   score: 0
   scoretext: {fileID: 1011810898}
 --- !u!1001 &459206675
@@ -7885,6 +7886,8 @@ MonoBehaviour:
   _enemyDisp: {fileID: 8929773823074417980, guid: 51c6e2dcca3b2714bb18e752691405e8, type: 3}
   _Camera: {fileID: 519420028}
   _gameManager: {fileID: 900500413}
+  _myPlayer_Life_Component: {fileID: 65722155}
+  _finishLine: {fileID: 864419182}
 --- !u!4 &903371486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2902764440768864367, guid: 4bbf7fb7402e0ae40aee7c4859179196, type: 3}
@@ -16869,6 +16872,8 @@ MonoBehaviour:
   _enemyDisp: {fileID: 0}
   _Camera: {fileID: 0}
   _gameManager: {fileID: 2018404392}
+  _myPlayer_Life_Component: {fileID: 0}
+  _finishLine: {fileID: 0}
 --- !u!4 &2018404393
 Transform:
   m_ObjectHideFlags: 0
