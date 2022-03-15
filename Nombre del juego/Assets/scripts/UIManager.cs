@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
+
     }
     
     public void UpdateScore()
@@ -52,12 +53,11 @@ public class UIManager : MonoBehaviour
         scoretext.text = "Score: " + score;
     }
     public void AddScore(int points)
-    {
+    {//eso es de sheila peero no se porq no se le sube
         score += points;
-        UpdateScore();
+         UpdateScore();
     }
-    
-    private void Awake()             //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
+    private void Awake()  //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
     { 
         _instance = this;
     }
