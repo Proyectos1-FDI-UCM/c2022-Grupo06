@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     private GameObject _Camera;
     [SerializeField]
     private GameManager _gameManager;
+    [SerializeField]
+    private Player_Life_Component _myPlayer_Life_Component;
     
    
     private void Awake()
@@ -65,4 +67,21 @@ public class GameManager : MonoBehaviour
         Player_Life_Component.instance.isAlive = false;
         _bow.SetActive(false);
     }
+
+
+
+
+
+
+
+    public void OnPlyerDamage(int damage)
+    {
+        _myPlayer_Life_Component.Damage(damage);
+
+    }
+
+
+
+
+
 }

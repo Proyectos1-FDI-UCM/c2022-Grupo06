@@ -24,7 +24,7 @@ public class Enemy_Controller : MonoBehaviour
         }
         else if (collision.gameObject.GetComponent<Player_Life_Component>())
         {
-            GameManager.Instance.PlayerDies();
+            GameManager.Instance.OnPlyerDamage(_damageontouch);
         }
     }
 }

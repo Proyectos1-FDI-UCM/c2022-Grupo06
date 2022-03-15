@@ -22,7 +22,7 @@ public class Bullet_Controller_Component : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Player_Life_Component>())
         {
-            GameManager.Instance.PlayerDies();
+            GameManager.Instance.OnPlyerDamage(_damage);
             Destroy(this.gameObject);
         }
     }
