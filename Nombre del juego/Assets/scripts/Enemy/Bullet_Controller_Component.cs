@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class EnemyProyectileRotation : MonoBehaviour
+public class Bullet_Controller_Component : MonoBehaviour
 {
     [SerializeField]
     private Transform _rotateAround;
@@ -16,14 +16,22 @@ public class EnemyProyectileRotation : MonoBehaviour
     private float _lightStart;
     private float _intenisityReduction;
     private Light2D _myLight;
+    [SerializeField]
+    private int _damage=1;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<Player_Life_Component>())
+        {
+            GameManager.Instance.OnplayerDamage(_damage);
+            Destroy(this.gameObject);
+        }
+    }
 
     void Start()
     {
         _myLight = GetComponent<Light2D>();
         _mytransform = GetComponent<Transform>();
     }
-    
-
     // Update is called once per frame
     void Update()
     {
@@ -41,7 +49,5 @@ public class EnemyProyectileRotation : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
-    
+  
 }

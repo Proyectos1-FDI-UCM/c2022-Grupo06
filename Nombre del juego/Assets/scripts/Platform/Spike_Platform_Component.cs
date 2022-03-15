@@ -13,17 +13,20 @@ public class Spike_Platform_Component : MonoBehaviour
     private float _impulse = 4.0f;
     [SerializeField]
     private float _gravity = 3.0f;
+    [SerializeField]
+    private int _damage;
+
     #endregion
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Player_Life_Component _player = collision.gameObject.GetComponent<Player_Life_Component>();
+        
 
-        if (_player != null)
+        if (collision.gameObject.GetComponent<Player_Life_Component>())
         {
 
             //Llamada al Game Manager correspondiente
-            _player.gameObject.SetActive(false);// por ahora se queda asi
-
+            //collision.gameObject.GetComponent<Player_Life_Component>().gameObject.SetActive(false);// por ahora se queda asi
+            GameManager.Instance.OnplayerDamage(_damage);
             //se llama al gameover 
         }
 
