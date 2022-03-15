@@ -3759,6 +3759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 1
+  enemyscore: 10
 --- !u!212 &473812359
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4185,6 +4186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 1
+  enemyscore: 10
 --- !u!212 &533057296
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7041,6 +7043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 1
+  enemyscore: 10
 --- !u!60 &840400705
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7879,6 +7882,8 @@ MonoBehaviour:
   _player: {fileID: 65722149}
   _bow: {fileID: 605316800}
   _enemyMov: {fileID: 99172385}
+  _enemyDisp: {fileID: 8929773823074417980, guid: 51c6e2dcca3b2714bb18e752691405e8, type: 3}
+  _Camera: {fileID: 519420028}
   _gameManager: {fileID: 900500413}
 --- !u!4 &903371486 stripped
 Transform:
@@ -8241,6 +8246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 0
+  enemyscore: 10
 --- !u!212 &928279743
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10563,6 +10569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 0
+  enemyscore: 10
 --- !u!212 &1267318238
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11605,6 +11612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 1
+  enemyscore: 10
 --- !u!60 &1352913289
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14238,6 +14246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 1
+  enemyscore: 10
 --- !u!60 &1609083912
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15124,6 +15133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 0
+  enemyscore: 10
 --- !u!212 &1738315670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15549,6 +15559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 1
+  enemyscore: 10
 --- !u!60 &1770434199
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15765,6 +15776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 0
+  enemyscore: 10
 --- !u!212 &1785494744
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16854,6 +16866,8 @@ MonoBehaviour:
   _player: {fileID: 65722149}
   _bow: {fileID: 605316800}
   _enemyMov: {fileID: 99172385}
+  _enemyDisp: {fileID: 0}
+  _Camera: {fileID: 0}
   _gameManager: {fileID: 2018404392}
 --- !u!4 &2018404393
 Transform:
