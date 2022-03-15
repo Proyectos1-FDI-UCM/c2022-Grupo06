@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _enemyMov;
     [SerializeField]
+    private GameObject _enemyDisp;
+    [SerializeField]
+    private GameObject _Camera;
+    [SerializeField]
     private GameManager _gameManager;
     
    
@@ -28,9 +32,12 @@ public class GameManager : MonoBehaviour
     }
     public void StartMatch()
     {
+        //activa cada uno de los personajes, el mov de la cámara y quita el menú principal
         _player.SetActive(true);
         _bow.SetActive(true);
         _enemyMov.SetActive(true);
+        _enemyDisp.SetActive(true);
+        _Camera.GetComponent<CamaraMovement>().enabled = true;
         UIManager.Instance.SetMainMenu(false);
         
         
@@ -47,6 +54,8 @@ public class GameManager : MonoBehaviour
         _player.SetActive(false);
         _bow.SetActive(false);
         _enemyMov.SetActive(false);
+        _enemyDisp.SetActive(false);
+        _Camera.GetComponent<CamaraMovement>().enabled = false;
         UIManager.Instance.SetMainMenu(true);
         UIManager.Instance.UpdateScore();
         
