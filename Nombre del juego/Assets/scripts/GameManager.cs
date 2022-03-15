@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         _bow.SetActive(true);
         _enemyMov.SetActive(true);
         UIManager.Instance.SetMainMenu(false);
+        
+        
     }
     public void QuitGame()
     {
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
         _bow.SetActive(false);
         _enemyMov.SetActive(false);
         UIManager.Instance.SetMainMenu(true);
+        UIManager.Instance.UpdateScore();
+        
     }
     public void PlayerDies()
     {

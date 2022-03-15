@@ -12,6 +12,12 @@ public class UIManager : MonoBehaviour
     private GameObject _defeatMenu;
     [SerializeField]
     private GameObject _victoryMenu;
+
+    #region score
+    [SerializeField]
+    int score=0;
+    public Text scoretext;
+    #endregion
     static private UIManager _instance;
     static public UIManager Instance
     {
@@ -34,15 +40,20 @@ public class UIManager : MonoBehaviour
     }
     public void StartMatch()
     {
-       
-        GameManager.Instance.StartMatch();
+         GameManager.Instance.StartMatch();
     }
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
     }
-    private void Awake()             //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
+    
+    public void UpdateScore()
     {
+        scoretext.text = "Score: " + score;
+    }
+    
+    private void Awake()             //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
+    { 
         _instance = this;
     }
     // Start is called before the first frame update
