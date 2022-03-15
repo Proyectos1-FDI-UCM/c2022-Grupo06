@@ -16,7 +16,7 @@ public class PlayerInput_Component : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKey("space"))
+        if (Input.GetKeyDown("space"))
         {
             _myPlayerMovement.Jump();
         }

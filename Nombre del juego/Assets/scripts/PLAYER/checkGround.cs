@@ -13,7 +13,6 @@ public class checkGround : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.GetComponent<PlatformMovement>()) player.transform.parent = collision.gameObject.transform;
     }
     private void OnTriggerExit2D(Collider2D collision)

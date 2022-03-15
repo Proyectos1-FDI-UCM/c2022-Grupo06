@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private GameObject _enemyMov;
     [SerializeField]
     private GameManager _gameManager;
+    
    
     private void Awake()
     {
@@ -45,5 +46,10 @@ public class GameManager : MonoBehaviour
         _bow.SetActive(false);
         _enemyMov.SetActive(false);
         UIManager.Instance.SetMainMenu(true);
+    }
+    public void PlayerDies()
+    {
+        Player_Life_Component.instance.isAlive = false;
+        _bow.SetActive(false);
     }
 }

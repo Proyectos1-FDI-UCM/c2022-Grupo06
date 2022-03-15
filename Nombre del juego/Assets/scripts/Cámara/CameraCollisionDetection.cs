@@ -8,8 +8,8 @@ public class CameraCollisionDetection : MonoBehaviour
     {      
        if (collision.GetComponent<PlayerMovement>())
        {
-            //game manager.OnplayerDies();
-            collision.gameObject.SetActive(false);
+            GameManager.Instance.PlayerDies();
+            //collision.gameObject.SetActive(false);
        }
        if (collision.GetComponent<Arrow>())
        {
