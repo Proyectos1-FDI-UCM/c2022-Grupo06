@@ -51,6 +51,11 @@ public class UIManager : MonoBehaviour
     {
         scoretext.text = "Score: " + score;
     }
+    public void AddScore(int points)
+    {
+        score += points;
+        UpdateScore();
+    }
     
     private void Awake()             //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
     { 
