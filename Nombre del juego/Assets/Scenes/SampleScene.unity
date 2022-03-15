@@ -278,7 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7558361fab966164baf66220b8393d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxlife: 4
+  isAlive: 1
+  Render: {fileID: 452840470}
+  _explosion: {fileID: 2129577170888187945, guid: 4c1c775923402214897f155020e941e5, type: 3}
 --- !u!114 &65722156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2977,6 +2979,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 729155354957258943, guid: 968fe5c35e2292b449c3d5e2797506e7, type: 3}
   m_PrefabInstance: {fileID: 1408271459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &452840470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5421476386242316971, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
+  m_PrefabInstance: {fileID: 2036180811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &457557396
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,8 +3100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenu: {fileID: 1323915493}
-  _defeatMenu: {fileID: 1548180226}
-  _victoryMenu: {fileID: 32410976}
+  _defeatMenu: {fileID: 0}
+  _victoryMenu: {fileID: 0}
 --- !u!1001 &459206675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3429,7 +3436,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
@@ -6870,11 +6877,7 @@ MonoBehaviour:
   _player: {fileID: 65722149}
   _bow: {fileID: 605316800}
   _enemyMov: {fileID: 99172385}
-  _enemyDisp: {fileID: 1674060284}
-  _Camera: {fileID: 519420028}
   _gameManager: {fileID: 900500413}
-  _myPlayer_Life_Component: {fileID: 0}
-  _finishLine: {fileID: 864419182}
 --- !u!4 &903371486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2902764440768864367, guid: 4bbf7fb7402e0ae40aee7c4859179196, type: 3}
@@ -14542,11 +14545,7 @@ MonoBehaviour:
   _player: {fileID: 65722149}
   _bow: {fileID: 605316800}
   _enemyMov: {fileID: 99172385}
-  _enemyDisp: {fileID: 0}
-  _Camera: {fileID: 0}
   _gameManager: {fileID: 2018404392}
-  _myPlayer_Life_Component: {fileID: 65722155}
-  _finishLine: {fileID: 864419182}
 --- !u!4 &2018404393
 Transform:
   m_ObjectHideFlags: 0
@@ -14878,7 +14877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6605644376906052979, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
       propertyPath: _dashSpeed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6605644376906052979, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
       propertyPath: _mycheckGround

@@ -113,10 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59b464fd73487247bfec0327b15bd5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPosition: {fileID: 0}
   _offset: 0.4
   _bullet: {fileID: 8929773823074417980, guid: 51c6e2dcca3b2714bb18e752691405e8, type: 3}
   _origin: {fileID: 4570703452176522500}
+  _player: {fileID: 4420804304367032904, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
 --- !u!60 &8310278125052628121
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     Vector2 dir;
-    [SerializeField]
     private Transform _playerPosition;                  //posicion del jugador           
     private GameObject newBullet;                       //instancia de la nueva bala
     [SerializeField]
@@ -19,6 +18,8 @@ public class EnemyAttack : MonoBehaviour
     private bool _firstShoot=false;                     //booleano con el que vemos si hemos si el enemigo ha disparado por primera vez
     private bool _canShoot = true;                      //condición necesaria que permite o no el disparo
     private LayerMask _floorLayer;                          // capa del suelo
+    [SerializeField]
+    private GameObject _player;
     
     private float _atCD=1;                                  //Retardo entre disparos
     private void ShotAble()                         //función que nos dice si se puede disparar o no
@@ -50,6 +51,7 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _playerPosition = _player.transform;
         ShotAble();      
         _atCD = _atCD + Time.deltaTime;
         dir = _playerPosition.position+ - _origin.transform.position+_aimingUp*_offset;              // pongo un offset para que apunte un poco más arriba, para predecir el movimiento del personaje

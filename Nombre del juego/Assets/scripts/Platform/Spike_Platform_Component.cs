@@ -26,7 +26,7 @@ public class Spike_Platform_Component : MonoBehaviour
 
             //Llamada al Game Manager correspondiente
             //collision.gameObject.GetComponent<Player_Life_Component>().gameObject.SetActive(false);// por ahora se queda asi
-            GameManager.Instance.OnplayerDamage(_damage);
+            GameManager.Instance.PlayerDies();
             //se llama al gameover 
         }
 
