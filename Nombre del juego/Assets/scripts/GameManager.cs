@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     private Player_Life_Component _myPlayer_Life_Component;
     [SerializeField]
     private Transform _finishLine;
+
     
    
     private void Awake()
@@ -69,13 +70,6 @@ public class GameManager : MonoBehaviour
         Player_Life_Component.instance.isAlive = false;
         _bow.SetActive(false);
     }
-
-
-
-
-
-
-
     public void OnPlyerDamage(int damage)
     {
         _myPlayer_Life_Component.Damage(damage);
@@ -83,7 +77,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnPlayerVictory()
-    {
+    {   
         Time.timeScale = 0.0f;
         _player.SetActive(false);
         _bow.SetActive(false);
@@ -94,27 +88,19 @@ public class GameManager : MonoBehaviour
     }
     public void OnPlayerDefeat()
     {
-        Time.timeScale = 0.0f;
-        _player.SetActive(false);
-        _bow.SetActive(false);
-        _enemyDisp.SetActive(false);
-        _enemyMov.SetActive(false);
-        UIManager.Instance.SetLoseMenu(true);
-        _Camera.GetComponent<CamaraMovement>().enabled = false;
+      _enemyDisp.SetActive(false);
+      _enemyMov.SetActive(false);      
+      _Camera.GetComponent<CamaraMovement>().enabled = false;      
+      UIManager.Instance.SetLoseMenu(true);
+      _bow.SetActive(false);
+      _player.SetActive(false);
+      Time.timeScale = 0.0f;       
     }
-
-
-
     private void Update()
     {
         if (_player.transform.position.y >= _finishLine.position.y)
         {
             OnPlayerVictory();
         }
-        if (Player_Life_Component.instance.isAlive == false)
-        {
-            OnPlayerDefeat();
-        }
     }
-
 }

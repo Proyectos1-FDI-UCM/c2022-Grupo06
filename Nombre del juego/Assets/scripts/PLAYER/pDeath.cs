@@ -41,13 +41,16 @@ public class pDeath : MonoBehaviour
         }
         playerR.GetComponent<SpriteRenderer>().sprite = playerDeath;
     }
-
     private float prog = 0;
     void Update()
     {
+      
         if (prog >= lifetime)
         {
+            
+            GameManager.Instance.OnPlayerDefeat();
             Destroy(gameObject);
+            
         }
         else
         {

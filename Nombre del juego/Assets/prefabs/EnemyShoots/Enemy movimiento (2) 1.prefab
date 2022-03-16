@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageontouch: 1
-  enemyscore: 10
+  enemyscore: 20
 --- !u!114 &4763858690161772212
 MonoBehaviour:
   m_ObjectHideFlags: 0
