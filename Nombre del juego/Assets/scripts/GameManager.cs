@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Player_Life_Component _myPlayer_Life_Component;
     [SerializeField]
+    private Enemy_Life_Component _myEnemy_Life_Component;
+    [SerializeField]
     private Transform _finishLine;
 
     
@@ -80,6 +82,11 @@ public class GameManager : MonoBehaviour
     {
         _myPlayer_Life_Component.Damage(damage);
 
+    }
+    public void EnemyDamage(int Damage, GameObject enemy)
+    {
+        //Debug.Log("daño enemigo"+Damage);
+        enemy.GetComponent<Enemy_Life_Component>().Damage(Damage);
     }
 
     private void OnPlayerVictory()

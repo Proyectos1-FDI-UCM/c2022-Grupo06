@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 5
+  Damage: 1
 --- !u!96 &-1650834112393969731
 TrailRenderer:
   serializedVersion: 2

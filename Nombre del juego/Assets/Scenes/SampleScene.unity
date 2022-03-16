@@ -278,10 +278,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7558361fab966164baf66220b8393d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxlife: 3
   isAlive: 1
   Render: {fileID: 452840470}
   _explosion: {fileID: 2129577170888187945, guid: 4c1c775923402214897f155020e941e5, type: 3}
-  _maxlife: 3
 --- !u!114 &65722156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,7 +1480,7 @@ PrefabInstance:
       objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3215,7 +3215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vel: 0.006
+  _vel: 0
   _accel: 0
   _coefaccel: 0.0000001
   _world_limit: 65
@@ -3325,7 +3325,7 @@ PrefabInstance:
       objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5402,7 +5402,7 @@ PrefabInstance:
       objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6125,6 +6125,7 @@ MonoBehaviour:
   _Camera: {fileID: 519420028}
   _gameManager: {fileID: 900500413}
   _myPlayer_Life_Component: {fileID: 65722155}
+  _myEnemy_Life_Component: {fileID: 0}
   _finishLine: {fileID: 864419182}
 --- !u!4 &903371486 stripped
 Transform:
@@ -6946,7 +6947,7 @@ PrefabInstance:
       objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14117,7 +14118,7 @@ PrefabInstance:
       objectReference: {fileID: 65722153}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_LocalPosition.x

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Life_Component : MonoBehaviour
+public class Player_Life_Component : Life_System_Component
 {
     // Start is called before the first frame update
     #region parametres
@@ -15,9 +15,6 @@ public class Player_Life_Component : MonoBehaviour
     [SerializeField]
     private GameObject _explosion;
 
-    [SerializeField]
-    private int _maxlife;
-    private int _currentlife;
 
     #endregion
 
@@ -26,30 +23,27 @@ public class Player_Life_Component : MonoBehaviour
     {
         instance = this;
         rb = GetComponent<Rigidbody2D>();
-       
-       _currentlife = _maxlife;
         
     }
     void Update()
     {
-        if(isAlive == false)
+        if (isAlive == false)
         {
             Instantiate(_explosion, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
         }
     }
-
-
-    public void Damage(int damage)
-    {
-        _currentlife -= damage;
-        if (_currentlife <= 0)
-        {
-            Die();
-        }
-    }
-    public void Die()
-    {
-        GameManager.Instance.PlayerDies();
-    }
+    
+    //public void Damage(int damage)
+    //{
+    //    _currentlife -= damage;
+    //    if (_currentlife <= 0)
+    //    {
+    //        Die();
+    //    }
+    //}
+    //public void Die()
+    //{
+    //    GameManager.Instance.PlayerDies();
+    //}
 }

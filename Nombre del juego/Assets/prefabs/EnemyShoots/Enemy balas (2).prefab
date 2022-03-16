@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4570703451250500255}
   - component: {fileID: 4570703451250500254}
-  - component: {fileID: 4570703451250500240}
   - component: {fileID: 4570703451250500252}
   - component: {fileID: 8310278125052628121}
   - component: {fileID: 5497870180389679642}
+  - component: {fileID: 9152518881295240078}
   m_Layer: 7
   m_Name: Enemy balas (2)
   m_TagString: Untagged
@@ -88,20 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4570703451250500240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4570703451250500242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4b3602554ad774a965bb16ba240123, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damageontouch: 1
-  enemyscore: 10
 --- !u!114 &4570703451250500252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +164,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &9152518881295240078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570703451250500242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4b3602554ad774a965bb16ba240123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxlife: 10
+  enemyscore: 10
+  _damageontouch: 1
 --- !u!1 &4570703452176522500
 GameObject:
   m_ObjectHideFlags: 0
