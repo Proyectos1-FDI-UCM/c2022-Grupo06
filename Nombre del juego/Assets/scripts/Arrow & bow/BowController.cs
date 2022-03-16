@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class BowController : MonoBehaviour
 {
@@ -59,16 +59,7 @@ public class BowController : MonoBehaviour
         Vector2 bPos = transform.position;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 Dir = mousePos - bPos;
-
         transform.up = Dir; 
-
-        transform.up = Dir;
-        if (Input.GetAxis("Vertical") == 1)
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
-
-
         if (Input.GetMouseButton(0) && _atCD <= 1.5f && _canStillShoot)
         {
             Time.timeScale = 0.5f;

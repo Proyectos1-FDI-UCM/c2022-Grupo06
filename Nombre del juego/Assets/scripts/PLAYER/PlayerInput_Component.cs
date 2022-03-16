@@ -10,10 +10,6 @@ public class PlayerInput_Component : MonoBehaviour
 
     [SerializeField]
     private GameObject _bow;
-
-    private void Start()
-    {
-    }
     void Update()
     {
         if (Input.GetKeyDown("space"))
