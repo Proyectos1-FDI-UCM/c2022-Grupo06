@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
     {
         _instance = this;
     }
+    public void RestartMatch()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
     public void StartMatch()
     {
         //activa cada uno de los personajes, el mov de la cámara y quita el menú principal

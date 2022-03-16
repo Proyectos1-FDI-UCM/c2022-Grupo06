@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -43,10 +44,13 @@ public class UIManager : MonoBehaviour
     {
          GameManager.Instance.StartMatch();
     }
+    public void RestartGame()
+    {
+        GameManager.Instance.RestartMatch();
+    }
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
-
     }
     
     public void UpdateScore(bool enabled)
