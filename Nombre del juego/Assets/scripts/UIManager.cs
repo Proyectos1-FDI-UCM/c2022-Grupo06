@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
 
     #region score
     [SerializeField]
+    private GameObject _score;
     int score=0;
     public Text scoretext;
     #endregion
@@ -48,14 +49,19 @@ public class UIManager : MonoBehaviour
 
     }
     
-    public void UpdateScore()
+    public void UpdateScore(bool enabled)
     {
-        scoretext.text = "Score: " + score;
+        _score.SetActive(enabled);
+        if (enabled)
+        {
+            scoretext.text = "Score: " + score;
+        }
+        
     }
     public void AddScore(int points)
     {//eso es de sheila peero no se porq no se le sube
         score += points;
-         UpdateScore();
+        UpdateScore(true);
     }
     private void Awake()  //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
     { 

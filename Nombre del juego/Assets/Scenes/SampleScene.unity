@@ -2943,7 +2943,7 @@ MonoBehaviour:
   _mainMenu: {fileID: 1323915493}
   _defeatMenu: {fileID: 1548180226}
   _victoryMenu: {fileID: 32410976}
-  score: 0
+  _score: {fileID: 1011810896}
   scoretext: {fileID: 1011810898}
 --- !u!1001 &459206675
 PrefabInstance:

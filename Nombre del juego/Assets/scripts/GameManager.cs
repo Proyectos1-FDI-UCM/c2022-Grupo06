@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         _enemyDisp.SetActive(true);
         _Camera.GetComponent<CamaraMovement>().enabled = true;
         UIManager.Instance.SetMainMenu(false);
+        UIManager.Instance.UpdateScore(true);
         
         
     }
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
         _enemyDisp.SetActive(false);
         _Camera.GetComponent<CamaraMovement>().enabled = false;
         UIManager.Instance.SetMainMenu(true);
-        UIManager.Instance.UpdateScore();
+        UIManager.Instance.UpdateScore(false);
         
     }
     public void PlayerDies()
