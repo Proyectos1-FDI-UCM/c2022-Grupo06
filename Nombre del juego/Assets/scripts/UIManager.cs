@@ -46,6 +46,10 @@ public class UIManager : MonoBehaviour
     {
          GameManager.Instance.StartMatch();
     }
+    public void StartMatch2()
+    {
+        GameManager.Instance.StartMatch2();
+    }
     public void RestartGame()
     {
         GameManager.Instance.RestartMatch();

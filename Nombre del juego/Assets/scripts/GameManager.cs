@@ -46,14 +46,31 @@ public class GameManager : MonoBehaviour
     {
         //Al darle 
         //activa cada uno de los personajes, el mov de la cámara y quita el menú principal
-        //_player.SetActive(true);
-        //_bow.SetActive(true);
-        //_enemyMov.SetActive(true);
-        //_enemyDisp.SetActive(true);
-        //_Camera.GetComponent<CamaraMovement>().enabled = true;
+        _player.SetActive(true);
+        _bow.SetActive(true);
+        _enemyMov.SetActive(true);
+        _enemyDisp.SetActive(true);
+        _Camera.GetComponent<CamaraMovement>().enabled = true;
+        SceneManager.LoadScene("SampleScene");
         UIManager.Instance.SetMainMenu(false);
         UIManager.Instance.UpdateScore(true);
+
+
+
+    }
+    public void StartMatch2()
+    {
+        //Al darle 
+        //activa cada uno de los personajes, el mov de la cámara y quita el menú principal
+        _player.SetActive(true);
+        _bow.SetActive(true);
+        _enemyMov.SetActive(true);
+        _enemyDisp.SetActive(true);
+        //_Camera.GetComponent<CamaraMovement>().enabled = true;
         SceneManager.LoadScene("SampleScene");
+        UIManager.Instance.SetMainMenu(false);
+        UIManager.Instance.UpdateScore(true);
+
 
 
     }
@@ -64,15 +81,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
         Time.timeScale = 0.0f;
-        _player.SetActive(false);
-        UIManager.Instance.UpdateScore(false);
-        _bow.SetActive(false);
-        _enemyMov.SetActive(false);
-        _enemyDisp.SetActive(false);
+        //_player.SetActive(false);
+        //UIManager.Instance.UpdateScore(false);
+        //_bow.SetActive(false);
+        //_enemyMov.SetActive(false);
+        //_enemyDisp.SetActive(false);
         //_Camera.GetComponent<CamaraMovement>().enabled = false;
-        SceneManager.LoadScene("Main Menu");
-        UIManager.Instance.SetMainMenu(true);
+        
         
     }
     public void PlayerDies()
@@ -94,13 +111,13 @@ public class GameManager : MonoBehaviour
     private void OnPlayerVictory()
     {   
         Time.timeScale = 0.0f;
-        //_player.SetActive(false);
-        //_bow.SetActive(false);
-        //_enemyDisp.SetActive(false);
-        //_enemyMov.SetActive(false);
-        //UIManager.Instance.SetVictoryMenu(true);
+        _player.SetActive(false);
+        _bow.SetActive(false);
+        _enemyDisp.SetActive(false);
+        _enemyMov.SetActive(false);
+        UIManager.Instance.SetVictoryMenu(true);
         //_Camera.GetComponent<CamaraMovement>().enabled = false;
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("Main Menu");
     }
     public void OnPlayerDefeat()
     {
@@ -110,14 +127,14 @@ public class GameManager : MonoBehaviour
       UIManager.Instance.SetLoseMenu(true);
       _bow.SetActive(false);
       _player.SetActive(false);
-      Time.timeScale = 0.0f;       
+      Time.timeScale = 0.0f;
     }
     private void Update()
     {
-        if (_player.transform.position.y >= _finishLine.position.y)
-        {
-            OnPlayerVictory();
-        }
+        //if (_player.transform.position.y >= _finishLine.position.y)
+        //{
+        //    OnPlayerVictory();
+        //}
 
        
     }
