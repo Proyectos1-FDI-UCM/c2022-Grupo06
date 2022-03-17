@@ -40,20 +40,22 @@ public class GameManager : MonoBehaviour
     }
     public void RestartMatch()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Main Menu");
     }
     public void StartMatch()
     {
+        //Al darle 
         //activa cada uno de los personajes, el mov de la cámara y quita el menú principal
-        _player.SetActive(true);
-        _bow.SetActive(true);
-        _enemyMov.SetActive(true);
-        _enemyDisp.SetActive(true);
-        _Camera.GetComponent<CamaraMovement>().enabled = true;
+        //_player.SetActive(true);
+        //_bow.SetActive(true);
+        //_enemyMov.SetActive(true);
+        //_enemyDisp.SetActive(true);
+        //_Camera.GetComponent<CamaraMovement>().enabled = true;
         UIManager.Instance.SetMainMenu(false);
         UIManager.Instance.UpdateScore(true);
-        
-        
+        SceneManager.LoadScene("SampleScene");
+
+
     }
     public void QuitGame()
     {
@@ -63,14 +65,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0.0f;
-       
         _player.SetActive(false);
+        UIManager.Instance.UpdateScore(false);
         _bow.SetActive(false);
         _enemyMov.SetActive(false);
         _enemyDisp.SetActive(false);
-        _Camera.GetComponent<CamaraMovement>().enabled = false;
+        //_Camera.GetComponent<CamaraMovement>().enabled = false;
+        SceneManager.LoadScene("Main Menu");
         UIManager.Instance.SetMainMenu(true);
-        UIManager.Instance.UpdateScore(false);
         
     }
     public void PlayerDies()
@@ -92,12 +94,13 @@ public class GameManager : MonoBehaviour
     private void OnPlayerVictory()
     {   
         Time.timeScale = 0.0f;
-        _player.SetActive(false);
-        _bow.SetActive(false);
-        _enemyDisp.SetActive(false);
-        _enemyMov.SetActive(false);
-        UIManager.Instance.SetVictoryMenu(true);
-        _Camera.GetComponent<CamaraMovement>().enabled = false;
+        //_player.SetActive(false);
+        //_bow.SetActive(false);
+        //_enemyDisp.SetActive(false);
+        //_enemyMov.SetActive(false);
+        //UIManager.Instance.SetVictoryMenu(true);
+        //_Camera.GetComponent<CamaraMovement>().enabled = false;
+        SceneManager.LoadScene("SampleScene");
     }
     public void OnPlayerDefeat()
     {
@@ -116,10 +119,6 @@ public class GameManager : MonoBehaviour
             OnPlayerVictory();
         }
 
-        //testing
-        if (Input.GetAxis("Vertical") == 1)
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
+       
     }
 }

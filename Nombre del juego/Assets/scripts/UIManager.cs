@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
 
+
     [SerializeField]
     private GameObject _mainMenu;
     [SerializeField]
@@ -29,7 +30,8 @@ public class UIManager : MonoBehaviour
         }
     }
     public void SetMainMenu(bool enabled)
-    {                                           //permite activar o desactivar el menu inicial
+    {
+        Debug.Log(enabled);                                         //permite activar o desactivar el menu inicial
         _mainMenu.SetActive(enabled);
     }
     public void SetVictoryMenu(bool enabled)
