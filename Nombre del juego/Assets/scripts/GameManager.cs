@@ -30,10 +30,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField]
     //private Enemy_Life_Component _myEnemy_Life_Component;
     [SerializeField]
-    private Transform _finishLine;
-
-    
-   
+    private Transform _finishLine;   
     private void Awake()
     {
         if (_instance == null)
@@ -58,9 +55,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         //UIManager.Instance.SetMainMenu(false);
         UIManager.Instance.UpdateScore(true);
-
-
-
     }
     public void StartMatch2()
     {
@@ -84,17 +78,14 @@ public class GameManager : MonoBehaviour
     }
 
     void Start()
-    {
-        
+    {       
         Time.timeScale = 0.0f;
         //_player.SetActive(false);
         //UIManager.Instance.UpdateScore(false);
         //_bow.SetActive(false);
         //_enemyMov.SetActive(false);
         //_enemyDisp.SetActive(false);
-        //_Camera.GetComponent<CamaraMovement>().enabled = false;
-        
-        
+        //_Camera.GetComponent<CamaraMovement>().enabled = false;    
     }
     public void PlayerDies()
     {
@@ -123,6 +114,10 @@ public class GameManager : MonoBehaviour
         //_Camera.GetComponent<CamaraMovement>().enabled = false;
         //SceneManager.LoadScene("Main Menu");
     }
+    private void OnLevelWasLoaded(int level)
+    {
+        
+    }
     public void OnPlayerDefeat()
     {
       _enemyDisp.SetActive(false);
@@ -132,6 +127,7 @@ public class GameManager : MonoBehaviour
       _bow.SetActive(false);
       _player.SetActive(false);
       Time.timeScale = 0.0f;
+        
     }
     private void Update()
     {
@@ -140,6 +136,7 @@ public class GameManager : MonoBehaviour
             OnPlayerVictory();
         }
 
+        
        
     }
 }
