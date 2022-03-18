@@ -29,11 +29,11 @@ public class UIManager : MonoBehaviour
             return _instance;
         }
     }
-    public void SetMainMenu(bool enabled)
-    {
-        Debug.Log(enabled);                                         //permite activar o desactivar el menu inicial
-        _mainMenu.SetActive(enabled);
-    }
+    //public void SetMainMenu(bool enabled)
+    //{
+    //    Debug.Log(enabled);       //permite activar o desactivar el menu inicial
+    //    _mainMenu.SetActive(enabled);
+    //}
     public void SetVictoryMenu(bool enabled)
     {
         _victoryMenu.SetActive(enabled);
@@ -46,10 +46,7 @@ public class UIManager : MonoBehaviour
     {
          GameManager.Instance.StartMatch();
     }
-    public void StartMatch2()
-    {
-        GameManager.Instance.StartMatch2();
-    }
+    
     public void RestartGame()
     {
         GameManager.Instance.RestartMatch();

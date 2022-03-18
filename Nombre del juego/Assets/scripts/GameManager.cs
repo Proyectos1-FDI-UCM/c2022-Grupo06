@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
     //private GameManager _gameManager;
     [SerializeField]
     private Player_Life_Component _myPlayer_Life_Component;
-    //[SerializeField]
-    //private Enemy_Life_Component _myEnemy_Life_Component;
     [SerializeField]
     private Transform _finishLine;   
     private void Awake()
@@ -40,6 +38,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            _instance = this;
         }
             DontDestroyOnLoad(gameObject);
     }
@@ -47,30 +46,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+   
     public void StartMatch()
     {
-        //Al darle 
-        //activa cada uno de los personajes, el mov de la cámara y quita el menú principal
-        _Camera.GetComponent<CamaraMovement>().enabled = true;
+        //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
-        //UIManager.Instance.SetMainMenu(false);
-        UIManager.Instance.UpdateScore(true);
-    }
-    public void StartMatch2()
-    {
-        //Al darle 
-        //activa cada uno de los personajes, el mov de la cámara y quita el menú principal
-        _player.SetActive(true);
-        _bow.SetActive(true);
-        _enemyMov.SetActive(true);
-        _enemyDisp.SetActive(true);
-        //_Camera.GetComponent<CamaraMovement>().enabled = true;
-        SceneManager.LoadScene("SampleScene");
-        UIManager.Instance.SetMainMenu(false);
-        UIManager.Instance.UpdateScore(true);
-
-
-
     }
     public void QuitGame()
     {
@@ -80,13 +60,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {       
         Time.timeScale = 0.0f;
-        //_player.SetActive(false);
-        //UIManager.Instance.UpdateScore(false);
-        //_bow.SetActive(false);
-        //_enemyMov.SetActive(false);
-        //_enemyDisp.SetActive(false);
-        //_Camera.GetComponent<CamaraMovement>().enabled = false;    
+       // SceneManager.LoadScene("SampleScene");
     }
+
     public void PlayerDies()
     {
         Player_Life_Component.instance.isAlive = false;
@@ -104,7 +80,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnPlayerVictory()
-    {   
+    {
+        Debug.Log("you win");
         Time.timeScale = 0.0f;
         _player.SetActive(false);
         _bow.SetActive(false);
@@ -114,9 +91,17 @@ public class GameManager : MonoBehaviour
         //_Camera.GetComponent<CamaraMovement>().enabled = false;
         //SceneManager.LoadScene("Main Menu");
     }
-    private void OnLevelWasLoaded(int level)
+    private void OnLevelWasLoaded(int level)  //cada vez que se cargue la escena principal
     {
         
+        if (level == 1)
+        {
+            _player.SetActive(true);
+            _bow.SetActive(true);
+            _enemyMov.SetActive(true);
+            _enemyDisp.SetActive(true);
+            UIManager.Instance.UpdateScore(true);
+        }
     }
     public void OnPlayerDefeat()
     {
@@ -131,12 +116,9 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (_player.transform.position.y >= _finishLine.position.y)
+        if (_player == true && _player.transform.position.y <= _finishLine.position.y)
         {
             OnPlayerVictory();
-        }
-
-        
-       
+        } 
     }
 }

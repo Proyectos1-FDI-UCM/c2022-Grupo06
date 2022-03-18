@@ -41,9 +41,6 @@ public class Life_System_Component : MonoBehaviour
         }
 
     }
-    void Update()
-    {
-        Debug.Log(_currentlife);
-    }
+    
 
 }
