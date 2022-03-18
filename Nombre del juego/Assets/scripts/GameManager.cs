@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
     private GameObject _enemyDisp;
     [SerializeField]
     private GameObject _Camera;
-    [SerializeField]
-    private GameManager _gameManager;
+    //[SerializeField]
+    //private GameManager _gameManager;
     [SerializeField]
     private Player_Life_Component _myPlayer_Life_Component;
-    [SerializeField]
-    private Enemy_Life_Component _myEnemy_Life_Component;
+    //[SerializeField]
+    //private Enemy_Life_Component _myEnemy_Life_Component;
     [SerializeField]
     private Transform _finishLine;
 
@@ -36,7 +36,15 @@ public class GameManager : MonoBehaviour
    
     private void Awake()
     {
-        _instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+            DontDestroyOnLoad(gameObject);
     }
     public void RestartMatch()
     {
@@ -46,13 +54,9 @@ public class GameManager : MonoBehaviour
     {
         //Al darle 
         //activa cada uno de los personajes, el mov de la cámara y quita el menú principal
-        _player.SetActive(true);
-        _bow.SetActive(true);
-        _enemyMov.SetActive(true);
-        _enemyDisp.SetActive(true);
         _Camera.GetComponent<CamaraMovement>().enabled = true;
         SceneManager.LoadScene("SampleScene");
-        UIManager.Instance.SetMainMenu(false);
+        //UIManager.Instance.SetMainMenu(false);
         UIManager.Instance.UpdateScore(true);
 
 
@@ -131,10 +135,10 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        //if (_player.transform.position.y >= _finishLine.position.y)
-        //{
-        //    OnPlayerVictory();
-        //}
+        if (_player.transform.position.y >= _finishLine.position.y)
+        {
+            OnPlayerVictory();
+        }
 
        
     }

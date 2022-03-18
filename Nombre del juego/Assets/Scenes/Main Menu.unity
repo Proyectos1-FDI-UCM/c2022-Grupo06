@@ -547,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731951921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9, y: -4.97, z: 0}
+  m_LocalPosition: {x: -6.9, y: 3.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2087,7 +2087,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662665769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.16, y: 3.5872922, z: -12.218012}
+  m_LocalPosition: {x: 6.16, y: -2.2, z: -12.218012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2728,9 +2728,7 @@ MonoBehaviour:
   _enemyMov: {fileID: 1662665769}
   _enemyDisp: {fileID: 1662665769}
   _Camera: {fileID: 1662665769}
-  _gameManager: {fileID: 1908187649}
   _myPlayer_Life_Component: {fileID: 0}
-  _myEnemy_Life_Component: {fileID: 0}
   _finishLine: {fileID: 731951922}
 --- !u!4 &1908187650
 Transform:
