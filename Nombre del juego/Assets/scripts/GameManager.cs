@@ -38,9 +38,9 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            _instance = this;
+           // _instance = this;
         }
-            DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     public void RestartMatch()
     {
@@ -52,6 +52,11 @@ public class GameManager : MonoBehaviour
         //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
     }
+    public void StartMatch2()
+    {
+        //Al darle al botón carga el tutorial
+        SceneManager.LoadScene("SampleScene");
+    }
     public void QuitGame()
     {
         Application.Quit();
@@ -60,9 +65,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {       
         Time.timeScale = 0.0f;
-       // SceneManager.LoadScene("SampleScene");
     }
-
     public void PlayerDies()
     {
         Player_Life_Component.instance.isAlive = false;
@@ -75,7 +78,6 @@ public class GameManager : MonoBehaviour
     }
     public void EnemyDamage(int Damage, GameObject enemy)
     {
-        //Debug.Log("daño enemigo"+Damage);
         enemy.GetComponent<Enemy_Life_Component>().Damage(Damage);
     }
 
@@ -88,12 +90,9 @@ public class GameManager : MonoBehaviour
         _enemyDisp.SetActive(false);
         _enemyMov.SetActive(false);
         UIManager.Instance.SetVictoryMenu(true);
-        //_Camera.GetComponent<CamaraMovement>().enabled = false;
-        //SceneManager.LoadScene("Main Menu");
     }
     private void OnLevelWasLoaded(int level)  //cada vez que se cargue la escena principal
     {
-        
         if (level == 1)
         {
             _player.SetActive(true);

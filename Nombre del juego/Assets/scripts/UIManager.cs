@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
 
-
     [SerializeField]
     private GameObject _mainMenu;
+    [SerializeField]
+    private GameObject _ChooseLevel;
     [SerializeField]
     private GameObject _defeatMenu;
     [SerializeField]
@@ -29,11 +30,11 @@ public class UIManager : MonoBehaviour
             return _instance;
         }
     }
-    //public void SetMainMenu(bool enabled)
-    //{
-    //    Debug.Log(enabled);       //permite activar o desactivar el menu inicial
-    //    _mainMenu.SetActive(enabled);
-    //}
+    public void Levels()
+    {
+        _mainMenu.SetActive(false);
+        _ChooseLevel.SetActive(true);
+    }
     public void SetVictoryMenu(bool enabled)
     {
         _victoryMenu.SetActive(enabled);
@@ -46,7 +47,10 @@ public class UIManager : MonoBehaviour
     {
          GameManager.Instance.StartMatch();
     }
-    
+    public void StartMatch2()
+    {
+        GameManager.Instance.StartMatch2();
+    }
     public void RestartGame()
     {
         GameManager.Instance.RestartMatch();
@@ -78,6 +82,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         
+        _mainMenu.SetActive(true);
+        _ChooseLevel.SetActive(false);
     }
 
     
