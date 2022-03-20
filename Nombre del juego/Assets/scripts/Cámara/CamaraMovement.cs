@@ -19,14 +19,20 @@ public class CamaraMovement : MonoBehaviour
     private float _startingtime =3.0f;
     #endregion
 
+    AudioSource _audioSource;
+    [SerializeField]
+    GameObject _camera;
     void Start()
     {
         _myTransform = GetComponent<Transform>();      //cacheamos el transform
+        _audioSource = GetComponent<AudioSource>();
+    
     }
 
     // Update is called once per frame
     private void LateUpdate()
     {
+        
         _elapsedTime += Time.deltaTime;           //_elapsedTime= _elapsedTime + Time.deltaTime;
 
         if (_elapsedTime >= _startingtime)                          //empezará acelerar cuando pase X tiempo
@@ -41,5 +47,15 @@ public class CamaraMovement : MonoBehaviour
             _vel = 0;
             _accel = 0;
         }
+
     }
+    public void Audio(bool enabled)
+    {
+        if (enabled)
+        {
+            _audioSource.Play();
+        }
+        
+    }
+
 }

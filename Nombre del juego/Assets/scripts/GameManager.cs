@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject _Camera;
     [SerializeField]
+    public GameObject _menumusic;
+    [SerializeField]
     private GameManager _gameManager;
     [SerializeField]
     private Player_Life_Component _myPlayer_Life_Component;
@@ -50,10 +52,12 @@ public class GameManager : MonoBehaviour
         _enemyMov.SetActive(true);
         _enemyDisp.SetActive(true);
         _Camera.GetComponent<CamaraMovement>().enabled = true;
+        _Camera.GetComponent<CamaraMovement>().Audio(true);
         UIManager.Instance.SetMainMenu(false);
         UIManager.Instance.UpdateScore(true);
-        
-        
+        //testing para parar el audio
+        _menumusic.GetComponent<MenuMusic>().mute(true);
+        _menumusic.GetComponent<MenuMusic>().Sound(false);
     }
     public void QuitGame()
     {
@@ -71,14 +75,19 @@ public class GameManager : MonoBehaviour
         _Camera.GetComponent<CamaraMovement>().enabled = false;
         UIManager.Instance.SetMainMenu(true);
         UIManager.Instance.UpdateScore(false);
-        
+        _menumusic.GetComponent<MenuMusic>().Sound(true);
+
+
     }
     public void PlayerDies()
     {
         Player_Life_Component.instance.isAlive = false;
         _bow.SetActive(false);
+        _bow.SetActive(false);
+        
+
     }
-    public void OnPlyerDamage(int damage)
+    public void OnPlayerDamage(int damage)
     {
         _myPlayer_Life_Component.Damage(damage);
 
@@ -98,16 +107,20 @@ public class GameManager : MonoBehaviour
         _enemyMov.SetActive(false);
         UIManager.Instance.SetVictoryMenu(true);
         _Camera.GetComponent<CamaraMovement>().enabled = false;
+        
+
     }
     public void OnPlayerDefeat()
     {
-      _enemyDisp.SetActive(false);
+        
+        _enemyDisp.SetActive(false);
       _enemyMov.SetActive(false);      
       _Camera.GetComponent<CamaraMovement>().enabled = false;      
       UIManager.Instance.SetLoseMenu(true);
       _bow.SetActive(false);
       _player.SetActive(false);
-      Time.timeScale = 0.0f;       
+        Time.timeScale = 0.0f;
+       
     }
     private void Update()
     {
