@@ -14,7 +14,7 @@ public class Enemy_Life_Component : Life_System_Component
     {
         if (collision.gameObject.GetComponent<Player_Life_Component>())
         {
-            GameManager.Instance.OnPlyerDamage(_damageontouch);
+            GameManager.Instance.OnPlayerDamage(_damageontouch);
         }
     }
   
