@@ -15,6 +15,10 @@ public class BowController : MonoBehaviour
     private float _PredictionCoef;   
     private float _force = 0;
 
+    [SerializeField]
+    private ParticleSystem _TpChargeUp;
+    [SerializeField]
+    private ParticleSystem _DamageChargeUp;
 
     private GameObject _arrow;
 
@@ -42,6 +46,7 @@ public class BowController : MonoBehaviour
 
     void Start()
     {
+        _DamageChargeUp.enableEmission = false; _TpChargeUp.enableEmission = false;
         Points = new GameObject[_numPoints];
         for (int i = 0; i < _numPoints; i++)
         {
@@ -68,13 +73,15 @@ public class BowController : MonoBehaviour
             _force += Time.deltaTime * _atackS*10;
             BowANIM.isBow = true;
             BarraTensado.AjustarDimensiones(_force);
-            for (int i = 0; i < _numPoints; i++)
+            if (_arrow == _arrowTP) { _TpChargeUp.enableEmission = true; _DamageChargeUp.enableEmission = false; }
+            else { _DamageChargeUp.enableEmission = true; _TpChargeUp.enableEmission = false; }
+                for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].SetActive(true);
                 Points[i].transform.position = PointPosition(0.1f * i, Dir, _force, ShotPoint.transform.position);
             }
         }
-        
+
         else if (_atCD >=1.5f && Input.GetMouseButton(0))
         {
             Time.timeScale = 0.5f;
@@ -128,6 +135,8 @@ public class BowController : MonoBehaviour
         _force = 0;
         BarraTensado.AjustarDimensiones(_force);
         BowANIM.isBow = false;
+        if (_arrow == _arrowTP) { _TpChargeUp.enableEmission = false;}
+        else { _DamageChargeUp.enableEmission = false; }
         for (int i = 0; i < _numPoints; i++)
         {
             Destroy(Points[i]);
