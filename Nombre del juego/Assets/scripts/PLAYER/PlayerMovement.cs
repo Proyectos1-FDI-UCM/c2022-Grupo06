@@ -112,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             _myRigidBody.velocity = new Vector2(_myRigidBody.velocity.x, impulse);//a partir de la velocidad que tiene en el eje x, se leañade verticalmente una vel.
+            FindObjectOfType<AudioManager>().Play(""); //esto es una funcion que se puede utilizar de vez en cuando para buscar el objeto de ese tipo
         }
     }
     public void movement(float moveInput)
