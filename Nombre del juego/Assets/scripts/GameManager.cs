@@ -42,13 +42,15 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-           // _instance = this;
+           
         }
         DontDestroyOnLoad(gameObject);
     }
     public void RestartMatch()
     {
+        
         SceneManager.LoadScene("Main Menu");
+        //AudioManager.Instance.Play("Menu");
         prueba = false;
     }
    
@@ -58,6 +60,9 @@ public class GameManager : MonoBehaviour
         prueba = true;
         //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
+        
+        //FindObjectOfType<AudioManager>().Play(""); 
+
     }
     public void StartMatch2()
     {
@@ -108,6 +113,7 @@ public class GameManager : MonoBehaviour
             _enemyMov.SetActive(true);
             _enemyDisp.SetActive(true);
             UIManager.Instance.UpdateScore(true);
+            AudioManager.Instance.Play("Main");
         }
     }
     public void OnPlayerDefeat()
