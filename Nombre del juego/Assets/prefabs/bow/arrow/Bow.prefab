@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1816113676273364457
 Transform:
   m_ObjectHideFlags: 0
@@ -251,6 +251,8 @@ MonoBehaviour:
   _point: {fileID: 3243805386953319856, guid: 84188f0c228741249865f44ffc0db410, type: 3}
   _numPoints: 10
   ShotPoint: {fileID: 1816113675861846506}
+  _pDamage: {fileID: 0}
+  _pTP: {fileID: 0}
   BarraTensado: {fileID: 0}
   MaxForce: 1
 --- !u!114 &1816113676273364456

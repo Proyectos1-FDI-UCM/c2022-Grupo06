@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7017067658100635705
 Transform:
   m_ObjectHideFlags: 0
@@ -54,7 +54,6 @@ MonoBehaviour:
   impulse: 0
   pIsLookingRight: 1
   _gravity: 4
-  _mycheckGround: {fileID: 0}
   _dashSpeed: 0
   _dashDur: 0
   ghost: {fileID: 0}

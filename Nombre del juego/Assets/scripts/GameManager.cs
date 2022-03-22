@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Player_Life_Component _myPlayer_Life_Component;
     [SerializeField]
-    private Transform _finishLine;   
+    private Transform _finishLine;
+    bool prueba = false;
     private void Awake()
     {
         if (_instance == null)
@@ -45,15 +46,19 @@ public class GameManager : MonoBehaviour
     public void RestartMatch()
     {
         SceneManager.LoadScene("Main Menu");
+        prueba = false;
     }
    
+
     public void StartMatch()
     {
+        prueba = true;
         //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
     }
     public void StartMatch2()
     {
+        prueba = true;
         //Al darle al botón carga el tutorial
         SceneManager.LoadScene("SampleScene");
     }
@@ -115,7 +120,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (_player == true && _player.transform.position.y <= _finishLine.position.y)
+        if (prueba == true && _player == true && _player.transform.position.y <= _finishLine.position.y)
         {
             OnPlayerVictory();
         } 
