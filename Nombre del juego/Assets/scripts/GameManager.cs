@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (prueba == true && _player == true && _player.transform.position.y <= _finishLine.position.y)
+        if (_player.transform.position.y != 0 &&prueba == true && _player == true && _player.transform.position.y < _finishLine.position.y)
         {
             OnPlayerVictory();
         } 
