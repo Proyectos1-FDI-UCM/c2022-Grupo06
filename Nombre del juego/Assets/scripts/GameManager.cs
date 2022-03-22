@@ -23,8 +23,6 @@ public class GameManager : MonoBehaviour
     private GameObject _enemyDisp;
     [SerializeField]
     private GameObject _Camera;
-    //[SerializeField]
-    //private GameManager _gameManager;
     [SerializeField]
     private Player_Life_Component _myPlayer_Life_Component;
     [SerializeField]

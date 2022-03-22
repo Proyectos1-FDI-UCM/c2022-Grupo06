@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -444,6 +444,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8732381373476107005, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
+      propertyPath: _Camera
+      value: 
+      objectReference: {fileID: 1765145580}
+    - target: {fileID: 8732381373476107005, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 4420804304367032904, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
 --- !u!1 &650941321
@@ -1659,7 +1667,7 @@ RectTransform:
   - {fileID: 1724904730}
   - {fileID: 909012088}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
