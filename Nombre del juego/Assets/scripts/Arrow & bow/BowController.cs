@@ -38,9 +38,9 @@ public class BowController : MonoBehaviour
     private GameObject ShotPoint;
 
     [SerializeField]
-    private ParticleSystem _pDamage;
+    private GameObject _pDamage;
     [SerializeField]
-    private ParticleSystem _pTP;
+    private GameObject _pTP;
 
     [SerializeField]
     public HUD_BarraTensado BarraTensado;
@@ -55,7 +55,7 @@ public class BowController : MonoBehaviour
         _arrow = _arrowTP;
         BowInstance = this;
         BarraTensado.AjustarMaximo(15f);
-        _pDamage.enableEmission = false; _pTP.enableEmission = false;
+        _pDamage.SetActive(false);_pTP.SetActive(false);
     }
 
     public bool MaxForce = false;
@@ -74,8 +74,8 @@ public class BowController : MonoBehaviour
             _force += Time.deltaTime * _atackS*10;
             BowANIM.isBow = true;
             BarraTensado.AjustarDimensiones(_force);
-            if(_arrow == _arrowDamage) { _pDamage.enableEmission = true; _pTP.enableEmission = false; }
-            else { _pDamage.enableEmission = false; _pTP.enableEmission =true; }
+            if(_arrow == _arrowDamage) { _pDamage.SetActive(true); }
+            else { _pTP.SetActive(true);}
             for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].SetActive(true);
@@ -136,7 +136,7 @@ public class BowController : MonoBehaviour
         _force = 0;
         BarraTensado.AjustarDimensiones(_force);
         BowANIM.isBow = false;
-        _pDamage.enableEmission = false; _pTP.enableEmission = false;
+        _pDamage.SetActive(false); _pTP.SetActive(false);
         for (int i = 0; i < _numPoints; i++)
         {
             Destroy(Points[i]);

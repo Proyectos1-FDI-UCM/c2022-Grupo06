@@ -51,12 +51,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pTransform: {fileID: 7017067658100635705}
   _myRigidBody: {fileID: 0}
-  moveSpeed: 4
-  impulse: 0
+  moveSpeed: 6
+  impulse: 5
   pIsLookingRight: 1
-  _gravity: 4
-  _dashSpeed: 0
-  _dashDur: 0
+  _gravity: 1.5
+  _dashSpeed: 8
+  _dashDur: 0.16
   ghost: {fileID: 0}
   ghosts: 0
 --- !u!50 &-3146621115033547661
@@ -130,8 +130,8 @@ MonoBehaviour:
   _maxlife: 0
   enemyscore: 10
   isAlive: 1
-  Render: {fileID: 0}
-  _explosion: {fileID: 0}
+  Render: {fileID: 5421476386242316971}
+  _explosion: {fileID: 2129577170888187945, guid: 4c1c775923402214897f155020e941e5, type: 3}
 --- !u!1 &5421476386242316971
 GameObject:
   m_ObjectHideFlags: 0
