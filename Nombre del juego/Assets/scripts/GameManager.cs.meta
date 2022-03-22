@@ -3,7 +3,14 @@ guid: a3a525b2a5da73d488d60cf62aa94418
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _player: {fileID: 4420804304367032904, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
+  - _bow: {fileID: 1816113676273364459, guid: 634d4e90df1d7074694a5bf985b5c191, type: 3}
+  - _enemyMov: {fileID: 5528064252072028420, guid: 7fbebb1a5f793cd45ba7fa22a9c6633f, type: 3}
+  - _enemyDisp: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
+  - _Camera: {instanceID: 0}
+  - _myPlayer_Life_Component: {instanceID: 0}
+  - _finishLine: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

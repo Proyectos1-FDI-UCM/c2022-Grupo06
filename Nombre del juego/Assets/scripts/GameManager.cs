@@ -23,13 +23,18 @@ public class GameManager : MonoBehaviour
     private GameObject _enemyDisp;
     [SerializeField]
     private GameObject _Camera;
-    [SerializeField]
+    
+    private CamaraMovement _camMov;
+
+    
     private Player_Life_Component _myPlayer_Life_Component;
     [SerializeField]
     private Transform _finishLine;
     bool prueba = false;
     private void Awake()
     {
+
+        _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
         if (_instance == null)
         {
             _instance = this;
@@ -109,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
       _enemyDisp.SetActive(false);
       _enemyMov.SetActive(false);      
-      _Camera.GetComponent<CamaraMovement>().enabled = false;      
+      //_Camera.GetComponent<CamaraMovement>().enabled = false;      
       UIManager.Instance.SetLoseMenu(true);
       _bow.SetActive(false);
       _player.SetActive(false);

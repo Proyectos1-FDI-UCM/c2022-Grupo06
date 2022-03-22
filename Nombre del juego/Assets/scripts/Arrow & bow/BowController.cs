@@ -115,6 +115,8 @@ public class BowController : MonoBehaviour
             _PredictionCoef = 0f;
             _multiplier = _arrowDamage.GetComponent<Arrow2>().multiplier;
             BarraTensado.AjustarColor(true);
+            _pTP.SetActive(false);
+            _pDamage.SetActive(true);
         }
         else
         {
@@ -122,6 +124,8 @@ public class BowController : MonoBehaviour
             _PredictionCoef = 0.5f;
             _multiplier = _arrowTP.GetComponent<Arrow>().multiplier;
             BarraTensado.AjustarColor(false);
+            _pDamage.SetActive(false);
+            _pTP.SetActive(true);
         }
     }
     public void CancelacionDisparo()

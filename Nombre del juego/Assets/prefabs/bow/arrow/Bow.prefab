@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1816113676273364457
 Transform:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _atackS: 1.5
-  _PredictionCoef: 0.5
+  _PredictionCoef: 0
   _arrowTP: {fileID: 3279880908078348967, guid: 29c55269acc7e2a49b7a5929cae1d20c, type: 3}
   _arrowDamage: {fileID: 1213834817381885705, guid: 7417280574497f34dba91f163394be2a, type: 3}
   _point: {fileID: 3243805386953319856, guid: 84188f0c228741249865f44ffc0db410, type: 3}

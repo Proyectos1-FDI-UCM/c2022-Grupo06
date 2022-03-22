@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5497870180389679642}
   - component: {fileID: 9152518881295240078}
   m_Layer: 7
-  m_Name: Enemy balas (2)
+  m_Name: EnemyShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
