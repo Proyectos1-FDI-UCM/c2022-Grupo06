@@ -15,13 +15,10 @@ public class Life_System_Component : MonoBehaviour
     void Start()
     {
         _currentlife = _maxlife;
-        Debug.Log(_currentlife);
     }
     public void Damage(int Damage)
     {
-       // Debug.Log("daño que entra" + Damage+"vida "+_currentlife);
         _currentlife -= Damage;
-        //Debug.Log(_currentlife);
         if (_currentlife <= 0)
         {
             Die();

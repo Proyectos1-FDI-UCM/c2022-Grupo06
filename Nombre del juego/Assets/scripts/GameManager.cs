@@ -66,8 +66,6 @@ public class GameManager : MonoBehaviour
         //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
         
-        //FindObjectOfType<AudioManager>().Play(""); 
-
     }
     public void StartMatch2()
     {

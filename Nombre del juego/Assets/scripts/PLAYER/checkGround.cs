@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class checkGround : MonoBehaviour
 {
-    //[SerializeField]
-    //public GameObject player;
-    void Start()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<PlatformMovement>()) transform.parent = collision.gameObject.transform;
