@@ -78,12 +78,19 @@ public class UIManager : MonoBehaviour
     { 
         _instance = this;
     }
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 0)
+        {
+            _mainMenu.SetActive(true);
+            _ChooseLevel.SetActive(false);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
         
-        _mainMenu.SetActive(true);
-        _ChooseLevel.SetActive(false);
+        
     }
 
     

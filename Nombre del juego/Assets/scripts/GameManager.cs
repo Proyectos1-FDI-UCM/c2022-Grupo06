@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
     {
         Player_Life_Component.instance.isAlive = false;
         _bow.SetActive(false);
+        
     }
     public void OnPlyerDamage(int damage)
     {
@@ -130,14 +131,7 @@ public class GameManager : MonoBehaviour
             _enemyDisp.SetActive(true);
             _enemyMov.SetActive(true);
 
-            //_player = LevelManager.Instance._player;
-            //_bow = LevelManager.Instance._bow;
-            //_Camera = LevelManager.Instance._Camera;
-            //_enemyDisp = LevelManager.Instance._enemyDisp;
-            //_enemyMov = LevelManager.Instance._enemyMov;
-            //_finishLine = LevelManager.Instance._finishLine;
-
-            //_myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
+            _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
             UIManager.Instance.UpdateScore(true);
             AudioManager.Instance.Play("Main");
         }
@@ -146,7 +140,7 @@ public class GameManager : MonoBehaviour
     {
       _enemyDisp.SetActive(false);
       _enemyMov.SetActive(false);      
-      //_Camera.GetComponent<CamaraMovement>().enabled = false;      
+      _Camera.GetComponent<CamaraMovement>().enabled = false;      
       UIManager.Instance.SetLoseMenu(true);
       _bow.SetActive(false);
       _player.SetActive(false);
