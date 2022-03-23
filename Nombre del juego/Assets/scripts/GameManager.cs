@@ -13,28 +13,32 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    [SerializeField]
-    private GameObject _player;
-    [SerializeField]
-    private GameObject _bow;
-    [SerializeField]
-    private GameObject _enemyMov;
-    [SerializeField]
-    private GameObject _enemyDisp;
-    [SerializeField]
-    private GameObject _Camera;
     
+    private GameObject _player;
+    
+    private GameObject _bow;
+    
+    private GameObject _enemyMov;
+    
+    private GameObject _enemyDisp;
+    
+    private GameObject _Camera;
+
     private CamaraMovement _camMov;
 
+    private bool _menu = true;
     
     private Player_Life_Component _myPlayer_Life_Component;
-    [SerializeField]
+    
     private Transform _finishLine;
-    bool prueba = false;
+    private LevelManager _levelManager;
+    
+    
     private void Awake()
     {
+       
 
-        _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
+
         if (_instance == null)
         {
             _instance = this;
@@ -46,18 +50,19 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+    
     public void RestartMatch()
     {
         
         SceneManager.LoadScene("Main Menu");
         //AudioManager.Instance.Play("Menu");
-        prueba = false;
+        
     }
    
 
     public void StartMatch()
     {
-        prueba = true;
+        
         //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
         
@@ -66,7 +71,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartMatch2()
     {
-        prueba = true;
+        
         //Al darle al botón carga el tutorial
         SceneManager.LoadScene("SampleScene");
     }
@@ -104,14 +109,35 @@ public class GameManager : MonoBehaviour
         _enemyMov.SetActive(false);
         UIManager.Instance.SetVictoryMenu(true);
     }
+
+
     private void OnLevelWasLoaded(int level)  //cada vez que se cargue la escena principal
     {
         if (level == 1)
         {
+            _menu = false;
+            _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+            _player = _levelManager._player;
+            _bow = _levelManager._bow;
+            _Camera = _levelManager._Camera;
+            _enemyDisp = _levelManager._enemyDisp;
+            _enemyMov = _levelManager._enemyMov;
+            _finishLine = _levelManager._finishLine;
+
+
             _player.SetActive(true);
             _bow.SetActive(true);
-            _enemyMov.SetActive(true);
             _enemyDisp.SetActive(true);
+            _enemyMov.SetActive(true);
+
+            //_player = LevelManager.Instance._player;
+            //_bow = LevelManager.Instance._bow;
+            //_Camera = LevelManager.Instance._Camera;
+            //_enemyDisp = LevelManager.Instance._enemyDisp;
+            //_enemyMov = LevelManager.Instance._enemyMov;
+            //_finishLine = LevelManager.Instance._finishLine;
+
+            //_myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
             UIManager.Instance.UpdateScore(true);
             AudioManager.Instance.Play("Main");
         }
@@ -129,7 +155,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (_player.transform.position.y != 0 &&prueba == true && _player == true && _player.transform.position.y < _finishLine.position.y)
+        if (_menu==false &&_player == true && _player.transform.position.y >= _finishLine.position.y)
         {
             OnPlayerVictory();
         } 
