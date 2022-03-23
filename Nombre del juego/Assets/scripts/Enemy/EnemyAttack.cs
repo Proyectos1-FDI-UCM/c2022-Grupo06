@@ -18,7 +18,6 @@ public class EnemyAttack : MonoBehaviour
     private bool _firstShoot=false;                     //booleano con el que vemos si hemos si el enemigo ha disparado por primera vez
     private bool _canShoot = true;                      //condición necesaria que permite o no el disparo
     private LayerMask _floorLayer;                          // capa del suelo
-    [SerializeField]
     private GameObject _player;
     
     private float _atCD=1;                                  //Retardo entre disparos
@@ -51,6 +50,7 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _player = GameManager.Instance._levelManager._player;
         _playerPosition = _player.transform;
         ShotAble();      
         _atCD = _atCD + Time.deltaTime;

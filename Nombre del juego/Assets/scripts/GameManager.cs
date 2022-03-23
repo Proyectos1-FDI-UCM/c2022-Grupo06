@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     private Player_Life_Component _myPlayer_Life_Component;
     
     private Transform _finishLine;
-    private LevelManager _levelManager;
+    public LevelManager _levelManager;
     
     
     private void Awake()

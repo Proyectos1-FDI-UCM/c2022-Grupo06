@@ -277,7 +277,7 @@ MonoBehaviour:
   _player: {fileID: 640016999}
   _bow: {fileID: 289317447}
   _enemyMov: {fileID: 1833636254}
-  _enemyDisp: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
+  _enemyDisp: {fileID: 1250776436}
   _Camera: {fileID: 519420028}
   _finishLine: {fileID: 864419182}
 --- !u!1001 &74264682
@@ -1134,7 +1134,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_Name
-      value: Enemy balas (3)
+      value: Enemy balas (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500252, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: _playerPosition
@@ -2826,7 +2826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vel: 0.012
+  _vel: 0.006
   _accel: 0
   _coefaccel: 0.0000001
   _world_limit: 65
@@ -3024,7 +3024,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_Name
-      value: Enemy balas (5)
+      value: Enemy balas (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500252, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: _playerPosition
@@ -4833,7 +4833,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: m_Name
-      value: Enemy balas (4)
+      value: Enemy balas (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4570703451250500252, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
       propertyPath: _playerPosition
@@ -7016,6 +7016,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246546832}
   m_CullTransparentMesh: 1
+--- !u!1 &1250776436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
+  m_PrefabInstance: {fileID: 5497870179285897473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1256010257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 729155354957258943, guid: 968fe5c35e2292b449c3d5e2797506e7, type: 3}
