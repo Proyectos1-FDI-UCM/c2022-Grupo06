@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     {
         
         //Al darle al botón carga el tutorial
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Tutorial");
     }
     public void QuitGame()
     {
