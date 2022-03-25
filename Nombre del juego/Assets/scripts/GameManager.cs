@@ -106,9 +106,39 @@ public class GameManager : MonoBehaviour
         _enemyDisp.SetActive(false);
         _enemyMov.SetActive(false);
         UIManager.Instance.SetVictoryMenu(true);
+<<<<<<< Updated upstream
         _Camera.GetComponent<CamaraMovement>().enabled = false;
         
 
+=======
+    }
+
+
+    private void OnLevelWasLoaded(int level)  //cada vez que se cargue la escena principal
+    {
+        if (level != 0)
+        {
+            _menu = false;
+            _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+            _player = _levelManager._player;
+            _bow = _levelManager._bow;
+            _Camera = _levelManager._Camera;
+            _enemyDisp = _levelManager._enemyDisp;
+            _enemyMov = _levelManager._enemyMov;
+            _finishLine = _levelManager._finishLine;
+
+
+            _player.SetActive(true);
+            _bow.SetActive(true);
+            _enemyDisp.SetActive(true);
+            _enemyMov.SetActive(true);
+
+            _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
+            UIManager.Instance.UpdateScore(true);
+          //  AudioManager.Instance.Play("Main");
+        }
+       
+>>>>>>> Stashed changes
     }
     public void OnPlayerDefeat()
     {
