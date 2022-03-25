@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)  //cada vez que se cargue la escena principal
     {
-        if (level == 1)
+        if (level != 0)
         {
             _menu = false;
             _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
