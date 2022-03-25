@@ -10,6 +10,6 @@ public class checkGround : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        transform.parent = null;
+        if (Player_Life_Component.instance.isAlive == true) transform.parent = null;
     }
 }
