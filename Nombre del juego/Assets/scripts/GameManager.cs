@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
             _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
             UIManager.Instance.UpdateScore(true);
-            AudioManager.Instance.Play("Main");
+            //AudioManager.Instance.Play("Main");
         }
     }
     public void OnPlayerDefeat()

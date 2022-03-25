@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1781056222}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: StartMatch
+        m_MethodName: StartMatch2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -389,71 +389,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214850518}
   m_CullTransparentMesh: 1
---- !u!1001 &381053035
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 109972524190914775, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_Name
-      value: gm
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5693229612924714961, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8732381373476107005, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: _Camera
-      value: 
-      objectReference: {fileID: 1765145580}
-    - target: {fileID: 8732381373476107005, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 4420804304367032904, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19d1b562008be4748acdce6596e304f3, type: 3}
 --- !u!1 &650941321
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,9 +456,9 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4289950463
-  m_fontColor: {r: 1, g: 0.44705883, b: 0.7029826, a: 1}
+  m_fontColor: {r: 1, g: 0.44705883, b: 0.7019608, a: 1}
   m_enableVertexGradient: 1
-  m_colorMode: 3
+  m_colorMode: 2
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
@@ -588,6 +523,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650941321}
   m_CullTransparentMesh: 1
+--- !u!1 &704097832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704097834}
+  - component: {fileID: 704097833}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &704097833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704097832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a525b2a5da73d488d60cf62aa94418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelManager: {fileID: 0}
+--- !u!4 &704097834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704097832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 523.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778545775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1061,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1647436857
@@ -1178,7 +1157,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1781056222}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: StartMatch2
+        m_MethodName: StartMatch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1667,7 +1646,7 @@ RectTransform:
   - {fileID: 1724904730}
   - {fileID: 909012088}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1815,7 +1794,7 @@ MonoBehaviour:
   m_margin: {x: 0.6173096, y: 0, z: -2.086731, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1982958905
