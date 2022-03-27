@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
     private Transform _playerPosition;                  //posicion del jugador           
     private GameObject newBullet;                       //instancia de la nueva bala
     [SerializeField]
-    private float _offset = 0.4f;                       //_offset relativa a la predicción del disparo              ¿mismo offset que la cámara?
+    private float _offset = 0.1f;                       //_offset relativa a la predicción del disparo              ¿mismo offset que la cámara?
     
     private Vector3 _aimingUp= new Vector3 (0,1,0);    //vector que le sumamos
     [SerializeField]
@@ -17,14 +17,14 @@ public class EnemyAttack : MonoBehaviour
     private GameObject _origin;                         //objeto vacio de donde nace la bala y el raycast
     private bool _firstShoot=false;                     //booleano con el que vemos si hemos si el enemigo ha disparado por primera vez
     private bool _canShoot = true;                      //condición necesaria que permite o no el disparo
-    private LayerMask _floorLayer;                          // capa del suelo
+    private LayerMask _Default;                          // capa del suelo
     private GameObject _player;
     
     private float _atCD=1;                                  //Retardo entre disparos
     private void ShotAble()                         //función que nos dice si se puede disparar o no
     {
 
-        if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position - _origin.transform.position), (_playerPosition.position - _origin.transform.position).magnitude, _floorLayer))         //raycast lanzado desde un punto del enemigo y 
+        if (Physics2D.Raycast(_origin.transform.position, (_playerPosition.position -_origin.transform.position), (_playerPosition.position - _origin.transform.position).magnitude, _Default))         //raycast lanzado desde un punto del enemigo y 
         {
             _canShoot = false;
         }
@@ -44,7 +44,7 @@ public class EnemyAttack : MonoBehaviour
     }
     void Start()
     {
-        _floorLayer = 1 << 8;
+        _Default = 0;
     }
 
     // Update is called once per frame
@@ -54,8 +54,8 @@ public class EnemyAttack : MonoBehaviour
         _playerPosition = _player.transform;
         ShotAble();      
         _atCD = _atCD + Time.deltaTime;
-        dir = _playerPosition.position+ - _origin.transform.position+_aimingUp*_offset;              // pongo un offset para que apunte un poco más arriba, para predecir el movimiento del personaje
-        if(_atCD>0 && _firstShoot == false &&_canShoot==true)
+        dir = _playerPosition.position + - _origin.transform.position;              // pongo un offset para que apunte un poco más arriba, para predecir el movimiento del personaje (+ _aimingUp * _offset)
+        if (_atCD>0 && _firstShoot == false &&_canShoot==true)
         {
             Shoot(dir, 10.0f);
             _firstShoot = true;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8310278125052628121}
   - component: {fileID: 5497870180389679642}
   - component: {fileID: 9152518881295240078}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: EnemyShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4570703452176522501}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: point start (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8597915658814336170}
   - component: {fileID: 792101969015667340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

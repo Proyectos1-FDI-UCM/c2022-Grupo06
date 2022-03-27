@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5180076697695035269}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: RotateAroun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 469335213507435744}
   - component: {fileID: -9203595817471973689}
   - component: {fileID: 1476670347713175497}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 0, g: 1, b: 0.058139563, a: 1}
-  m_Intensity: 1.57
+  m_Intensity: 2
   m_LightVolumeOpacity: 0.16
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -189,7 +189,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -209,5 +209,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotateAround: {fileID: 5180076697695035269}
   _initialIntensity: 1
-  _lifeTime: 2
+  _lifeTime: 1
   _damage: 1

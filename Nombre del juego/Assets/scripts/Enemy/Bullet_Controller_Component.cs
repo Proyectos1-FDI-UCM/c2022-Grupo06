@@ -23,8 +23,9 @@ public class Bullet_Controller_Component : MonoBehaviour
         if (collision.gameObject.GetComponent<Player_Life_Component>())
         {
             GameManager.Instance.OnPlyerDamage(_damage);
-            Destroy(this.gameObject);
+            
         }
+        Destroy(this.gameObject);
     }
 
     void Start()
@@ -39,7 +40,7 @@ public class Bullet_Controller_Component : MonoBehaviour
         if (_elapsedTime >= 0.2f)
         {
             _elapsedTime = 0;
-            _myLight.intensity=Mathf.Lerp(0f,_initialIntensity, _elapsedTime/100);
+            _myLight.intensity=Mathf.Lerp(0f,_initialIntensity, _elapsedTime/10);
         }
         //Vector2 fuerza = this.GetComponent<Rigidbody2D>().velocity = 10.0f * Vector2.right;
         //dir = (_rotateAround.position - _mytransform.position)* fuerza;

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6481423100449900696}
   - component: {fileID: 1208065721699312455}
   - component: {fileID: 8483066215636551849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 8317556690977469043}
   - component: {fileID: 7032413702115589438}
   - component: {fileID: 9088837098936837187}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_RENDERER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 8858991624771437043}
   - component: {fileID: 1838788858369331590}
   - component: {fileID: 5465154594653304994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GLASSES B)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7813992317878825545}
   - component: {fileID: 7285786579348887866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,6 +507,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7017067658100635705}
     m_Modifications:
+    - target: {fileID: 1525270179568829620, guid: 4a02cfa62067c6f4db532c3b87f56728, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1525270179685006082, guid: 4a02cfa62067c6f4db532c3b87f56728, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -594,6 +598,14 @@ PrefabInstance:
     - target: {fileID: 1525270179685006334, guid: 4a02cfa62067c6f4db532c3b87f56728, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525270179685006334, guid: 4a02cfa62067c6f4db532c3b87f56728, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525270180244467970, guid: 4a02cfa62067c6f4db532c3b87f56728, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1525270180244467971, guid: 4a02cfa62067c6f4db532c3b87f56728, type: 3}
       propertyPath: m_AnchorMax.y
