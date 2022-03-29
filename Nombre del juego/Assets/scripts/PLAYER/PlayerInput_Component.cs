@@ -15,6 +15,7 @@ public class PlayerInput_Component : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             _myPlayerMovement.Jump();
+            AudioManager.Instance.Play("Jump");
         }
         moveInput= Input.GetAxis("Horizontal");
         _myPlayerMovement.movement(moveInput);
@@ -22,6 +23,7 @@ public class PlayerInput_Component : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             _bow.GetComponent<BowController>().CambioDeFlecha();
+            AudioManager.Instance.Play("ArrowChange");
         }
         if (Input.GetKey(KeyCode.R))
         {

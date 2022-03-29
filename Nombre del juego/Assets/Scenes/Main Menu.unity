@@ -1724,7 +1724,7 @@ MonoBehaviour:
     _audiosource: {fileID: 0}
   - _nombre: Main
     _clip: {fileID: 8300000, guid: 19bba77d74364334c84d4c746185b1ba, type: 3}
-    _volume: 0.7
+    _volume: 0.5
     _pitch: 1
     _mute: 0
     _loop: 1
@@ -1787,7 +1787,7 @@ MonoBehaviour:
     _audiosource: {fileID: 0}
   - _nombre: Tutorial
     _clip: {fileID: 8300000, guid: d290662c2fdad6d40b5e9580dbaafee2, type: 3}
-    _volume: 0.7
+    _volume: 0.5
     _pitch: 1
     _mute: 0
     _loop: 1
