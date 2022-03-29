@@ -1750,7 +1750,7 @@ MonoBehaviour:
     _mute: 0
     _loop: 0
     _audiosource: {fileID: 0}
-  - _nombre: Suelo
+  - _nombre: Jump
     _clip: {fileID: 8300000, guid: 6c197e2e5f08eb64d83aa0f4c563fffa, type: 3}
     _volume: 1
     _pitch: 1
