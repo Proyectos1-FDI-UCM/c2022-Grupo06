@@ -62,11 +62,15 @@ public class GameManager : MonoBehaviour
     {
         //Al darle al botón carga el tutorial
         SceneManager.LoadScene("Tutorial");
+        AudioManager.Instance.Stop("Menu");
+        AudioManager.Instance.Play("Tutorial");
     }
     public void RestartMatch()
     {
         SceneManager.LoadScene("Main Menu");
         AudioManager.Instance.Stop("Main");
+        AudioManager.Instance.Stop("Win");
+        AudioManager.Instance.Stop("Lose");
         AudioManager.Instance.Play("Menu");
     }
     public void QuitGame()
@@ -104,6 +108,8 @@ public class GameManager : MonoBehaviour
         //_enemyDisp.SetActive(false);
         //_enemyMov.SetActive(false);
         AudioManager.Instance.Stop("Main");
+        AudioManager.Instance.Stop("Tutorial");
+        AudioManager.Instance.Play("Win");
         UIManager.Instance.SetVictoryMenu(true);
         
     }
@@ -140,6 +146,8 @@ public class GameManager : MonoBehaviour
       _enemyMov.SetActive(false);      
       _Camera.GetComponent<CamaraMovement>().enabled = false;
         AudioManager.Instance.Stop("Main");
+        AudioManager.Instance.Stop("Tutorial");
+        AudioManager.Instance.Play("Lose");
         UIManager.Instance.SetLoseMenu(true);
       _bow.SetActive(false);
       _player.SetActive(false);
