@@ -11,6 +11,8 @@ public class Sounds
     
     public float _volume;
     public float _pitch;
+    public bool _mute;
+    public bool _loop;
 
     [HideInInspector]  //no te hace falta que aparezca en el inspector, se va a llamar directamente desde el awake del AudioManageer
     public AudioSource _audiosource;

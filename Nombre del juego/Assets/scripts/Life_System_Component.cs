@@ -34,6 +34,7 @@ public class Life_System_Component : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            AudioManager.Instance.Play("EnemyDie");
             UIManager.Instance.AddScore(enemyscore);
         }
 

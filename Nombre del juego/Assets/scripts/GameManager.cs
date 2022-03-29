@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    #region instance
     static private GameManager _instance;
     static public GameManager Instance
     {
@@ -13,7 +14,9 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    
+    #endregion
+
+    #region components
     private GameObject _player;
     
     private GameObject _bow;
@@ -32,46 +35,39 @@ public class GameManager : MonoBehaviour
     
     private Transform _finishLine;
     public LevelManager _levelManager;
-    
-    
+    #endregion
+
+
     private void Awake()
     {
-       
-
-
         if (_instance == null)
         {
             _instance = this;
         }
         else
         {
-            Destroy(gameObject);
-           
+            Destroy(gameObject);   
         }
         DontDestroyOnLoad(gameObject);
     }
-    
-    public void RestartMatch()
-    {
-        
-        SceneManager.LoadScene("Main Menu");
-        //AudioManager.Instance.Play("Menu");
-        
-    }
-   
 
     public void StartMatch()
     {
-        
         //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
-        
+        AudioManager.Instance.Stop("Menu");
+        AudioManager.Instance.Play("Main");
     }
     public void StartMatch2()
     {
-        
         //Al darle al botón carga el tutorial
         SceneManager.LoadScene("Tutorial");
+    }
+    public void RestartMatch()
+    {
+        SceneManager.LoadScene("Main Menu");
+        AudioManager.Instance.Stop("Main");
+        AudioManager.Instance.Play("Menu");
     }
     public void QuitGame()
     {
@@ -96,6 +92,7 @@ public class GameManager : MonoBehaviour
     public void EnemyDamage(int Damage, GameObject enemy)
     {
         enemy.GetComponent<Enemy_Life_Component>().Damage(Damage);
+
     }
 
     private void OnPlayerVictory()
@@ -106,7 +103,9 @@ public class GameManager : MonoBehaviour
         _bow.SetActive(false);
         //_enemyDisp.SetActive(false);
         //_enemyMov.SetActive(false);
+        AudioManager.Instance.Stop("Main");
         UIManager.Instance.SetVictoryMenu(true);
+        
     }
 
 
@@ -131,19 +130,22 @@ public class GameManager : MonoBehaviour
 
             _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
             UIManager.Instance.UpdateScore(true);
-            //AudioManager.Instance.Play("Main");
+            
+            
         }
     }
     public void OnPlayerDefeat()
     {
       _enemyDisp.SetActive(false);
       _enemyMov.SetActive(false);      
-      _Camera.GetComponent<CamaraMovement>().enabled = false;      
-      UIManager.Instance.SetLoseMenu(true);
+      _Camera.GetComponent<CamaraMovement>().enabled = false;
+        AudioManager.Instance.Stop("Main");
+        UIManager.Instance.SetLoseMenu(true);
       _bow.SetActive(false);
       _player.SetActive(false);
       Time.timeScale = 0.0f;
-        
+      
+
     }
     private void Update()
     {

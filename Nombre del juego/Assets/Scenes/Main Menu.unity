@@ -1671,6 +1671,85 @@ MonoBehaviour:
   _victoryMenu: {fileID: 0}
   _score: {fileID: 0}
   scoretext: {fileID: 0}
+--- !u!1 &1882675595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882675596}
+  - component: {fileID: 1882675597}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882675596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882675595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.913849, y: 16.924002, z: 15.774481}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882675597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882675595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09797288f9be59a4a90c49914fdb0696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - _nombre: Menu
+    _clip: {fileID: 8300000, guid: dfebee1c0b2ae4243b2402469503a1ef, type: 3}
+    _volume: 2
+    _pitch: 3
+    _audiosource: {fileID: 0}
+  - _nombre: Main
+    _clip: {fileID: 8300000, guid: 19bba77d74364334c84d4c746185b1ba, type: 3}
+    _volume: 2
+    _pitch: 3
+    _audiosource: {fileID: 0}
+  - _nombre: Disparo
+    _clip: {fileID: 8300000, guid: 678979ca8f7283342a682c54fcde92e4, type: 3}
+    _volume: 2
+    _pitch: 3
+    _audiosource: {fileID: 0}
+  - _nombre: Teletransporte
+    _clip: {fileID: 8300000, guid: 79a057ebf96d1f34f831bdfb8a314948, type: 3}
+    _volume: 2
+    _pitch: 3
+    _audiosource: {fileID: 0}
+  - _nombre: Disparo
+    _clip: {fileID: 8300000, guid: 678979ca8f7283342a682c54fcde92e4, type: 3}
+    _volume: 2
+    _pitch: 3
+    _audiosource: {fileID: 0}
+  - _nombre: Suelo
+    _clip: {fileID: 8300000, guid: 6c197e2e5f08eb64d83aa0f4c563fffa, type: 3}
+    _volume: 2
+    _pitch: 3
+    _audiosource: {fileID: 0}
+  - _nombre: ArrowChange
+    _clip: {fileID: 8300000, guid: df12cdfe74f75a6409946c64f61104d6, type: 3}
+    _volume: 2
+    _pitch: 3
+    _audiosource: {fileID: 0}
 --- !u!1 &1982958902
 GameObject:
   m_ObjectHideFlags: 0

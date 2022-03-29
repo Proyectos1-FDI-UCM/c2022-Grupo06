@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-
+    #region components
     [SerializeField]
     private GameObject _mainMenu;
     [SerializeField]
@@ -15,13 +15,14 @@ public class UIManager : MonoBehaviour
     private GameObject _defeatMenu;
     [SerializeField]
     private GameObject _victoryMenu;
-
-    #region score
     [SerializeField]
     private GameObject _score;
     int score=0;
     public Text scoretext;
     #endregion
+
+
+    #region instance
     static private UIManager _instance;
     static public UIManager Instance
     {
@@ -30,22 +31,29 @@ public class UIManager : MonoBehaviour
             return _instance;
         }
     }
+    #endregion
+
+    private void Awake()  //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
+    {
+        _instance = this;
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+        if (level == 0)
+        {
+            _mainMenu.SetActive(true);
+            //AudioManager.Instance.Play("Menu");
+            _ChooseLevel.SetActive(false);
+        }
+    }
     public void Levels()
     {
         _mainMenu.SetActive(false);
         _ChooseLevel.SetActive(true);
     }
-    public void SetVictoryMenu(bool enabled)
-    {
-        _victoryMenu.SetActive(enabled);
-    }
-    public void SetLoseMenu(bool enabled)
-    {
-        _defeatMenu.SetActive(enabled);
-    }
     public void StartMatch()
     {
-         GameManager.Instance.StartMatch();
+        GameManager.Instance.StartMatch();
     }
     public void StartMatch2()
     {
@@ -55,6 +63,15 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.RestartMatch();
     }
+    public void SetVictoryMenu(bool enabled)
+    {
+        _victoryMenu.SetActive(enabled);
+    }
+    public void SetLoseMenu(bool enabled)
+    {
+        _defeatMenu.SetActive(enabled);
+    }
+   
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
@@ -70,28 +87,11 @@ public class UIManager : MonoBehaviour
         
     }
     public void AddScore(int points)
-    {//eso es de sheila peero no se porq no se le sube
+    {
         score += points;
         UpdateScore(true);
     }
-    private void Awake()  //como el GameManager, debemos inicializarlo a lo primero para que vaya preparando todo lo necesario para el juego
-    { 
-        _instance = this;
-    }
-    private void OnLevelWasLoaded(int level)
-    {
-        if (level == 0)
-        {
-            _mainMenu.SetActive(true);
-            _ChooseLevel.SetActive(false);
-        }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
+  
 
     
 }

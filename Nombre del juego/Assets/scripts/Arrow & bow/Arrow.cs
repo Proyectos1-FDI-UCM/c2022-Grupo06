@@ -14,11 +14,13 @@ public class Arrow : MonoBehaviour
     private float pOffset = 0.4f;
     public void Destruir()
     {
+        
         gameObject.SetActive(false);        
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        AudioManager.Instance.Play("Teletransporte");
         PlayerMovement.pInstance.pTransform.position = transform.position + new Vector3(0, pOffset, 0);
         PlayerMovement.pInstance._myRigidBody.velocity = new Vector2(0, 0);
         Destroy(gameObject);
