@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    #region Components
     [SerializeField]
     public GameObject _player;
     [SerializeField]
@@ -16,6 +17,7 @@ public class LevelManager : MonoBehaviour
     public GameObject _Camera;
     [SerializeField]
     public Transform _finishLine;
+    #endregion
 
     static private LevelManager _instance;
     static public LevelManager Instance

@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
         AudioManager.Instance.Stop("Main");
+        AudioManager.Instance.Stop("Tutorial");
         AudioManager.Instance.Stop("Win");
         AudioManager.Instance.Stop("Lose");
         AudioManager.Instance.Play("Menu");

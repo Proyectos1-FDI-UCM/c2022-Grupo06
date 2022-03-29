@@ -4081,7 +4081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vel: 0.002
+  _vel: 0.006
   _accel: 0
   _coefaccel: 0.0000001
   _world_limit: 76.5
@@ -4259,80 +4259,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4570703451250500255, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
   m_PrefabInstance: {fileID: 1513690810}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &748632601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 748632603}
-  - component: {fileID: 748632602}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &748632602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748632601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09797288f9be59a4a90c49914fdb0696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - _nombre: Main
-    _clip: {fileID: 0}
-    _volume: 0
-    _pitch: 0
-    _audiosource: {fileID: 0}
-  - _nombre: Disparo
-    _clip: {fileID: 8300000, guid: 678979ca8f7283342a682c54fcde92e4, type: 3}
-    _volume: 0
-    _pitch: 0
-    _audiosource: {fileID: 0}
-  - _nombre: Teletransporte
-    _clip: {fileID: 8300000, guid: 79a057ebf96d1f34f831bdfb8a314948, type: 3}
-    _volume: 0
-    _pitch: 0
-    _audiosource: {fileID: 0}
-  - _nombre: ArrowChange
-    _clip: {fileID: 8300000, guid: df12cdfe74f75a6409946c64f61104d6, type: 3}
-    _volume: 0
-    _pitch: 0
-    _audiosource: {fileID: 0}
-  - _nombre: EnemyDeath
-    _clip: {fileID: 8300000, guid: 9ac4c7f01f9950f46881944e86490b04, type: 3}
-    _volume: 0
-    _pitch: 0
-    _audiosource: {fileID: 0}
-  - _nombre: Suelo
-    _clip: {fileID: 8300000, guid: 6c197e2e5f08eb64d83aa0f4c563fffa, type: 3}
-    _volume: 0
-    _pitch: 0
-    _audiosource: {fileID: 0}
---- !u!4 &748632603
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748632601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.806488, y: 49.759384, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &752156322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2122299217945704719, guid: 3b0f7b20d51d0814898dc7f6fdd8f2e4, type: 3}

@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         if (level == 0)
         {
             _mainMenu.SetActive(true);
-            //AudioManager.Instance.Play("Menu");
+            
             _ChooseLevel.SetActive(false);
         }
     }
