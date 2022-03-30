@@ -40,16 +40,20 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (_instance == null)
         {
             _instance = this;
+
         }
         else
         {
             Destroy(gameObject);   
         }
         DontDestroyOnLoad(gameObject);
+        
     }
+    
 
     public void StartMatch()
     {
@@ -68,11 +72,10 @@ public class GameManager : MonoBehaviour
     public void RestartMatch()
     {
         SceneManager.LoadScene("Main Menu");
-        AudioManager.Instance.Stop("Main");
-        AudioManager.Instance.Stop("Tutorial");
         AudioManager.Instance.Stop("Win");
         AudioManager.Instance.Stop("Lose");
         AudioManager.Instance.Play("Menu");
+
     }
     public void QuitGame()
     {
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {       
         Time.timeScale = 0.0f;
+        AudioManager.Instance.Play("Menu");
     }
     public void PlayerDies()
     {
@@ -100,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void OnPlayerVictory()
+    public void OnPlayerVictory()
     {
         Debug.Log("you win");
         Time.timeScale = 0.0f;
@@ -156,11 +160,5 @@ public class GameManager : MonoBehaviour
       
 
     }
-    private void Update()
-    {
-        if (_menu==false &&_player == true && _player.transform.position.y >= _finishLine.position.y)
-        {
-            OnPlayerVictory();
-        } 
-    }
+    
 }
