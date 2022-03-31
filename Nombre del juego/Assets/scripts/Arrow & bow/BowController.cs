@@ -91,7 +91,8 @@ public class BowController : MonoBehaviour
             {
                 Points[i].transform.position = PointPosition(0.1f * i, Dir, _force, ShotPoint.transform.position);
             }
-            
+            if (_arrow == _arrowDamage) { _pDamage.SetActive(true); }
+            else { _pTP.SetActive(true); }
         }
         else if (!Input.GetMouseButton(0))
         {
@@ -113,6 +114,7 @@ public class BowController : MonoBehaviour
         {
             _arrow = _arrowDamage;
             _PredictionCoef = 0f;
+            _pTP.SetActive(false);
             _multiplier = _arrowDamage.GetComponent<Arrow2>().multiplier;
             BarraTensado.AjustarColor(true);
         }
@@ -120,6 +122,7 @@ public class BowController : MonoBehaviour
         {
             _arrow = _arrowTP;
             _PredictionCoef = 0.5f;
+            _pDamage.SetActive(false);
             _multiplier = _arrowTP.GetComponent<Arrow>().multiplier;
             BarraTensado.AjustarColor(false);
         }

@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     public bool pIsLookingRight = true;
     [SerializeField]
     private float _gravity = 4.0f;
-
     private bool _hasDashed;
     [SerializeField]
     private float _dashSpeed;
@@ -34,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private int ghosts;
     private float gInterval;
+    
     void Start()
     {
         pInstance = this;
@@ -95,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
             _hasDashed = true;
             _dashPr = 0;
             _isDashing = false;
+            _myRigidBody.velocity = new Vector2(0, 1);
         }
 
         if (_myRigidBody.velocity.y == 0) isGrounded = true;
@@ -102,23 +103,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded)
         {
-            _myRigidBody.velocity = new Vector2(0, 0);
+            if(PlayerInput_Component.inst.jumpInput) _myRigidBody.velocity = new Vector2(_myRigidBody.velocity.x, impulse);
+            //verticalInput = 0;
+            //_myRigidBody.velocity = new Vector2(0, 0);
             _isDashing = false;
             _hasDashed = false;
         }
-    }
-    public void Jump()
-    {
-        
-        if (isGrounded)
-        {
-            _myRigidBody.velocity = new Vector2(_myRigidBody.velocity.x,impulse);//a partir de la velocidad que tiene en el eje x, se leañade verticalmente una vel.
-            //Debug.Log("jump" + _myRigidBody.velocity);
-            //FindObjectOfType<AudioManager>().Play(""); //esto es una funcion que se puede utilizar de vez en cuando para buscar el objeto de ese tipo
-        }
+
     }
     public void movement(float moveInput)
     {
+        
         _myRigidBody.gravityScale = _gravity;
         #region animaciones marvin
         if (_myRigidBody.velocity.y > 0 && !isGrounded)
@@ -144,23 +139,18 @@ public class PlayerMovement : MonoBehaviour
             PLAYERANIM.pANIMATOR.isRunning = false;
         }
         #endregion
-        if(moveInput != 0)
+        if (moveInput != 0)
         {
-            //Vector2 movimiento = new Vector2( Mathf.Abs(moveInput), _myRigidBody.velocity.y);
-             Vector2 movimiento = new Vector2(moveSpeed * Mathf.Abs(moveInput), _myRigidBody.velocity.y);
-            movimiento *= Time.deltaTime;
-            Debug.Log(movimiento);
+            _myRigidBody.velocity = new Vector2(moveInput * moveSpeed, _myRigidBody.velocity.y);
             if (moveInput > 0)
             {
                 //si es mayor que cero va hacia la derecha, sprite por defecto
                 pTransform.eulerAngles = new Vector3(0, 0, 0);
-                _myRigidBody.AddForce(movimiento * moveSpeed);
             }
             else
             {
-                _myRigidBody.AddForce(-movimiento * moveSpeed);
                 //si es menor que cero va a la izq, rotar el sprite
-                 pTransform.eulerAngles = new Vector3(0, 180, 0);
+                pTransform.eulerAngles = new Vector3(0, 180, 0);
             }
             //_myRigidBody.MovePosition((Vector2)transform.position + movimiento * Time.deltaTime);
         }
@@ -169,7 +159,8 @@ public class PlayerMovement : MonoBehaviour
     public void Dash(Vector2 vec)
     {
         _myRigidBody.inertia = 0;
-        _myRigidBody.AddForce(new Vector2(vec.x / 1.5f * _dashSpeed, vec.y / 1.5f * _dashSpeed), ForceMode2D.Impulse);
+        _myRigidBody.velocity = new Vector2(vec.x / 1.5f * _dashSpeed, vec.y / 1.5f * _dashSpeed);
+        //_myRigidBody.AddForce(new Vector2(vec.x / 1.5f * _dashSpeed, vec.y / 1.5f * _dashSpeed), ForceMode2D.Impulse);
         _dashCD = 0;
     }
 }

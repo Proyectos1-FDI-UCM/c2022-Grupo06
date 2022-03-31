@@ -55,11 +55,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pTransform: {fileID: 7017067658100635705}
   _myRigidBody: {fileID: 0}
-  moveSpeed: 6
-  impulse: 5
+  moveSpeed: 8
+  impulse: 6
   pIsLookingRight: 1
   _gravity: 1.5
-  _dashSpeed: 8
+  _dashSpeed: 20
   _dashDur: 0.16
   ghost: {fileID: 3524957245420017737, guid: 0da0c4a7851bd514fa80fc8973d275d3, type: 3}
   ghosts: 5
@@ -78,11 +78,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 200
   m_Material: {fileID: 6200000, guid: 5c1ae266390f0db4fafe509175bbac72, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!60 &2688735373117820090
 PolygonCollider2D:
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myPlayerMovement: {fileID: 6605644376906052979}
+  moveInput: 0
+  jumpInput: 0
   _bow: {fileID: 1816113676273364459, guid: 634d4e90df1d7074694a5bf985b5c191, type: 3}
 --- !u!114 &1208065721699312455
 MonoBehaviour:
