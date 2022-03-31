@@ -147,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
         if(moveInput != 0)
         {
             //Vector2 movimiento = new Vector2( Mathf.Abs(moveInput), _myRigidBody.velocity.y);
-             Vector2 movimiento = new Vector2(moveSpeed * Mathf.Abs(moveInput), _myRigidBody.velocity.y);
+            Vector2 movimiento = new Vector2(moveSpeed * Mathf.Abs(moveInput), _myRigidBody.velocity.y);
             movimiento *= Time.deltaTime;
             Debug.Log(movimiento);
             if (moveInput > 0)

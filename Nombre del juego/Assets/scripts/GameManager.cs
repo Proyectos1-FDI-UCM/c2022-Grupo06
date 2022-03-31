@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region components
-    private GameObject _player;
+    public  GameObject _player;
     
     private GameObject _bow;
     
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     
     private GameObject _enemyDisp;
     
-    private GameObject _Camera;
+    public  GameObject _Camera;
 
     private CamaraMovement _camMov;
 
@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     private Player_Life_Component _myPlayer_Life_Component;
     
     private Transform _finishLine;
+
+    public GameObject _accelLine;
     public LevelManager _levelManager;
     #endregion
 
@@ -132,7 +134,7 @@ public class GameManager : MonoBehaviour
             _enemyDisp = _levelManager._enemyDisp;
             _enemyMov = _levelManager._enemyMov;
             _finishLine = _levelManager._finishLine;
-
+            _accelLine = _levelManager._accelLine;
 
             _player.SetActive(true);
             _bow.SetActive(true);
