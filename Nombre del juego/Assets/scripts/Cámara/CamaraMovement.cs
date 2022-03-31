@@ -8,7 +8,8 @@ public class CamaraMovement : MonoBehaviour
     #region parameters
     private Transform _myTransform;   //el transform de la cámara
     [SerializeField]
-    public float _vel;              //una velocidad que solo utilizaremos para parar el movimiento de la cámara
+    public float _vel;              //una velocidad que solo utilizaremos para parar el movimiento de la cámaraç
+    public float _velInicial;
     public float _accel;           //aceleración que incrementará con el tiempo
     [SerializeField]
     private float _coefaccel;       //coeficiente del que depende el valor de la aceleración
@@ -22,6 +23,7 @@ public class CamaraMovement : MonoBehaviour
     void Start()
     {
         _myTransform = GetComponent<Transform>();      //cacheamos el transform
+        _velInicial = _vel;
     }
 
     // Update is called once per frame
