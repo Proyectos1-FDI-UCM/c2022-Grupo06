@@ -109,9 +109,11 @@ public class PlayerMovement : MonoBehaviour
     }
     public void Jump()
     {
+        
         if (isGrounded)
         {
-            _myRigidBody.velocity = new Vector2(_myRigidBody.velocity.x, impulse);//a partir de la velocidad que tiene en el eje x, se leañade verticalmente una vel.
+            _myRigidBody.velocity = new Vector2(_myRigidBody.velocity.x,impulse);//a partir de la velocidad que tiene en el eje x, se leañade verticalmente una vel.
+            //Debug.Log("jump" + _myRigidBody.velocity);
             //FindObjectOfType<AudioManager>().Play(""); //esto es una funcion que se puede utilizar de vez en cuando para buscar el objeto de ese tipo
         }
     }
@@ -144,18 +146,23 @@ public class PlayerMovement : MonoBehaviour
         #endregion
         if(moveInput != 0)
         {
-            Vector2 movimiento = new Vector2(moveSpeed * Mathf.Abs(moveInput), _myRigidBody.velocity.y);
+            //Vector2 movimiento = new Vector2( Mathf.Abs(moveInput), _myRigidBody.velocity.y);
+             Vector2 movimiento = new Vector2(moveSpeed * Mathf.Abs(moveInput), _myRigidBody.velocity.y);
             movimiento *= Time.deltaTime;
-
-            pTransform.Translate(movimiento);
-        }
-        if (moveInput > 0)
-        {//si es mayor que cero va hacia la derecha, sprite por defecto
-            pTransform.eulerAngles = new Vector3(0, 0, 0);
-        }
-        else if (moveInput < 0)
-        {//si es menor que cero va a la izq, rotar el sprite
-            pTransform.eulerAngles = new Vector3(0, 180, 0);
+            Debug.Log(movimiento);
+            if (moveInput > 0)
+            {
+                //si es mayor que cero va hacia la derecha, sprite por defecto
+                pTransform.eulerAngles = new Vector3(0, 0, 0);
+                _myRigidBody.AddForce(movimiento * moveSpeed);
+            }
+            else
+            {
+                _myRigidBody.AddForce(-movimiento * moveSpeed);
+                //si es menor que cero va a la izq, rotar el sprite
+                 pTransform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            //_myRigidBody.MovePosition((Vector2)transform.position + movimiento * Time.deltaTime);
         }
     }
 

@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: ghosts
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6605644376906052979, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7017067658100635705, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4256,7 +4260,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713059824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
@@ -4422,6 +4426,18 @@ PrefabInstance:
     - target: {fileID: 3842767363081938233, guid: eb02cb9b645a07b40b8a31dbace9e71c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828985346569445702, guid: eb02cb9b645a07b40b8a31dbace9e71c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.0724173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828985346569445702, guid: eb02cb9b645a07b40b8a31dbace9e71c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.938005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828985346569445702, guid: eb02cb9b645a07b40b8a31dbace9e71c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.91515
       objectReference: {fileID: 0}
     - target: {fileID: 8988749069485084754, guid: eb02cb9b645a07b40b8a31dbace9e71c, type: 3}
       propertyPath: m_Name
