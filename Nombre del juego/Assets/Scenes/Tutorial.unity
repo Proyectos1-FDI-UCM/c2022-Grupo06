@@ -4150,6 +4150,7 @@ GameObject:
   - component: {fileID: 713059827}
   - component: {fileID: 713059826}
   - component: {fileID: 713059825}
+  - component: {fileID: 713059831}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -4260,12 +4261,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713059824}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vel: 0
+  _vel: 0.006
+  _velInicial: 0
   _accel: 0
   _coefaccel: 0.0000001
   _world_limit: 76.5
@@ -4368,6 +4370,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &713059831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713059824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a53a75ae26240540bf9592b7b983526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _accelOffset: 2
+  _velocidadReajuste: 0.012
 --- !u!1001 &720271906
 PrefabInstance:
   m_ObjectHideFlags: 0

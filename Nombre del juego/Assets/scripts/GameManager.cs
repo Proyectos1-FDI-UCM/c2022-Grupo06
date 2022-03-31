@@ -35,7 +35,6 @@ public class GameManager : MonoBehaviour
     
     private Transform _finishLine;
 
-    public GameObject _accelLine;
     public LevelManager _levelManager;
     #endregion
 
@@ -134,7 +133,7 @@ public class GameManager : MonoBehaviour
             _enemyDisp = _levelManager._enemyDisp;
             _enemyMov = _levelManager._enemyMov;
             _finishLine = _levelManager._finishLine;
-            _accelLine = _levelManager._accelLine;
+            
 
             _player.SetActive(true);
             _bow.SetActive(true);
@@ -149,8 +148,8 @@ public class GameManager : MonoBehaviour
     }
     public void OnPlayerDefeat()
     {
-      _enemyDisp.SetActive(false);
-      _enemyMov.SetActive(false);      
+      //_enemyDisp.SetActive(false);
+      //_enemyMov.SetActive(false);      
       _Camera.GetComponent<CamaraMovement>().enabled = false;
         AudioManager.Instance.Stop("Main");
         AudioManager.Instance.Stop("Tutorial");
