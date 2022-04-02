@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject _victoryMenu;
     [SerializeField]
+    private GameObject _pauseMenu;
+    [SerializeField]
     private GameObject _score;
     int score=0;
     public Text scoretext;
@@ -55,6 +57,16 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.StartMatch();
     }
+    public void Pause()
+    {
+        Debug.Log("se llama al gm");
+        GameManager.Instance.pause();
+    }
+    public void Restore()
+    {
+        Debug.Log("se llama al gm");
+        GameManager.Instance.Restore();
+    }
     public void StartMatch2()
     {
         GameManager.Instance.StartMatch2();
@@ -70,8 +82,14 @@ public class UIManager : MonoBehaviour
     public void SetLoseMenu(bool enabled)
     {
         _defeatMenu.SetActive(enabled);
+
     }
-   
+    public void SetPauseMenu(bool enabled)
+    {
+        _pauseMenu.SetActive(enabled);
+
+    }
+
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
@@ -91,7 +109,4 @@ public class UIManager : MonoBehaviour
         score += points;
         UpdateScore(true);
     }
-  
-
-    
 }

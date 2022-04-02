@@ -104,6 +104,27 @@ public class GameManager : MonoBehaviour
         enemy.GetComponent<Enemy_Life_Component>().Damage(Damage);
 
     }
+    public void pause()
+    {
+        Time.timeScale = 0.0f;
+        Debug.Log("se llama a metodo");
+        _bow.SetActive(false);
+        _enemyDisp.SetActive(false);
+        _enemyMov.SetActive(false);
+        UIManager.Instance.SetPauseMenu(true);
+        _Camera.GetComponent<CamaraMovement>().enabled = false;
+    }
+    public void Restore()
+    {
+        UIManager.Instance.SetPauseMenu(false);
+        Time.timeScale = 1.0f;
+        Debug.Log("se llama a metodo 2");
+        _bow.SetActive(true);
+        _enemyDisp.SetActive(true);
+        _enemyMov.SetActive(true);
+        
+        _Camera.GetComponent<CamaraMovement>().enabled = true;
+    }
 
     public void OnPlayerVictory()
     {
@@ -158,8 +179,6 @@ public class GameManager : MonoBehaviour
       _bow.SetActive(false);
       _player.SetActive(false);
       Time.timeScale = 0.0f;
-      
-
     }
     
 }
