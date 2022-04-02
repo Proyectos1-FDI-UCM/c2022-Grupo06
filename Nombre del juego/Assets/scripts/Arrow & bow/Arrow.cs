@@ -20,10 +20,14 @@ public class Arrow : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        AudioManager.Instance.Play("Teletransporte");
-        PlayerMovement.pInstance.pTransform.position = transform.position + new Vector3(0, pOffset, 0);
-        PlayerMovement.pInstance._myRigidBody.velocity = new Vector2(0, 0);
-        Destroy(gameObject);
+        if (collision.gameObject.GetComponent<CameraFollow>() == false)
+        {
+            AudioManager.Instance.Play("Teletransporte");
+            PlayerMovement.pInstance.pTransform.position = transform.position + new Vector3(0, pOffset, 0);
+            PlayerMovement.pInstance._myRigidBody.velocity = new Vector2(0, 0);
+            Destroy(gameObject);
+        }
+       
     }
         
     void Update()

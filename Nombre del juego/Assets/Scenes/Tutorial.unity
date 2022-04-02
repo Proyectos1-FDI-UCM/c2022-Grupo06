@@ -4266,7 +4266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47cb6f43356a2ec40923c053fb4b5722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vel: 0.006
+  _vel: 0.003
   _velInicial: 0
   _accel: 0
   _coefaccel: 0.0000001
@@ -4383,7 +4383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _accelOffset: 2
-  _velocidadReajuste: 0.012
+  _velocidadReajuste: 0.08
 --- !u!1001 &720271906
 PrefabInstance:
   m_ObjectHideFlags: 0
