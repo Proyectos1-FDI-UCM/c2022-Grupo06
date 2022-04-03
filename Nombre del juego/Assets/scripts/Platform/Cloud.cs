@@ -9,6 +9,7 @@ public class Cloud : MonoBehaviour
     [SerializeField]
     public float cont;
     private float _elapsedTime=0;     //tiempo que ha pasado, para la desaparición
+    private Color transparencia;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Player_Life_Component>())
@@ -21,10 +22,17 @@ public class Cloud : MonoBehaviour
         if (InicioCuentra == true)
         {
             _elapsedTime += Time.deltaTime;
+            transparencia.a = Mathf.Lerp(1, 0, _elapsedTime/cont);
+            GetComponent<SpriteRenderer>().color = transparencia;
             if (_elapsedTime >= cont)
             {
                 this.gameObject.SetActive(false);
             }
         }
     }
+    private void Start()
+    {
+        transparencia = GetComponent<SpriteRenderer>().color;
+    }
+
 }

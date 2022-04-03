@@ -12,9 +12,8 @@ public class Spike_Platform_Component : MonoBehaviour
     [SerializeField]
     private float _impulse = 4.0f;
     [SerializeField]
-    private float _gravity = 3.0f;
-    [SerializeField]
     private int _damage;
+    private Transform _mytransform;
 
     #endregion
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,27 +34,33 @@ public class Spike_Platform_Component : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _myRigidbody = GetComponent<Rigidbody2D>();
-        _currentime = _timer;
-
-        //_myRigidbody.gravityScale = _gravity;
+        _mytransform = transform;
+        _myRigidbody = GetComponent<Rigidbody2D>(); 
     }
     void Update()
     {
-        if (_currentime >= 0)
+        _myRigidbody.velocity = _mytransform.up.normalized * -1;
+        _currentime += Time.deltaTime;
+        //if (_currentime >= 0)
+        //{
+        //    _currentime -= Time.deltaTime;
+        //}
+        //else
+        //{
+        //    _currentime = _timer;
+        //    Jump();
+        //}
+        Debug.Log(_currentime);
+        if(_currentime >= _timer)
         {
-      
-            _currentime -= Time.deltaTime;
-        }
-        else
-        {
-            _currentime = _timer;
             Jump();
+            _currentime = 0;
         }
     }
     void Jump()
     {
-       
-        _myRigidbody.velocity = new Vector2(0, _impulse);
+        Debug.Log(_myRigidbody.velocity = _mytransform.forward.normalized * _impulse);
+        _myRigidbody.velocity = _mytransform.up.normalized*_impulse;
+
     }
 }

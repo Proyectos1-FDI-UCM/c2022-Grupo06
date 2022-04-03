@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de95d4aab23dc84790f61e9e4bfdc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _atackS: 1.5
+  _atackS: 2
   _PredictionCoef: 0
   _arrowTP: {fileID: 3279880908078348967, guid: 29c55269acc7e2a49b7a5929cae1d20c, type: 3}
   _arrowDamage: {fileID: 1213834817381885705, guid: 7417280574497f34dba91f163394be2a, type: 3}

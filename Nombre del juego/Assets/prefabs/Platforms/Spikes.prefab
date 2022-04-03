@@ -140,8 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timer: 3
-  _impulse: 4
-  _gravity: 3
+  _impulse: 20
   _damage: 0
 --- !u!50 &-1502365306744760190
 Rigidbody2D:
@@ -163,7 +162,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2525134103097883916
 BoxCollider2D:
   m_ObjectHideFlags: 0
