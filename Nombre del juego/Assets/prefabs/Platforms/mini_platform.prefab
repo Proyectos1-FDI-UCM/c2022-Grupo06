@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2122299217945704719}
   - component: {fileID: -5431369235534056159}
-  - component: {fileID: 1233232123031419951}
+  - component: {fileID: 3783719103825109956}
   m_Layer: 0
   m_Name: mini_platform
   m_TagString: Untagged
@@ -56,7 +56,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &1233232123031419951
+--- !u!61 &3783719103825109956
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,7 +69,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.2310625, y: -1.0446519}
+  m_Offset: {x: 1.2066336, y: -1.0565265}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -80,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8354023, y: 0.97002816}
+  m_Size: {x: 2.872589, y: 0.99999976}
   m_EdgeRadius: 0
 --- !u!1001 &4876524850650689238
 PrefabInstance:
