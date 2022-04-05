@@ -154,6 +154,10 @@ public class PlayerMovement : MonoBehaviour
             }
             //_myRigidBody.MovePosition((Vector2)transform.position + movimiento * Time.deltaTime);
         }
+        else if (!_isDashing)
+        {
+            _myRigidBody.velocity = new Vector2(0, _myRigidBody.velocity.y);
+        }
     }
 
     public void Dash(Vector2 vec)
