@@ -8,12 +8,18 @@ public class CameraCollisionDetection : MonoBehaviour
     {      
        if (collision.GetComponent<PlayerMovement>())
        {
-            GameManager.Instance.PlayerDies();
+            //GameManager.Instance.PlayerDies();
             //collision.gameObject.SetActive(false);
        }
        if (collision.GetComponent<Arrow>())
        {
             Destroy(collision.gameObject);
+       }
+        if (collision.GetComponent<GeneratorComponent>())
+        {
+            Debug.Log("Zona destroy");
+            Destroy(collision.GetComponent<GeneratorComponent>().Zona);
+            
         }
     }
 }

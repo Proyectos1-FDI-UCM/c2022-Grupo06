@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private CamaraMovement _camMov;
 
     private bool _menu = true;
+
+    private bool _arcade = false;
     
     private Player_Life_Component _myPlayer_Life_Component;
     
@@ -58,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void StartMatch()
     {
+        _arcade = false;
         //Al darle al botón carga la escena principal
         SceneManager.LoadScene("SampleScene");
         AudioManager.Instance.Stop("Menu");
@@ -65,8 +68,17 @@ public class GameManager : MonoBehaviour
     }
     public void StartMatch2()
     {
+        _arcade = false;
         //Al darle al botón carga el tutorial
         SceneManager.LoadScene("Tutorial");
+        AudioManager.Instance.Stop("Menu");
+        AudioManager.Instance.Play("Tutorial");
+    }
+    public void StartArcade()
+    {
+        _arcade = true;
+        //Al darle al botón carga el modo arcade
+        SceneManager.LoadScene("ArcadeScene");
         AudioManager.Instance.Stop("Menu");
         AudioManager.Instance.Play("Tutorial");
     }
@@ -87,6 +99,7 @@ public class GameManager : MonoBehaviour
     {       
         Time.timeScale = 0.0f;
         AudioManager.Instance.Play("Menu");
+        _arcade = false;
     }
     public void PlayerDies()
     {
@@ -148,37 +161,49 @@ public class GameManager : MonoBehaviour
         {
             _menu = false;
             _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
-            _player = _levelManager._player;
-            _bow = _levelManager._bow;
-            _Camera = _levelManager._Camera;
-            _enemyDisp = _levelManager._enemyDisp;
-            _enemyMov = _levelManager._enemyMov;
-            _finishLine = _levelManager._finishLine;
-            
+            if (level == 3)
+            {
+                _player = _levelManager._player;
+                _bow = _levelManager._bow;
+                _Camera = _levelManager._Camera;
+                _player.SetActive(true);
+                _bow.SetActive(true);
+                _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
+                UIManager.Instance.UpdateScore(true);
+            }
+            else
+            {
+                _player = _levelManager._player;
+                _bow = _levelManager._bow;
+                _Camera = _levelManager._Camera;
+                _enemyDisp = _levelManager._enemyDisp;
+                _enemyMov = _levelManager._enemyMov;
+                _finishLine = _levelManager._finishLine;
 
-            _player.SetActive(true);
-            _bow.SetActive(true);
-            _enemyDisp.SetActive(true);
-            _enemyMov.SetActive(true);
+                _player.SetActive(true);
+                _bow.SetActive(true);
+                _enemyDisp.SetActive(true);
+                _enemyMov.SetActive(true);
 
-            _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
-            UIManager.Instance.UpdateScore(true);
-            
+                _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
+                UIManager.Instance.UpdateScore(true);
+            }
             
         }
     }
     public void OnPlayerDefeat()
     {
-      //_enemyDisp.SetActive(false);
-      //_enemyMov.SetActive(false);      
-      _Camera.GetComponent<CamaraMovement>().enabled = false;
+        //_enemyDisp.SetActive(false);
+        //_enemyMov.SetActive(false);      
+        if (_arcade) { _Camera.GetComponent<CameraArcade>().enabled = false; }
+        else { _Camera.GetComponent<CamaraMovement>().enabled = false; }
         AudioManager.Instance.Stop("Main");
         AudioManager.Instance.Stop("Tutorial");
         AudioManager.Instance.Play("Lose");
         UIManager.Instance.SetLoseMenu(true);
-      _bow.SetActive(false);
-      _player.SetActive(false);
-      Time.timeScale = 0.0f;
+        _bow.SetActive(false);
+        _player.SetActive(false);
+        Time.timeScale = 0.0f;
     }
     
 }

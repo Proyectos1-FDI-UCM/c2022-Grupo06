@@ -71,6 +71,10 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.StartMatch2();
     }
+    public void StartArcade()
+    {
+        GameManager.Instance.StartArcade();
+    }
     public void RestartGame()
     {
         GameManager.Instance.RestartMatch();
