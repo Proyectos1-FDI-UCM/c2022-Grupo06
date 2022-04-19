@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         Player_Life_Component.instance.isAlive = false;
         _bow.SetActive(false);
-        
+        OnPlayerDefeat();
     }
     public void OnPlyerDamage(int damage)
     {
@@ -194,7 +194,7 @@ public class GameManager : MonoBehaviour
     public void OnPlayerDefeat()
     {
         //_enemyDisp.SetActive(false);
-        //_enemyMov.SetActive(false);      
+        //_enemyMov.SetActive(false);
         if (_arcade) { _Camera.GetComponent<CameraArcade>().enabled = false; }
         else { _Camera.GetComponent<CamaraMovement>().enabled = false; }
         AudioManager.Instance.Stop("Main");

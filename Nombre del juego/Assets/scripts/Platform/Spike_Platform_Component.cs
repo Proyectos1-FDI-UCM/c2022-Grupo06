@@ -50,7 +50,6 @@ public class Spike_Platform_Component : MonoBehaviour
         //    _currentime = _timer;
         //    Jump();
         //}
-        Debug.Log(_currentime);
         if(_currentime >= _timer)
         {
             Jump();
