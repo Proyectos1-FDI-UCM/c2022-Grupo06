@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (_myPlayer.transform.position.y >= _myCamara.transform.position.y+ _accelOffset)
         {
-            _camaraMov._vel = _velocidadReajuste;
+            _camaraMov._vel = _velocidadReajuste;   
         }
         else
         {
