@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
     private Transform _finishLine;
 
     public LevelManager _levelManager;
+
+  
     #endregion
 
 
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
         
     }
     
-
+   
     public void StartMatch()
     {
         _arcade = false;
@@ -154,6 +156,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+   
 
     private void OnLevelWasLoaded(int level)  //cada vez que se cargue la escena principal
     {
