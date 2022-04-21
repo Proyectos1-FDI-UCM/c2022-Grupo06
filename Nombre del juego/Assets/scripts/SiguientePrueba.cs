@@ -12,15 +12,17 @@ public class SiguientePrueba : MonoBehaviour
     private Transform _playerTransform;
     private Transform _cameraTransform;
 
-    [SerializeField]
     private GameObject _player;
 
-    [SerializeField]
     private GameObject _camera;
+
+    private bool _cameraControl = false;
 
 
     void Start()
     {
+        _player = GameManager.Instance._player;
+        _camera = GameManager.Instance._Camera;
         _playerTransform = _player.GetComponent<Transform>();
         _cameraTransform = _camera.GetComponent<Transform>();
     }
@@ -30,12 +32,22 @@ public class SiguientePrueba : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerInput_Component>())
         {
             _playerTransform.position = _nextPlace.position;
-                 
+            _cameraControl = true;
+                
         }
     }
 
     private void Update()
     {
-        _cameraTransform.position = Vector3.Lerp(_cameraTransform.position, _nextCameraPlace.position, Time.deltaTime);
+        if (_cameraControl == true)
+        {
+            _cameraTransform.position = Vector3.Lerp(_cameraTransform.position, _nextCameraPlace.position, Time.deltaTime);
+        }
+
+        if (_cameraTransform.position == _nextCameraPlace.position)
+        {
+            _cameraControl = false;
+        }
+       
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LucesPruebasDetection : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _luz;
+    public GameObject _luz;
     [SerializeField]
     private GameObject _siguienteLuzCollider;
     [SerializeField]
