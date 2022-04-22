@@ -58,7 +58,7 @@ public class Spike_Platform_Component : MonoBehaviour
     }
     void Jump()
     {
-        Debug.Log(_myRigidbody.velocity = _mytransform.forward.normalized * _impulse);
+        //Debug.Log(_myRigidbody.velocity = _mytransform.forward.normalized * _impulse);
         _myRigidbody.velocity = _mytransform.up.normalized*_impulse;
 
     }
