@@ -13,29 +13,44 @@ public class CambioBoton : MonoBehaviour
             return _instance;
         }
     }
-    [SerializeField]
+    
     private GameObject _player;
     private Transform _playerTransform;
 
     [SerializeField]
     private Transform _nextPlayerPlace;
+    private bool _cameraControl;
 
     [SerializeField]
     private Transform _nextCameraPlace;
 
-    [SerializeField]
+    
     private GameObject _camera;
     private Transform _cameraTransform;
 
     private void Start()
     {
+        _player = GameManager.Instance._player;
+        _camera = GameManager.Instance._Camera;
         _playerTransform = _player.GetComponent<Transform>();
         _cameraTransform = _camera.GetComponent<Transform>();
 
     }
     public void PasoArriba()
     {
-        _player.transform.position = _nextPlayerPlace.position;
-        _cameraTransform.position = _nextCameraPlace.position;
+        _playerTransform.position = _nextPlayerPlace.position;
+        _cameraControl = true;
+    }
+    private void Update()
+    {
+        if (_cameraControl == true)
+        {
+            _cameraTransform.position = Vector3.Lerp(_cameraTransform.position, _nextCameraPlace.position, Time.deltaTime);
+        }
+
+        if (_cameraTransform.position == _nextCameraPlace.position)
+        {
+            _cameraControl = false;
+        }
     }
 }
