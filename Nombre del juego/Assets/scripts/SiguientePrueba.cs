@@ -5,18 +5,18 @@ using UnityEngine;
 public class SiguientePrueba : MonoBehaviour
 {
     [SerializeField]
-    private Transform _nextPlace;
+    public Transform _nextPlace;
     [SerializeField]
-    private Transform _nextCameraPlace;
+    public Transform _nextCameraPlace;
 
-    private Transform _playerTransform;
-    private Transform _cameraTransform;
+    public Transform _playerTransform;
+    public Transform _cameraTransform;
 
-    private GameObject _player;
+    public GameObject _player;
 
-    private GameObject _camera;
+    public GameObject _camera;
 
-    private bool _cameraControl = false;
+    public bool _cameraControl = false;
 
 
     void Start()
