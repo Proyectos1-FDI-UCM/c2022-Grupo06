@@ -5,25 +5,19 @@ using UnityEngine;
 public class BlockDestruction : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Posboos;
-    [SerializeField]
+    private Transform Posboss;
     private GameObject Posplayer;
-
-     private Transform transform;
-    Transform a;
-    Transform b;
+    private Transform _mytransform;
+   
 
     private void Start()
     {
-        transform =GetComponent<Transform>();
-        a = Posboos.GetComponent<Transform>();
-        b = Posplayer.GetComponent<Transform>();
-        transform.position = ((a.position + b.position) / 2) + b.position;
-        Debug.Log(a.position+ "pos enemigo" + b.position + "posicion bloque" + transform.position);
-        Debug.Log(b.position.x);
-        Debug.Log(b.position.y);
-
-
+        Posplayer = GameManager.Instance._player;
+        Posboss = GameManager.Instance._boss;
+        _mytransform =GetComponent<Transform>();
+        _mytransform.position = ((Posboss.position + Posplayer.transform.position) / 2) ;
+        Debug.Log("pos enemigo" + Posboss.position+ "pos personaje" + Posplayer.transform.position + "posicion bloque" + transform.position);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

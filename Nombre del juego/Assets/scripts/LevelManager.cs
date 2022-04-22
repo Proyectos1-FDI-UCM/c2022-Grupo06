@@ -17,7 +17,9 @@ public class LevelManager : MonoBehaviour
     public GameObject _Camera;
     [SerializeField]
     public Transform _finishLine;
-    
+    [SerializeField]
+    public Transform _boss;
+
     #endregion
 
     static private LevelManager _instance;

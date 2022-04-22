@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd9d7b390916ba488817b0caab84f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Posboos: {fileID: 518849498109103603, guid: c0c868f988794be49a1775fe4c9c0e5b, type: 3}
-  Posplayer: {fileID: 4420804304367032904, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
+  Posboss: {fileID: 518849498109103603, guid: c0c868f988794be49a1775fe4c9c0e5b, type: 3}
 --- !u!1001 &8761153405910657290
 PrefabInstance:
   m_ObjectHideFlags: 0

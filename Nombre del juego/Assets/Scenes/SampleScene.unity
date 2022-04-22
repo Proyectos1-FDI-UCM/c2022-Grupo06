@@ -679,6 +679,7 @@ MonoBehaviour:
   _enemyDisp: {fileID: 1674060284}
   _Camera: {fileID: 519420028}
   _finishLine: {fileID: 864419182}
+  _boss: {fileID: 801764002}
 --- !u!1001 &74264682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6657,6 +6658,11 @@ MonoBehaviour:
   _maxlife: 10
   enemyscore: 10
   _damageontouch: 1
+--- !u!4 &801764002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4132928864770731996, guid: c0c868f988794be49a1775fe4c9c0e5b, type: 3}
+  m_PrefabInstance: {fileID: 801763998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &821293900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2902764440768864367, guid: 4bbf7fb7402e0ae40aee7c4859179196, type: 3}

@@ -39,7 +39,8 @@ public class GameManager : MonoBehaviour
 
     public LevelManager _levelManager;
 
-  
+    public Transform _boss;
+
     #endregion
 
 
@@ -166,6 +167,7 @@ public class GameManager : MonoBehaviour
             _levelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
             if (level == 3)
             {
+                //en caso de ser el arcade
                 _player = _levelManager._player;
                 _bow = _levelManager._bow;
                 _Camera = _levelManager._Camera;
@@ -182,7 +184,10 @@ public class GameManager : MonoBehaviour
                 _enemyDisp = _levelManager._enemyDisp;
                 _enemyMov = _levelManager._enemyMov;
                 _finishLine = _levelManager._finishLine;
-
+                if (level == 1)
+                {
+                    _boss = _levelManager._boss;
+                }
                 _player.SetActive(true);
                 _bow.SetActive(true);
                 _enemyDisp.SetActive(true);
