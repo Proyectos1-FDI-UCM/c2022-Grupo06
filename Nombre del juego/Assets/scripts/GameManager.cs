@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,24 +15,24 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region components
-    public  GameObject _player;
-    
+    public GameObject _player;
+
     private GameObject _bow;
-    
+
     private GameObject _enemyMov;
-    
+
     private GameObject _enemyDisp;
-    
-    public  GameObject _Camera;
+
+    public GameObject _Camera;
 
     private CamaraMovement _camMov;
 
     private bool _menu = true;
 
     private bool _arcade = false;
-    
+
     private Player_Life_Component _myPlayer_Life_Component;
-    
+
     private Transform _finishLine;
 
     public LevelManager _levelManager;
@@ -46,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        
+
         if (_instance == null)
         {
             _instance = this;
@@ -54,13 +52,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);   
+            Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-        
+
     }
-    
-   
+
+
     public void StartMatch()
     {
         _arcade = false;
@@ -99,7 +97,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Start()
-    {       
+    {
         Time.timeScale = 0.0f;
         AudioManager.Instance.Play("Menu");
         _arcade = false;
@@ -125,8 +123,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.0f;
         Debug.Log("se llama a metodo");
         _bow.SetActive(false);
-        _enemyDisp.SetActive(false);
-        _enemyMov.SetActive(false);
+        //_enemyDisp.SetActive(false);
+        //_enemyMov.SetActive(false);
         UIManager.Instance.SetPauseMenu(true);
         _Camera.GetComponent<CamaraMovement>().enabled = false;
     }
@@ -136,10 +134,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
         Debug.Log("se llama a metodo 2");
         _bow.SetActive(true);
-        _enemyDisp.SetActive(true);
-        _enemyMov.SetActive(true);
-        
-        _Camera.GetComponent<CamaraMovement>().enabled = true;
+        //_enemyDisp.SetActive(true);
+        //_enemyMov.SetActive(true);
+        _levelManager._Camera.GetComponent<CamaraMovement>().enabled = true;
     }
 
     public void OnPlayerVictory()
@@ -154,10 +151,10 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.Stop("Tutorial");
         AudioManager.Instance.Play("Win");
         UIManager.Instance.SetVictoryMenu(true);
-        
+
     }
 
-   
+
 
     private void OnLevelWasLoaded(int level)  //cada vez que se cargue la escena principal
     {
@@ -196,7 +193,7 @@ public class GameManager : MonoBehaviour
                 _myPlayer_Life_Component = _player.GetComponent<Player_Life_Component>();
                 UIManager.Instance.UpdateScore(true);
             }
-            
+
         }
     }
     public void OnPlayerDefeat()
@@ -213,5 +210,5 @@ public class GameManager : MonoBehaviour
         _player.SetActive(false);
         Time.timeScale = 0.0f;
     }
-    
+
 }

@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SiguientePrueba : MonoBehaviour
+public class SiguientePruebaMov : MonoBehaviour
 {
     [SerializeField]
-    public Transform _nextPlace;
+    public GameObject _luz;
     [SerializeField]
-    public Transform _nextCameraPlace;
+    private GameObject _siguienteZona;
 
+    [SerializeField]
+    private GameObject _siguienteZonaCamara;
     public Transform _playerTransform;
     public Transform _cameraTransform;
 
@@ -18,7 +20,7 @@ public class SiguientePrueba : MonoBehaviour
 
     public bool _cameraControl = false;
 
-
+    // Start is called before the first frame update
     void Start()
     {
         _player = GameManager.Instance._player;
@@ -27,16 +29,19 @@ public class SiguientePrueba : MonoBehaviour
         _cameraTransform = _camera.GetComponent<Transform>();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerInput_Component>())
+        if (collision.GetComponent<PlayerMovement>())
         {
-            _playerTransform.position = _nextPlace.position;
-            _camera.GetComponent<ZonaPruebasCameraMovement>().nextPlace = _nextCameraPlace;
+            _player.transform.position = _siguienteZona.transform.position;
+            _camera.GetComponent<ZonaPruebasCameraMovement>().nextPlace = _siguienteZonaCamara.transform;
+            //this.enabled = false;
+            gameObject.SetActive(false);
         }
-    }
 
-    private void Update()
-    {
     }
 }
