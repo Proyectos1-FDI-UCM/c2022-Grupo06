@@ -104,8 +104,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             if(PlayerInput_Component.inst.jumpInput) _myRigidBody.velocity = new Vector2(_myRigidBody.velocity.x, impulse);
-            //verticalInput = 0;
-            //_myRigidBody.velocity = new Vector2(0, 0);
+            
             _isDashing = false;
             _hasDashed = false;
         }
