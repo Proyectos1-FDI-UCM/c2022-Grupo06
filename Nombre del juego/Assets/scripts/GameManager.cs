@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         //Al darle al botón carga el modo arcade
         SceneManager.LoadScene("ArcadeScene");
         AudioManager.Instance.Stop("Menu");
-        AudioManager.Instance.Play("Tutorial");
+        AudioManager.Instance.Play("Arcade");
     }
     public void RestartMatch()
     {
@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
         //_enemyMov.SetActive(false);
         UIManager.Instance.SetPauseMenu(true);
         _Camera.GetComponent<CamaraMovement>().enabled = false;
-        AudioManager.Instance.Play("Main");
+        
     }
     public void Restore()
     {
@@ -150,6 +150,7 @@ public class GameManager : MonoBehaviour
         //_enemyMov.SetActive(false);
         AudioManager.Instance.Stop("Main");
         AudioManager.Instance.Stop("Tutorial");
+        AudioManager.Instance.Stop("Arcade");
         AudioManager.Instance.Play("Win");
         UIManager.Instance.SetVictoryMenu(true);
 
@@ -205,6 +206,7 @@ public class GameManager : MonoBehaviour
         else { _Camera.GetComponent<CamaraMovement>().enabled = false; }
         AudioManager.Instance.Stop("Main");
         AudioManager.Instance.Stop("Tutorial");
+        AudioManager.Instance.Stop("Arcade");
         AudioManager.Instance.Play("Lose");
         UIManager.Instance.SetLoseMenu(true);
         _bow.SetActive(false);
