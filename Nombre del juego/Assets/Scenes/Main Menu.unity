@@ -694,6 +694,7 @@ MonoBehaviour:
   _player: {fileID: 0}
   _Camera: {fileID: 0}
   _levelManager: {fileID: 0}
+  _boss: {fileID: 0}
 --- !u!4 &704097834
 Transform:
   m_ObjectHideFlags: 0
@@ -1883,7 +1884,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.34
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

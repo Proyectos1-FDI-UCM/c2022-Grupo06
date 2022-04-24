@@ -66,21 +66,29 @@ public class BowController : MonoBehaviour
         Vector2 Dir = mousePos - bPos;
         transform.up = Dir; 
         //disparo
-        if (Input.GetMouseButton(0) && _atCD <= 1.5f && _canStillShoot)
+        if (Input.GetMouseButton(0)  && _atCD <= 1.5f && _canStillShoot)
         {
+            //cambia la escala del tiempo
             Time.timeScale = 0.5f;
             _point.SetActive(true);
+            //suma el contador
             _atCD += Time.deltaTime * _atackS;
-            _force += Time.deltaTime * _atackS*10;
-            BowANIM.isBow = true;
-            BarraTensado.AjustarDimensiones(_force);
-            if(_arrow == _arrowDamage) { _pDamage.SetActive(true); }
-            else { _pTP.SetActive(true);}
-            for (int i = 0; i < _numPoints; i++)
+            if (_atCD > 0.2f)
             {
-                Points[i].SetActive(true);
-                Points[i].transform.position = PointPosition(0.1f * i, Dir, _force, ShotPoint.transform.position);
+                //fuerza a la flecha
+                _force += Time.deltaTime * _atackS*10;
+                //animación del arco
+                BowANIM.isBow = true;
+                BarraTensado.AjustarDimensiones(_force);
+                if(_arrow == _arrowDamage) { _pDamage.SetActive(true); }
+                else { _pTP.SetActive(true);}
+                for (int i = 0; i < _numPoints; i++)
+                {
+                    Points[i].SetActive(true);
+                    Points[i].transform.position = PointPosition(0.1f * i, Dir, _force, ShotPoint.transform.position);
+                }
             }
+            
         }
         
         else if (_atCD >=1.5f && Input.GetMouseButton(0))
@@ -97,7 +105,7 @@ public class BowController : MonoBehaviour
         else if (!Input.GetMouseButton(0))
         {
             Time.timeScale = 1;
-            if (_atCD > 0) Shoot(Dir, _force);
+            if (_atCD > 0f) Shoot(Dir, _force);
             for (int i = 0; i < _numPoints; i++)
             {
                 Points[i].SetActive(false);
