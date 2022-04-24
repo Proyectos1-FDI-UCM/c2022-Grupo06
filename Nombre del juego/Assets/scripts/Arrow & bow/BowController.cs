@@ -15,7 +15,7 @@ public class BowController : MonoBehaviour
     private float _PredictionCoef;   
     private float _force = 0;
 
-
+   
     private GameObject _arrow;
 
     [SerializeField]
@@ -57,7 +57,6 @@ public class BowController : MonoBehaviour
         BarraTensado.AjustarMaximo(15f);
         _pDamage.SetActive(false);_pTP.SetActive(false);
     }
-
     public bool MaxForce = false;
     // Update is called once per frame
     void Update()
@@ -66,6 +65,7 @@ public class BowController : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 Dir = mousePos - bPos;
         transform.up = Dir; 
+        //disparo
         if (Input.GetMouseButton(0) && _atCD <= 1.5f && _canStillShoot)
         {
             Time.timeScale = 0.5f;

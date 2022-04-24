@@ -8,6 +8,7 @@ public class PlayerInput_Component : MonoBehaviour
     [SerializeField]
     private PlayerMovement _myPlayerMovement;
     public float moveInput = 0;
+    float x = 0, y = 0;
     public bool jumpInput;
     static public PlayerInput_Component inst;
 
@@ -19,11 +20,13 @@ public class PlayerInput_Component : MonoBehaviour
     }
     void Update()
     {
+        x = Input.acceleration.x;
+        y = Input.acceleration.z;
         moveInput = Input.GetAxis("Horizontal");
-        jumpInput = (JoystickMovil.Vertical > 0.9f) || Input.GetKeyDown("space");
+        jumpInput = (y < -0.9f) || Input.GetKeyDown("space");
 
-        _myPlayerMovement.movement(moveInput + JoystickMovil.Horizontal);
-        //movimientos del Joystick
+        _myPlayerMovement.movement(moveInput + x);
+       
         
         if (Input.GetMouseButtonDown(1))
         {
