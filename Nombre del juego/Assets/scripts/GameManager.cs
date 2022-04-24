@@ -95,6 +95,14 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+    public void CambioFlecha()
+    {
+        BowController.BowInstance.CambioDeFlecha();
+    }
+    public void CancelaDisparo()
+    {
+        BowController.BowInstance.CancelacionDisparo();
+    }
 
     void Start()
     {

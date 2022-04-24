@@ -98,7 +98,15 @@ public class UIManager : MonoBehaviour
     {
         GameManager.Instance.QuitGame();
     }
-    
+    public void CambioFlecha()
+    {
+        GameManager.Instance.CambioFlecha();
+    }
+    public void CancelaDisparo()
+    {
+        GameManager.Instance.CancelaDisparo();
+    }
+
     public void UpdateScore(bool enabled)
     {
         _score.SetActive(enabled);
