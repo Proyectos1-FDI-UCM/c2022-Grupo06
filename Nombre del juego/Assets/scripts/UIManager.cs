@@ -59,12 +59,12 @@ public class UIManager : MonoBehaviour
     }
     public void Pause()
     {
-        Debug.Log("se llama al gm");
+        //Debug.Log("se llama al gm");
         GameManager.Instance.pause();
     }
     public void Restore()
     {
-        Debug.Log("se llama al gm");
+        //Debug.Log("se llama al gm");
         GameManager.Instance.Restore();
     }
     public void StartMatch2()

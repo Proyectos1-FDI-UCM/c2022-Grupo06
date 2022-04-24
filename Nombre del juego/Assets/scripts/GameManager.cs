@@ -121,12 +121,13 @@ public class GameManager : MonoBehaviour
     public void pause()
     {
         Time.timeScale = 0.0f;
-        Debug.Log("se llama a metodo");
+        //Debug.Log("se llama a metodo");
         _bow.SetActive(false);
         //_enemyDisp.SetActive(false);
         //_enemyMov.SetActive(false);
         UIManager.Instance.SetPauseMenu(true);
         _Camera.GetComponent<CamaraMovement>().enabled = false;
+        AudioManager.Instance.Play("Main");
     }
     public void Restore()
     {
