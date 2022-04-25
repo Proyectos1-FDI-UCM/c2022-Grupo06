@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
             _myRigidBody.velocity = new Vector2(0, 1);
         }
 
-        if (_myRigidBody.velocity.y == 0) isGrounded = true;
+        if (_myRigidBody.velocity.y ==0) isGrounded = true;
         else isGrounded = false;
 
         if (isGrounded)

@@ -31,5 +31,9 @@ public class PlayerInput_Component : MonoBehaviour
         {
             _bow.GetComponent<BowController>().CancelacionDisparo();
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            GameManager.Instance.pause();
+        }
     }
 }

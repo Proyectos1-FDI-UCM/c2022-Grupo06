@@ -55,14 +55,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pTransform: {fileID: 7017067658100635705}
   _myRigidBody: {fileID: 0}
-  moveSpeed: 8
-  impulse: 6
+  moveSpeed: 6
+  impulse: 8
   pIsLookingRight: 1
   _gravity: 1.5
-  _dashSpeed: 20
-  _dashDur: 0.16
+  _dashSpeed: 25
+  _dashDur: 0.18
   ghost: {fileID: 3524957245420017737, guid: 0da0c4a7851bd514fa80fc8973d275d3, type: 3}
-  ghosts: 5
+  ghosts: 6
 --- !u!50 &-3146621115033547661
 Rigidbody2D:
   serializedVersion: 4

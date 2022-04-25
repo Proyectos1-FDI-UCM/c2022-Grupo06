@@ -249,7 +249,7 @@ MonoBehaviour:
   _arrowTP: {fileID: 3279880908078348967, guid: 29c55269acc7e2a49b7a5929cae1d20c, type: 3}
   _arrowDamage: {fileID: 1213834817381885705, guid: 7417280574497f34dba91f163394be2a, type: 3}
   _point: {fileID: 3243805386953319856, guid: 84188f0c228741249865f44ffc0db410, type: 3}
-  _numPoints: 10
+  _numPoints: 15
   ShotPoint: {fileID: 1816113675861846506}
   _pDamage: {fileID: 0}
   _pTP: {fileID: 0}

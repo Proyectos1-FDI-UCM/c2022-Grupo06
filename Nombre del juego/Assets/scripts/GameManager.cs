@@ -88,6 +88,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         AudioManager.Instance.Stop("Win");
         AudioManager.Instance.Stop("Lose");
+        AudioManager.Instance.Stop("Main");
+        AudioManager.Instance.Stop("Arcade");
         AudioManager.Instance.Play("Menu");
 
     }
@@ -133,7 +135,6 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.SetPauseMenu(false);
         Time.timeScale = 1.0f;
-        Debug.Log("se llama a metodo 2");
         _bow.SetActive(true);
         //_enemyDisp.SetActive(true);
         //_enemyMov.SetActive(true);
