@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
         AudioManager.Instance.Stop("Lose");
         AudioManager.Instance.Stop("Main");
         AudioManager.Instance.Stop("Arcade");
+        AudioManager.Instance.Stop("Tutorial");
         AudioManager.Instance.Play("Menu");
 
     }
