@@ -8,6 +8,7 @@ public class PlayerInput_Component : MonoBehaviour
     private PlayerMovement _myPlayerMovement;
     public float moveInput = 0;
     public bool jumpInput;
+    public bool canArrowChange = true;
     static public PlayerInput_Component inst;
 
     [SerializeField]
@@ -15,6 +16,7 @@ public class PlayerInput_Component : MonoBehaviour
     private void Awake()
     {
         inst = this;
+        canArrowChange = true;
     }
     void Update()
     {
@@ -22,7 +24,7 @@ public class PlayerInput_Component : MonoBehaviour
         jumpInput = Input.GetKeyDown("space");
         _myPlayerMovement.movement(moveInput);
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && canArrowChange)
         {
             _bow.GetComponent<BowController>().CambioDeFlecha();
             AudioManager.Instance.Play("ArrowChange");
