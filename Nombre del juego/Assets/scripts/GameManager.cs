@@ -144,7 +144,6 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerVictory()
     {
-        Debug.Log("you win");
         Time.timeScale = 0.0f;
         _player.SetActive(false);
         _bow.SetActive(false);
