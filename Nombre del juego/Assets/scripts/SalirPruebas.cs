@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class SalirPruebas : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _inicioTutorial_Player;
+
+    [SerializeField]
+    private GameObject _inicioTutorial_Camara;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +25,10 @@ public class SalirPruebas : MonoBehaviour
     {
         if(collision.GetComponent<PlayerMovement>())
         {
-            GameManager.Instance.OnPlayerVictory();
+            GameManager.Instance._player.transform.position = _inicioTutorial_Player.transform.position;
+            GameManager.Instance._Camera.transform.position = _inicioTutorial_Camara.transform.position;
+            GameManager.Instance._Camera.GetComponent<ZonaPruebasCameraMovement>().enabled = false;
+            GameManager.Instance._Camera.GetComponent<CamaraMovement>().enabled = true;
         }
     }
 }
