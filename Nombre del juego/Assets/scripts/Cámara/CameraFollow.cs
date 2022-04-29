@@ -31,19 +31,5 @@ public class CameraFollow : MonoBehaviour
             _camaraMov._vel = _camaraMov._velInicial;
         }
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.GetComponent<PlayerInput_Component>())
-    //    {
-    //        _camaraMov._vel *= 1.01f;
-    //    }
-    //}
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.GetComponent<PlayerInput_Component>())
-    //    {
-    //        _camaraMov._vel = _camaraMov._velInicial; 
-    //    }
-    //}
 }
