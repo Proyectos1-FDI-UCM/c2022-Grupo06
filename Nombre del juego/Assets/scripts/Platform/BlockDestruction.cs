@@ -16,7 +16,7 @@ public class BlockDestruction : MonoBehaviour
         Posboss = GameManager.Instance._boss;
         _mytransform =GetComponent<Transform>();
         _mytransform.position = ((Posboss.position + Posplayer.transform.position) / 2) ;
-        Debug.Log("pos enemigo" + Posboss.position+ "pos personaje" + Posplayer.transform.position + "posicion bloque" + transform.position);
+        //Debug.Log("pos enemigo" + Posboss.position+ "pos personaje" + Posplayer.transform.position + "posicion bloque" + transform.position);
         
     }
 

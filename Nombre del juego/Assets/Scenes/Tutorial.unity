@@ -4078,7 +4078,7 @@ MonoBehaviour:
   _enemyDisp: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
   _Camera: {fileID: 713059824}
   _finishLine: {fileID: 910782243}
-  _boss: {fileID: 0}
+  _boss: {fileID: 671863124}
 --- !u!4 &566941774
 Transform:
   m_ObjectHideFlags: 0

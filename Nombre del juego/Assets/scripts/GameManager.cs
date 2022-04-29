@@ -188,6 +188,10 @@ public class GameManager : MonoBehaviour
                 {
                     _boss = _levelManager._boss;
                 }
+                else
+                {
+                    _boss = _player.transform;
+                }
                 _player.SetActive(true);
                 _bow.SetActive(true);
                 _enemyDisp.SetActive(true);
