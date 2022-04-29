@@ -1960,6 +1960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vel: 0.0012
   _velInicial: 0
+  _stopPos: 200
   _accel: 0
   _coefaccel: 0
   _world_limit: 37.35

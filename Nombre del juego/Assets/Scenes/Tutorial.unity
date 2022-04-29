@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07cd0de11f1f9b43a666d518624b121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
 --- !u!212 &140798722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5201,6 +5202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vel: 0
   _velInicial: 0
+  _stopPos: 200
   _accel: 0
   _coefaccel: 0
   _world_limit: 76.5

@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class CameraCollisionDetection : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _camera;
     private void OnTriggerEnter2D(Collider2D collision)
     {      
-       if (collision.GetComponent<PlayerMovement>())
-       {
+        if (collision.GetComponent<PlayerMovement>())
+        {
             GameManager.Instance.PlayerDies();
             collision.gameObject.SetActive(false);
         }
-       if (collision.GetComponent<Arrow>())
-       {
+        if (collision.GetComponent<Arrow>())
+        {
             Destroy(collision.gameObject);
-       }
+        }
         if (collision.GetComponent<GeneratorComponent>())
         {
-            Debug.Log("Zona destroy");
             Destroy(collision.GetComponent<GeneratorComponent>().Zona);
             
         }
