@@ -142,11 +142,7 @@ public class BowController : MonoBehaviour
         _pDamage.SetActive(false); _pTP.SetActive(false);
         for (int i = 0; i < _numPoints; i++)
         {
-            Destroy(Points[i]);
-        }
-        for (int i = 0; i < _numPoints; i++)
-        {
-            Points[i] = Instantiate(_point, transform.position, Quaternion.identity);
+            Points[i].SetActive(false);
         }
     }
     private void Shoot(in Vector2 Dir, float force)
