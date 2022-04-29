@@ -146,7 +146,6 @@ public class GameManager : MonoBehaviour
     public void OnPlayerVictory()
     {
         Time.timeScale = 0.0f;
-        _player.SetActive(false);
         _bow.SetActive(false);
         //_enemyDisp.SetActive(false);
         //_enemyMov.SetActive(false);

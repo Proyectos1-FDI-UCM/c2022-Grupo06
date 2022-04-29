@@ -7,10 +7,11 @@ public class EnemyAttack : MonoBehaviour
     Vector2 dir;
     private Transform _playerPosition;                  //posicion del jugador           
     private GameObject newBullet;                       //instancia de la nueva bala
+
     [SerializeField]
-    private float _offset = 0.1f;                       //_offset relativa a la predicción del disparo              ¿mismo offset que la cámara?
-    
-    private Vector3 _aimingUp= new Vector3 (0,1,0);    //vector que le sumamos
+    private int _shootDistance = 10;
+    [SerializeField]
+    private int _shootTimeWait = 5;
     [SerializeField]
     private GameObject _bullet;                         //modelo de bala
     [SerializeField]
@@ -35,7 +36,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void Shoot( in Vector2 dir, float force)
     {
-        if(dir.magnitude <= 10.0f)
+        if(dir.magnitude <= _shootDistance)
         {
             newBullet = Instantiate(_bullet, _origin.transform.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().velocity = force * dir.normalized;
@@ -60,7 +61,7 @@ public class EnemyAttack : MonoBehaviour
             Shoot(dir, 10.0f);
             _firstShoot = true;
         }
-        else if (_atCD >= 5 && _firstShoot==true && _canShoot==true)
+        else if (_atCD >= _shootTimeWait && _firstShoot==true && _canShoot==true)
         {          
             Shoot(dir, 10.0f);
             _atCD = 0;
