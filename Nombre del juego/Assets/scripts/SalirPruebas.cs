@@ -29,6 +29,7 @@ public class SalirPruebas : MonoBehaviour
             GameManager.Instance._Camera.transform.position = _inicioTutorial_Camara.transform.position;
             GameManager.Instance._Camera.GetComponent<ZonaPruebasCameraMovement>().enabled = false;
             GameManager.Instance._Camera.GetComponent<CamaraMovement>().enabled = true;
+            GameManager.Instance._Camera.GetComponent<CamaraMovement>()._vel = 0.001f;
         }
     }
 }
