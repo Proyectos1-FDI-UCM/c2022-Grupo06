@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
         //_enemyDisp.SetActive(false);
         //_enemyMov.SetActive(false);
         UIManager.Instance.SetPauseMenu(true);
+        GetComponent<SliderVolume>();
         _Camera.GetComponent<CamaraMovement>().enabled = false;
         
     }

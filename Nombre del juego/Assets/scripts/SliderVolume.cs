@@ -10,13 +10,14 @@ public class SliderVolume : MonoBehaviour
     public Image mute;
 
 
-
     // Start is called before the first frame update
-    void Start()
+    public void Startt()
     {
+        mute.enabled = false;
         slider.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f); //al iniciar valor predefinido 0.5
         AudioListener.volume = slider.value;//el volumen de nuestro juego es igual al volumen del slider
         CompruebaMute();
+        
     }
 
     public void ChangeVolume(float number)
