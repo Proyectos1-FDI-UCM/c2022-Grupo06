@@ -1003,7 +1003,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -2.00551}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1014,7 +1014,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 5.011019}
   m_EdgeRadius: 0
 --- !u!114 &140798721
 MonoBehaviour:
@@ -7065,6 +7065,14 @@ PrefabInstance:
       propertyPath: _inicioTutorial_Player
       value: 
       objectReference: {fileID: 352824927}
+    - target: {fileID: 4231584275989914274, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231584277444645196, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7383963366933527059, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
       propertyPath: _bow
       value: 
@@ -7072,6 +7080,22 @@ PrefabInstance:
     - target: {fileID: 7481925199430179326, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
       propertyPath: m_Name
       value: EstructurasPruebas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502176896167487713, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 8502176897083251471, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873299444928811127, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873299445606884249, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.49
       objectReference: {fileID: 0}
     - target: {fileID: 9088437739992161964, guid: b6a2cff90827acb479c6249d4b297ae3, type: 3}
       propertyPath: m_RootOrder
