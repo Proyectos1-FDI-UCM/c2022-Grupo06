@@ -10,7 +10,10 @@ public class PlayerInput_Component : MonoBehaviour
     public bool jumpInput;
     public bool canArrowChange = true;
     static public PlayerInput_Component inst;
-
+    [SerializeField]
+    private GameObject LuzFlecha;
+    [SerializeField]
+    private GameObject LuzFlecha2;
     [SerializeField]
     private GameObject _bow;
     private void Awake()
@@ -26,6 +29,8 @@ public class PlayerInput_Component : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && canArrowChange)
         {
+            LuzFlecha.SetActive(!LuzFlecha.activeSelf);
+            LuzFlecha2.SetActive(!LuzFlecha2.activeSelf);
             _bow.GetComponent<BowController>().CambioDeFlecha();
             AudioManager.Instance.Play("ArrowChange");
         }

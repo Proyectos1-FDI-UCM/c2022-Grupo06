@@ -126,8 +126,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.0f;
         //Debug.Log("se llama a metodo");
         _bow.SetActive(false);
-        //_enemyDisp.SetActive(false);
-        //_enemyMov.SetActive(false);
+        _enemyDisp.SetActive(false);
+        _enemyMov.SetActive(false);
         UIManager.Instance.SetPauseMenu(true);
         GetComponent<SliderVolume>();
         _Camera.GetComponent<CamaraMovement>().enabled = false;
@@ -138,8 +138,8 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.SetPauseMenu(false);
         Time.timeScale = 1.0f;
         _bow.SetActive(true);
-        //_enemyDisp.SetActive(true);
-        //_enemyMov.SetActive(true);
+        _enemyDisp.SetActive(true);
+        _enemyMov.SetActive(true);
         _levelManager._Camera.GetComponent<CamaraMovement>().enabled = true;
     }
 
