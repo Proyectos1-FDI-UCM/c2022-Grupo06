@@ -6,8 +6,8 @@ public class Life_System_Component : MonoBehaviour
 {
     #region parametres
     [SerializeField]
-    protected int _maxlife;
-    protected  int _currentlife;
+    public int _maxlife;
+    public  int _currentlife;
     [SerializeField]
     int enemyscore = 10;
     #endregion

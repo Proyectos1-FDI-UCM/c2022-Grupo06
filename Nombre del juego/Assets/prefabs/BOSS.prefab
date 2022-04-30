@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4b3602554ad774a965bb16ba240123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxlife: 5
+  _maxlife: 10
   enemyscore: 100
   _damageontouch: 1
 --- !u!60 &3917969662279050728

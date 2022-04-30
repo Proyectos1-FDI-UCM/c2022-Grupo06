@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59b464fd73487247bfec0327b15bd5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 0.4
+  _shootDistance: 10
+  _shootTimeWait: 5
   _bullet: {fileID: 8929773823074417980, guid: 51c6e2dcca3b2714bb18e752691405e8, type: 3}
   _origin: {fileID: 4570703452176522500}
 --- !u!60 &8310278125052628121
@@ -176,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxlife: 1
+  _currentlife: 0
   enemyscore: 10
   _damageontouch: 1
 --- !u!1 &4570703452176522500
