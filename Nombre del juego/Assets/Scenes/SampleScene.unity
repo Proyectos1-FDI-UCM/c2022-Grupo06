@@ -8599,6 +8599,10 @@ PrefabInstance:
       propertyPath: enemyscore
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2476752679424278322, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2476752681025009103, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8608,6 +8612,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4420804304367032904, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421476386242316971, guid: d4b581e1cf04aa54b97441415dc346ff, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

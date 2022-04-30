@@ -15,7 +15,7 @@ public class CameraArcade : MonoBehaviour
     private float _coefaccel;       //coeficiente del que depende el valor de la aceleración
     private float _elapsedTime;     //tiempo que ha pasado, para la aceleración
     [SerializeField]
-    private GameObject _initPoint;
+    private GameObject _initPoint;  //posición inicial en la que empieza la cámara
     #endregion
 
     void Start()
