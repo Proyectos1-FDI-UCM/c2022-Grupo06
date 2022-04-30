@@ -17,10 +17,5 @@ public class CameraCollisionDetection : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.GetComponent<GeneratorComponent>())
-        {
-            Destroy(collision.GetComponent<GeneratorComponent>().Zona);
-            
-        }
     }
 }
