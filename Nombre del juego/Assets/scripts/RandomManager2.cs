@@ -30,7 +30,6 @@ public class RandomManager2 : MonoBehaviour
     void Update()
     {       
          int _random = Random.Range(0, 14);
-        Debug.Log(_activated);
         if (_activated == true)
         {
             _cosas2[_random].SetActive(true);
