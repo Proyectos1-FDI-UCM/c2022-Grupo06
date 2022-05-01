@@ -45,6 +45,10 @@ public class GeneratorComponent : MonoBehaviour
         }
         _lvlZones[random].transform.position = _myTransform.position;
         _lvlZones[random].SetActive(true);
+        //foreach(Enemy_Life_Component enemy in _lvlZones[random])
+        //{
+        //    enemy.gameObject.setActive(true);
+        //}
         _lvlZones[down].SetActive(false);
         down = middle;
         middle = up;
