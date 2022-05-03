@@ -13532,15 +13532,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1346785908173682264, guid: f033cc6926c9b0b439a74e5aa30dc813, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.2438974
+      value: 3.05731
       objectReference: {fileID: 0}
     - target: {fileID: 1346785908173682264, guid: f033cc6926c9b0b439a74e5aa30dc813, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.0838366
+      value: 14.709763
       objectReference: {fileID: 0}
     - target: {fileID: 1346785908173682264, guid: f033cc6926c9b0b439a74e5aa30dc813, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.97
+      value: 3.56
       objectReference: {fileID: 0}
     - target: {fileID: 1346785908173682264, guid: f033cc6926c9b0b439a74e5aa30dc813, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13557,6 +13557,10 @@ PrefabInstance:
     - target: {fileID: 1346785908173682264, guid: f033cc6926c9b0b439a74e5aa30dc813, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5434034040045059050, guid: f033cc6926c9b0b439a74e5aa30dc813, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5434034040045059050, guid: f033cc6926c9b0b439a74e5aa30dc813, type: 3}
       propertyPath: m_LightType

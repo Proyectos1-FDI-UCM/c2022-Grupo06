@@ -126,21 +126,25 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.0f;
         //Debug.Log("se llama a metodo");
         _bow.SetActive(false);
-        _enemyDisp.SetActive(false);
-        _enemyMov.SetActive(false);
+        //_enemyDisp.SetActive(false);
+        //_enemyMov.SetActive(false);
         UIManager.Instance.SetPauseMenu(true);
         GetComponent<SliderVolume>();
-        _Camera.GetComponent<CamaraMovement>().enabled = false;
-        
+        if (_Camera.GetComponent<CamaraMovement>()) _Camera.GetComponent<CamaraMovement>().enabled = false;
+        else _Camera.GetComponent<CameraArcade>().enabled = false;
+
+
     }
     public void Restore()
     {
         UIManager.Instance.SetPauseMenu(false);
         Time.timeScale = 1.0f;
         _bow.SetActive(true);
-        _enemyDisp.SetActive(true);
-        _enemyMov.SetActive(true);
-        _levelManager._Camera.GetComponent<CamaraMovement>().enabled = true;
+        //_enemyDisp.SetActive(true);
+        //_enemyMov.SetActive(true);
+        if (_Camera.GetComponent<CamaraMovement>()) _levelManager._Camera.GetComponent<CamaraMovement>().enabled = true;
+        else _levelManager._Camera.GetComponent<CameraArcade>().enabled = true;
+
     }
 
     public void OnPlayerVictory()

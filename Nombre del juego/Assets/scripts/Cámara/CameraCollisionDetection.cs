@@ -7,7 +7,7 @@ public class CameraCollisionDetection : MonoBehaviour
     [SerializeField]
     private GameObject _camera;
     private void OnTriggerEnter2D(Collider2D collision)
-    {      
+    {
         if (collision.GetComponent<PlayerMovement>())
         {
             GameManager.Instance.PlayerDies();
