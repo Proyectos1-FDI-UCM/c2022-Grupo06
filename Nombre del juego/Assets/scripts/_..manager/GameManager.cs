@@ -124,7 +124,6 @@ public class GameManager : MonoBehaviour
     public void pause()
     {
         Time.timeScale = 0.0f;
-        //Debug.Log("se llama a metodo");
         _bow.SetActive(false);
         _enemyDisp.SetActive(false);
         _enemyMov.SetActive(false);
@@ -140,8 +139,8 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.SetPauseMenu(false);
         Time.timeScale = 1.0f;
         _bow.SetActive(true);
-        //_enemyDisp.SetActive(true);
-        //_enemyMov.SetActive(true);
+        _enemyDisp.SetActive(true);
+        _enemyMov.SetActive(true);
         if (_Camera.GetComponent<CamaraMovement>()) _levelManager._Camera.GetComponent<CamaraMovement>().enabled = true;
         else _levelManager._Camera.GetComponent<CameraArcade>().enabled = true;
 
@@ -209,8 +208,6 @@ public class GameManager : MonoBehaviour
     }
     public void OnPlayerDefeat()
     {
-        //_enemyDisp.SetActive(false);
-        //_enemyMov.SetActive(false);
         if (_arcade) { _Camera.GetComponent<CameraArcade>().enabled = false; }
         else { _Camera.GetComponent<CamaraMovement>().enabled = false; }
         AudioManager.Instance.Stop("Main");

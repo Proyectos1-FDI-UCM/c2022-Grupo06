@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cloud : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool InicioCuentra = false;
+    public bool InicioCuentra = false;
     [SerializeField]
     public float cont;
     private float _elapsedTime=0;     //tiempo que ha pasado, para la desaparición
@@ -26,7 +26,10 @@ public class Cloud : MonoBehaviour
             GetComponent<SpriteRenderer>().color = transparencia;
             if (_elapsedTime >= cont)
             {
-                this.gameObject.SetActive(false);
+                InicioCuentra = false;
+                transparencia.a = 1;
+                gameObject.SetActive(false);
+                
             }
         }
     }
