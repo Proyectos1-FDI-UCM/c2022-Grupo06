@@ -4269,8 +4269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 783073015}
   _bow: {fileID: 2031231022}
-  _enemyMov: {fileID: 0}
-  _enemyDisp: {fileID: 0}
+  _enemyMov: {fileID: 5528064252072028420, guid: 7fbebb1a5f793cd45ba7fa22a9c6633f, type: 3}
+  _enemyDisp: {fileID: 4570703451250500242, guid: c3752e581cbaadb42835e8e3cd0edcde, type: 3}
   _Camera: {fileID: 1129810326}
   _finishLine: {fileID: 0}
   _boss: {fileID: 0}

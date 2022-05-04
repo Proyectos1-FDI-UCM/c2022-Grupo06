@@ -26,11 +26,15 @@ public class Cloud : MonoBehaviour
             GetComponent<SpriteRenderer>().color = transparencia;
             if (_elapsedTime >= cont)
             {
-                InicioCuentra = false;
-                transparencia.a = 1;
+                InicioCuentra = false; 
                 gameObject.SetActive(false);
-                
             }
+        }
+        else
+        {
+            transparencia.a = 1;
+            GetComponent<SpriteRenderer>().color = transparencia;
+            _elapsedTime = 0;
         }
     }
     private void Start()
