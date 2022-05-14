@@ -124,13 +124,13 @@ public class GameManager : MonoBehaviour
     public void pause()
     {
         Time.timeScale = 0.0f;
-        _bow.SetActive(false);
-        _enemyDisp.SetActive(false);
-        _enemyMov.SetActive(false);
+        _levelManager._bow.SetActive(false);
+        _levelManager._enemyDisp.SetActive(false);
+        _levelManager._enemyMov.SetActive(false);
         UIManager.Instance.SetPauseMenu(true);
         GetComponent<SliderVolume>();
-        if (_Camera.GetComponent<CamaraMovement>()) _Camera.GetComponent<CamaraMovement>().enabled = false;
-        else _Camera.GetComponent<CameraArcade>().enabled = false;
+        if (_levelManager._Camera.GetComponent<CamaraMovement>()) _levelManager._Camera.GetComponent<CamaraMovement>().enabled = false;
+        else _levelManager._Camera.GetComponent<CameraArcade>().enabled = false;
 
 
     }
@@ -138,10 +138,10 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.SetPauseMenu(false);
         Time.timeScale = 1.0f;
-        _bow.SetActive(true);
-        _enemyDisp.SetActive(true);
-        _enemyMov.SetActive(true);
-        if (_Camera.GetComponent<CamaraMovement>()) _levelManager._Camera.GetComponent<CamaraMovement>().enabled = true;
+        _levelManager._bow.SetActive(true);
+        _levelManager._enemyDisp.SetActive(true);
+        _levelManager._enemyMov.SetActive(true);
+        if (_levelManager._Camera.GetComponent<CamaraMovement>()) _levelManager._Camera.GetComponent<CamaraMovement>().enabled = true;
         else _levelManager._Camera.GetComponent<CameraArcade>().enabled = true;
 
     }

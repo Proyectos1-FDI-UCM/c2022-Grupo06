@@ -29,7 +29,6 @@ public class GeneratorComponent : MonoBehaviour
     private void Start()
     {
         _myTransform = GetComponent<Transform>();
-        Debug.Log(_myTransform.position);
         down = 0;
         middle = 1;
         up = 2;
@@ -38,7 +37,6 @@ public class GeneratorComponent : MonoBehaviour
     {
         
         random = Random.Range(0, 5);
-        Debug.Log(random);
         while(_lvlZones[random].activeSelf == true)
         {
             random = Random.Range(0, 5);

@@ -7,7 +7,6 @@ public class ArcadeGenerator : MonoBehaviour
     private Transform _myTransform;
     [SerializeField]
     private Transform generador;
-    int random;
     
     private void Start()
     {
@@ -15,9 +14,8 @@ public class ArcadeGenerator : MonoBehaviour
     }
     private void Update()
     {
-        if (transform.position.y> generador.position.y)
+        if (_myTransform.position.y> generador.position.y)
         {
-          
             GeneratorComponent.Instance.CambioPos();
         }
     }
