@@ -19,8 +19,7 @@ public class winTutorial : MonoBehaviour
     {
         if (collision.GetComponent<PlayerMovement>())
         {
-            GameManager.Instance.OnPlayerVictory();
-            GameManager.Instance._Camera.GetComponent<CamaraMovement>().enabled = false;
+            GameManager.Instance.StartMatch();
         }
         
     }

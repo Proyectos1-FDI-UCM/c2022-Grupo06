@@ -42,5 +42,9 @@ public class PlayerInput_Component : MonoBehaviour
         {
             GameManager.Instance.pause();
         }
+        if (Input.GetKey(KeyCode.P))
+        {
+            GameManager.Instance.StartMatch();
+        }
     }
 }

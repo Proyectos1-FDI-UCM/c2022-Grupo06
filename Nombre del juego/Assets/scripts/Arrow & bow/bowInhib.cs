@@ -16,6 +16,9 @@ public class bowInhib : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _bow.SetActive(true);
+        if (collision.GetComponent<PlayerMovement>())
+        {
+            _bow.SetActive(true);
+        }
     }
 }

@@ -66,6 +66,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         AudioManager.Instance.Stop("Menu");
         AudioManager.Instance.Play("Main");
+        AudioManager.Instance.Stop("Win");
+        AudioManager.Instance.Stop("Lose");
+        AudioManager.Instance.Stop("Tutorial");
     }
     public void StartMatch2()
     {
